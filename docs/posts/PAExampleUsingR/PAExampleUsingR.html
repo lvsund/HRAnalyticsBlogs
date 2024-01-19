@@ -533,24 +533,32 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <p>There is a strong correlation of Age and Absence Rate</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggplot2)</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot() + geom_point(aes(x = LengthService,y = AbsenceRate),data=MFGEmployees) + </span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_smooth(aes(x = LengthService,y = AbsenceRate),data=MFGEmployees,method = 'lm')</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co"># cor(MFGEmployees$LengthService, MFGEmployees$AbsenceRate)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> LengthService,<span class="at">y =</span> AbsenceRate),<span class="at">data=</span>MFGEmployees) <span class="sc">+</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> LengthService,<span class="at">y =</span> AbsenceRate),<span class="at">data=</span>MFGEmployees,<span class="at">method =</span> <span class="st">'lm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(MFGEmployees<span class="sc">$</span>LengthService, MFGEmployees<span class="sc">$</span>AbsenceRate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.04669242</code></pre>
+</div>
 </div>
 <p>There is not a strong correlation between length of service and Absence Rate.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> LengthService,<span class="at">y =</span> Age),<span class="at">data=</span>MFGEmployees) <span class="sc">+</span> </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> LengthService,<span class="at">y =</span> Age),<span class="at">data=</span>MFGEmployees,<span class="at">method =</span> <span class="st">'lm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> LengthService,<span class="at">y =</span> Age),<span class="at">data=</span>MFGEmployees) <span class="sc">+</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> LengthService,<span class="at">y =</span> Age),<span class="at">data=</span>MFGEmployees,<span class="at">method =</span> <span class="st">'lm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(MFGEmployees<span class="sc">$</span>Age, MFGEmployees<span class="sc">$</span>LengthService)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(MFGEmployees<span class="sc">$</span>Age, MFGEmployees<span class="sc">$</span>LengthService)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.05623405</code></pre>
 </div>
@@ -568,10 +576,10 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p>Let us know move on to step 3.</p>
 <p>Reload the data and adjust it for corrections again</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>MFGEmployees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"MFGEmployees4.csv"</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(MFGEmployees,"~/R Files/MFGEmployees4.csv")</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="sc">$</span>AbsenceRate<span class="ot">&lt;-</span>MFGEmployees<span class="sc">$</span>AbsentHours<span class="sc">/</span><span class="dv">2080</span><span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MFGEmployees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>MFGEmployees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"MFGEmployees4.csv"</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(MFGEmployees,"~/R Files/MFGEmployees4.csv")</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="sc">$</span>AbsenceRate<span class="ot">&lt;-</span>MFGEmployees<span class="sc">$</span>AbsentHours<span class="sc">/</span><span class="dv">2080</span><span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MFGEmployees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> EmployeeNumber   Surname           GivenName            Gender         
  Min.   :   1   Length:8336        Length:8336        Length:8336       
@@ -602,8 +610,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
                     3rd Qu.: 4.5329  
                     Max.   :13.1024  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="ot">&lt;-</span><span class="fu">subset</span>(MFGEmployees,MFGEmployees<span class="sc">$</span>Age<span class="sc">&gt;=</span><span class="dv">18</span>)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="ot">&lt;-</span><span class="fu">subset</span>(MFGEmployees,MFGEmployees<span class="sc">$</span>Age<span class="sc">&lt;=</span><span class="dv">65</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="ot">&lt;-</span><span class="fu">subset</span>(MFGEmployees,MFGEmployees<span class="sc">$</span>Age<span class="sc">&gt;=</span><span class="dv">18</span>)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="ot">&lt;-</span><span class="fu">subset</span>(MFGEmployees,MFGEmployees<span class="sc">$</span>Age<span class="sc">&lt;=</span><span class="dv">65</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>##3. Build The model One of the questions asked in the defining the goal step was ‘whether it was possible to <strong>predict</strong> absenteeism?’</p>
 <p>Absence Rate is a numeric continuous value. In the ‘Building a model’ step we have to chose what models/statistical algorithms to use. Prediction of a numerics continous values suggests a couple of models that could be brought to bear: Regression trees and linear regression. There are many more but for purposes of this article we will look at these</p>
@@ -619,7 +627,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </ul>
 <p><strong>Absence Rate</strong> will be the the ‘target’ or thing to be predicted.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rattle)   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rattle)   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: tibble</code></pre>
 </div>
@@ -631,12 +639,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 Version 5.5.1 Copyright (c) 2006-2021 Togaware Pty Ltd.
 Type 'rattle()' to shake, rattle, and roll your data.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr) </span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>building <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>scoring  <span class="ot">&lt;-</span> <span class="sc">!</span> building</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>crv<span class="sc">$</span>seed <span class="ot">&lt;-</span> <span class="dv">42</span> </span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>MYdataset <span class="ot">&lt;-</span> MFGEmployees</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(MYdataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr) </span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>building <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>scoring  <span class="ot">&lt;-</span> <span class="sc">!</span> building</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>crv<span class="sc">$</span>seed <span class="ot">&lt;-</span> <span class="dv">42</span> </span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>MYdataset <span class="ot">&lt;-</span> MFGEmployees</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(MYdataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   8165 obs. of  14 variables:
  $ EmployeeNumber: int  1 2 3 4 5 6 7 8 9 10 ...
@@ -654,27 +662,27 @@ Type 'rattle()' to shake, rattle, and roll your data.</code></pre>
  $ BusinessUnit  : chr  "Stores" "Stores" "Stores" "Stores" ...
  $ AbsenceRate   : num  1.76 1.45 4.03 3.37 0 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>MYinput <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"DepartmentName"</span>, <span class="st">"StoreLocation"</span>, <span class="st">"Division"</span>,</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Age"</span>, <span class="st">"LengthService"</span>, <span class="st">"BusinessUnit"</span>)</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>MYnumeric <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"LengthService"</span>)</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>MYcategoric <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"DepartmentName"</span>, <span class="st">"StoreLocation"</span>, <span class="st">"Division"</span>,</span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>     <span class="st">"BusinessUnit"</span>)</span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>MYtarget  <span class="ot">&lt;-</span> <span class="st">"AbsenceRate"</span></span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>MYrisk    <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>MYident   <span class="ot">&lt;-</span> <span class="st">"EmployeeNumber"</span></span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>MYignore  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Surname"</span>, <span class="st">"GivenName"</span>, <span class="st">"City"</span>, <span class="st">"JobTitle"</span>, <span class="st">"AbsentHours"</span>)</span>
-<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>MYweights <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart, <span class="at">quietly=</span><span class="cn">TRUE</span>)</span>
-<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(crv<span class="sc">$</span>seed)</span>
-<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>MYrpart <span class="ot">&lt;-</span> <span class="fu">rpart</span>(AbsenceRate <span class="sc">~</span> .,</span>
-<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>MYdataset[, <span class="fu">c</span>(MYinput, MYtarget)],</span>
-<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">method=</span><span class="st">"anova"</span>,</span>
-<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">parms=</span><span class="fu">list</span>(<span class="at">split=</span><span class="st">"information"</span>),</span>
-<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">control=</span><span class="fu">rpart.control</span>(<span class="at">minsplit=</span><span class="dv">10</span>,</span>
-<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">maxdepth=</span><span class="dv">10</span>,</span>
-<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">usesurrogate=</span><span class="dv">0</span>, </span>
-<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">maxsurrogate=</span><span class="dv">0</span>))</span>
-<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a><span class="fu">fancyRpartPlot</span>(MYrpart, <span class="at">main=</span><span class="st">"Decision Tree MFGEmployees $ AbsenceRate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>MYinput <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"DepartmentName"</span>, <span class="st">"StoreLocation"</span>, <span class="st">"Division"</span>,</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Age"</span>, <span class="st">"LengthService"</span>, <span class="st">"BusinessUnit"</span>)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>MYnumeric <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"LengthService"</span>)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>MYcategoric <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"DepartmentName"</span>, <span class="st">"StoreLocation"</span>, <span class="st">"Division"</span>,</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>     <span class="st">"BusinessUnit"</span>)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>MYtarget  <span class="ot">&lt;-</span> <span class="st">"AbsenceRate"</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>MYrisk    <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>MYident   <span class="ot">&lt;-</span> <span class="st">"EmployeeNumber"</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>MYignore  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Surname"</span>, <span class="st">"GivenName"</span>, <span class="st">"City"</span>, <span class="st">"JobTitle"</span>, <span class="st">"AbsentHours"</span>)</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>MYweights <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart, <span class="at">quietly=</span><span class="cn">TRUE</span>)</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(crv<span class="sc">$</span>seed)</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>MYrpart <span class="ot">&lt;-</span> <span class="fu">rpart</span>(AbsenceRate <span class="sc">~</span> .,</span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>MYdataset[, <span class="fu">c</span>(MYinput, MYtarget)],</span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">method=</span><span class="st">"anova"</span>,</span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">parms=</span><span class="fu">list</span>(<span class="at">split=</span><span class="st">"information"</span>),</span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">control=</span><span class="fu">rpart.control</span>(<span class="at">minsplit=</span><span class="dv">10</span>,</span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">maxdepth=</span><span class="dv">10</span>,</span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">usesurrogate=</span><span class="dv">0</span>, </span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">maxsurrogate=</span><span class="dv">0</span>))</span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a><span class="fu">fancyRpartPlot</span>(MYrpart, <span class="at">main=</span><span class="st">"Decision Tree MFGEmployees $ AbsenceRate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -689,9 +697,9 @@ Type 'rattle()' to shake, rattle, and roll your data.</code></pre>
 </ul>
 <p>being used to predict absence rate.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Linear Regression Model</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>RegressionCurrentData <span class="ot">&lt;-</span> <span class="fu">lm</span>(AbsenceRate<span class="sc">~</span>Age<span class="sc">+</span>LengthService, <span class="at">data=</span>MFGEmployees)</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(RegressionCurrentData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Linear Regression Model</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>RegressionCurrentData <span class="ot">&lt;-</span> <span class="fu">lm</span>(AbsenceRate<span class="sc">~</span>Age<span class="sc">+</span>LengthService, <span class="at">data=</span>MFGEmployees)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(RegressionCurrentData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -717,24 +725,24 @@ F-statistic:  9027 on 2 and 8162 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The summary shows an adjusted R-squared of .68 which means approximately 68% of the variance is accounted by age and length of service. The variables are both significant at Pr(&gt;|t|) of &lt;2e-16. These results are using the entirety of the existing data to predict itself.</p>
 <p>Graphically it look like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">#2D plot of Age and AbsenceRate</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age,<span class="at">y =</span> AbsenceRate),<span class="at">data=</span>MFGEmployees) <span class="sc">+</span><span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age,<span class="at">y =</span> AbsenceRate),<span class="at">data=</span>MFGEmployees,<span class="at">method =</span> <span class="st">'lm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co">#2D plot of Age and AbsenceRate</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age,<span class="at">y =</span> AbsenceRate),<span class="at">data=</span>MFGEmployees) <span class="sc">+</span><span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age,<span class="at">y =</span> AbsenceRate),<span class="at">data=</span>MFGEmployees,<span class="at">method =</span> <span class="st">'lm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#3D Scatterplot  of Age and Length of Service with Absence Rate - with Coloring and Vertical Lines</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and Regression Plane </span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scatterplot3d) </span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>s3d <span class="ot">&lt;-</span><span class="fu">scatterplot3d</span>(MFGEmployees<span class="sc">$</span>Age,MFGEmployees<span class="sc">$</span>LengthService,MFGEmployees<span class="sc">$</span>AbsenceRate, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">highlight.3d=</span><span class="cn">TRUE</span>,</span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">type=</span><span class="st">"h"</span>, <span class="at">main=</span><span class="st">"Absence Rate By Age And Length of Service"</span>)</span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(MFGEmployees<span class="sc">$</span>AbsenceRate <span class="sc">~</span> MFGEmployees<span class="sc">$</span>Age<span class="sc">+</span>MFGEmployees<span class="sc">$</span>LengthService) </span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>s3d<span class="sc">$</span><span class="fu">plane3d</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#3D Scatterplot  of Age and Length of Service with Absence Rate - with Coloring and Vertical Lines</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and Regression Plane </span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scatterplot3d) </span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>s3d <span class="ot">&lt;-</span><span class="fu">scatterplot3d</span>(MFGEmployees<span class="sc">$</span>Age,MFGEmployees<span class="sc">$</span>LengthService,MFGEmployees<span class="sc">$</span>AbsenceRate, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">highlight.3d=</span><span class="cn">TRUE</span>,</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">type=</span><span class="st">"h"</span>, <span class="at">main=</span><span class="st">"Absence Rate By Age And Length of Service"</span>)</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(MFGEmployees<span class="sc">$</span>AbsenceRate <span class="sc">~</span> MFGEmployees<span class="sc">$</span>Age<span class="sc">+</span>MFGEmployees<span class="sc">$</span>LengthService) </span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>s3d<span class="sc">$</span><span class="fu">plane3d</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-17-2.png" class="img-fluid" width="672"></p>
 </div>
@@ -746,27 +754,27 @@ F-statistic:  9027 on 2 and 8162 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The R “caret” library helps us do that. We will run both a regression tree and linear regression and compare how they do against each other.</p>
 <p>First the Linear Regression</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MFGEmployees &lt;- readRDS(file="c:/Users/Lyndon.A3HR/Documents/MFGEmployees.Rda")</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MFGEmployees &lt;- readRDS(file="c:/Users/Lyndon.A3HR/Documents/MFGEmployees.Rda")</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: lattice</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">998</span>)</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>inTraining <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(MFGEmployees<span class="sc">$</span>BusinessUnit, <span class="at">p =</span> .<span class="dv">75</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>training <span class="ot">&lt;-</span> MFGEmployees[inTraining,]</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>testing <span class="ot">&lt;-</span> MFGEmployees[ <span class="sc">-</span> inTraining,]</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>fitControl <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="do">## 10-fold CV</span></span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="at">method =</span> <span class="st">"repeatedcv"</span>,</span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">number =</span> <span class="dv">10</span>,</span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>                           <span class="do">## repeated ten times</span></span>
-<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a><span class="at">repeats =</span> <span class="dv">10</span>)</span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">825</span>)</span>
-<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>lmFit1 <span class="ot">&lt;-</span> <span class="fu">train</span>(AbsenceRate <span class="sc">~</span> Age <span class="sc">+</span> LengthService, <span class="at">data =</span> training,</span>
-<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"lm"</span>,</span>
-<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> fitControl)</span>
-<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>lmFit1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">998</span>)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>inTraining <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(MFGEmployees<span class="sc">$</span>BusinessUnit, <span class="at">p =</span> .<span class="dv">75</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>training <span class="ot">&lt;-</span> MFGEmployees[inTraining,]</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>testing <span class="ot">&lt;-</span> MFGEmployees[ <span class="sc">-</span> inTraining,]</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>fitControl <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="do">## 10-fold CV</span></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="at">method =</span> <span class="st">"repeatedcv"</span>,</span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">number =</span> <span class="dv">10</span>,</span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>                           <span class="do">## repeated ten times</span></span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a><span class="at">repeats =</span> <span class="dv">10</span>)</span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">825</span>)</span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>lmFit1 <span class="ot">&lt;-</span> <span class="fu">train</span>(AbsenceRate <span class="sc">~</span> Age <span class="sc">+</span> LengthService, <span class="at">data =</span> training,</span>
+<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"lm"</span>,</span>
+<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> fitControl)</span>
+<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a>lmFit1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear Regression 
 
@@ -787,16 +795,16 @@ Tuning parameter 'intercept' was held constant at a value of TRUE</code></pre>
 <p>The rSquared shows a value of .688 which means even with sampling different parts of the data on 10 fold cross validation the use of age and length of service seems to be pretty robust so far.</p>
 <p>Next the decision tree. The first time with just the numeric variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">825</span>)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>rpartFit1 <span class="ot">&lt;-</span> <span class="fu">train</span>(AbsenceRate <span class="sc">~</span> Age <span class="sc">+</span> LengthService, <span class="at">data =</span> training,</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"rpart"</span>,</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> fitControl,</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">maxdepth =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">825</span>)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>rpartFit1 <span class="ot">&lt;-</span> <span class="fu">train</span>(AbsenceRate <span class="sc">~</span> Age <span class="sc">+</span> LengthService, <span class="at">data =</span> training,</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"rpart"</span>,</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> fitControl,</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">maxdepth =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
 : There were missing values in resampled performance measures.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>rpartFit1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>rpartFit1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>CART 
 
@@ -820,16 +828,16 @@ The final value used for the model was cp = 0.06330829.</code></pre>
 <p>You will notice that the decision tree with 10 fold cross validation didnt perform as well with an RSquared of approximately .60</p>
 <p>The second time with the original categorical and numeric varibles used.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">825</span>)</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>rpartFit2 <span class="ot">&lt;-</span> <span class="fu">train</span>(AbsenceRate <span class="sc">~</span> Gender <span class="sc">+</span> DepartmentName <span class="sc">+</span> StoreLocation <span class="sc">+</span> Division <span class="sc">+</span> Age <span class="sc">+</span> LengthService <span class="sc">+</span> BusinessUnit, <span class="at">data =</span> training,</span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"rpart"</span>,</span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> fitControl,</span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">maxdepth =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">825</span>)</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>rpartFit2 <span class="ot">&lt;-</span> <span class="fu">train</span>(AbsenceRate <span class="sc">~</span> Gender <span class="sc">+</span> DepartmentName <span class="sc">+</span> StoreLocation <span class="sc">+</span> Division <span class="sc">+</span> Age <span class="sc">+</span> LengthService <span class="sc">+</span> BusinessUnit, <span class="at">data =</span> training,</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"rpart"</span>,</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> fitControl,</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">maxdepth =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
 : There were missing values in resampled performance measures.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>rpartFit2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>rpartFit2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>CART 
 
@@ -867,21 +875,21 @@ The final value used for the model was cp = 0.06330829.</code></pre>
 <p>Lets predict the 2016 Absenteeism from the 2015 model.</p>
 <p>If we make the simplifying assumption that nobody quits and nobody new comes in, we can take the 2015 data and add 1 to age and 1 to years of service for an approximation of new 2016 data before we get to 2016.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply model</span></span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate 2016 data</span></span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="ot">&lt;-</span>MFGEmployees</span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>Age<span class="ot">&lt;-</span>Absence2016Data<span class="sc">$</span>Age<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>LengthService<span class="ot">&lt;-</span>Absence2016Data<span class="sc">$</span>LengthService<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>AbsenceRate<span class="ot">&lt;-</span><span class="dv">0</span></span>
-<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>AbsenceRate<span class="ot">&lt;-</span><span class="fu">predict</span>(lmFit1,Absence2016Data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply model</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate 2016 data</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="ot">&lt;-</span>MFGEmployees</span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>Age<span class="ot">&lt;-</span>Absence2016Data<span class="sc">$</span>Age<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>LengthService<span class="ot">&lt;-</span>Absence2016Data<span class="sc">$</span>LengthService<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>AbsenceRate<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>AbsenceRate<span class="ot">&lt;-</span><span class="fu">predict</span>(lmFit1,Absence2016Data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To get single estimate for 2016 we ask for mean of absence rate.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Absence2016Data<span class="sc">$</span>AbsenceRate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Absence2016Data<span class="sc">$</span>AbsenceRate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.040885</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(MFGEmployees<span class="sc">$</span>AbsenceRate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(MFGEmployees<span class="sc">$</span>AbsenceRate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.907265</code></pre>
 </div>
