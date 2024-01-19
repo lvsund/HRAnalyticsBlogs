@@ -147,3 +147,9 @@ As I have suggested in the above, I believe Workforce/ HR/ People analytics are 
 Google is indeed doing some tremendously exciting things in their People practices. They have taken the bold move to increase dramatically their ability to be 'data driven' in their HR practices. And they will likely continue to see payoffs for their decisions.
 
 I guess the key question is- how will Workforce, HR, People Analytics impact you and your organization?
+
+::: {.callout-note appearance="simple"}    
+About Lyndon Sundmark, MBA
+
+Lyndon is a retired HR Professional with over 40 years experience of applying a 'data-driven', 'evidence based' mindset to HR practices in organizations in a variety of roles and industries.
+:::
