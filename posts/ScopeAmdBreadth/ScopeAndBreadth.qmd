@@ -1,0 +1,152 @@
+---
+title: "Is It Time To Revisit The Scope and Breadth of People / HR Analytics?"
+author: "Lyndon Sundmark, MBA"
+date: "2018-10-13"
+categories: [HR Analytics]
+---
+
+# Introduction
+
+As I continue to peruse much of what is being written on the internet on 'all things People/HR Analytics', a huge amount of it is geared towards talking about traditional HR metrics and its relationship to other business metrics. I think this is a 'good' and 'natural' starting point both in terms of understanding and implementing People/HR analytics initiatives in organizations. And indeed, many organizations strive for this as their first evidence of 'visibility' that they are engaging in it. With it, they are often presenting a picture to the organization for the first time, of the human resources in their organization.
+
+For some, their perspective may be that this is the limit of what People /HR Analytics is, and can do for them. Their perspective is limited by how they have defined it for themselves. Definitions in People/HR Analytics are critical for that reason. They set the boundaries for us at any given point in time as to what activities are and aren't deemed to be People/HR Analytics.
+
+# The Real Scope And Breadth
+
+For those of you who have read my book
+
+<https://www.amazon.com/Doing-HR-Analytics-Practitioners-Handbook/dp/1973716372>
+
+and my compendium of Linkedin blog articles on People/HR Analytics found on my LinkedIn profile page, you know that I view this field as being understood and defined as 'data-driven' HR management and decision making.
+
+If you accept that definition, a few things may emerge as self-evident in your thinking:
+
+-   You will probably conclude traditional HR metrics probably is not the full scope of People/HR Analytics. Its an important part, but only part of the picture.
+
+-   You can, and probably should, think of the scope of 'data-driven' as potentially 'ALL' of HR, so as to not unnecessary limit its potential applicability.
+
+-   You should recognize that this will mean it is NOT 'business as usual' HR. While the purposes of almost all of what we do in HR don't change- and indeed are based on the functions, responsibilities and expectations put on us by the organization and the business it is in- the way we think of how we do HR will likely need to change to accommodate a 'data-driven' -new methodologies, new tools and so on.
+
+-   You should probably conclude that applying Data Science to HR information will likely be behind much of the changes in the 'how we do HR'.
+
+All this being said, the scope of 'ALL' HR may still be somewhat nebulous and fuzzy out there- truthful in the potential- but still difficult to get one's head around to action this -- nevertheless.
+
+In my book I suggest 3 major spheres of applicability in that 'ALL' scope:
+
+-   **Traditional HR metrics** -describing our employee population over time and what is happening to it. (And understanding the relationship of these to other more general business and organization metrics). As mentioned above, this is a part of People/HR Analytics and an important part.
+
+-   **Our HR operations**- monitoring, understanding, and continuously improving the services HR provides to its customers
+
+-   **Embedding Data Science frameworks and Machine Learning models into HR decision and policy making and HR processes directly**. This is category most impacting on how we do the business of HR differently to be 'data driven'.
+
+Most of you might be familiar with much of the scope of Traditional HR Metrics. If not, you can peruse the glossary and standards at the following link as an example:
+
+<https://www.hrmetricsservice.org/standards-and-glossary/>
+
+of you might be familiar with the sphere of applicability to HR operations. For some of you it may have been in the form of a 'continuous improvement' initiative in HR- identifying who your customers are, your products and services to them, and the processes that provide them.
+
+The third sphere above is probably the 'foggiest' for most people. How do we get our heads around this- both in the doing and engaging in, and understanding the 'full scope' of what this may cover? I think the 'full scope' of what this is -- is still emerging. Probably the reason for that is that this is only limited by the variety of HR issues faced and imaginations of HR professionals.
+
+Indeed, it may useful for the HR professional community to document the uses it has actually put data science to in HR - so that others can learning from it -thereby fundamentally change (over time) the business of HR.
+
+But even so, how do we even know whether something has the potential to be considered as a candidate for the application of data science to HR?
+
+I think the answer to that question can be found in:
+
+-   First understanding what questions data science and machine learning models were designed to answer.
+
+-   Then think about what the equivalent of those types of questions would be within the scope of known HR functions.
+
+I recently came across the following article written by a fellow at Microsoft-Brandon Rohrer:
+
+<https://learn.microsoft.com/en-us/archive/blogs/machinelearning/what-types-of-questions-can-data-science-answer>
+
+which is an excellent answer to the first bullet point just above and is very much worth the read.
+
+In summary:
+
+-   What Type of Questions Can Data Science Answer?
+
+-   Is this A or B? -Two-Class Classification
+
+-   Is this A or B or C or D? Multi-class classification
+
+-   Is this weird or unusual? Anomaly Detection
+
+-   How Much / How Many? Regression
+
+-   What is the probability that something is A or B or C or D? Multi-class classification as regression
+
+-   What is the probability that something is A or B? Two-class classification as regression
+
+-   How is this data organized? Clustering or Dimensionality reduction
+
+-   What should I do now? Reinforcement Learning
+
+This is a very abbreviated summary of that article, but it very quickly sharpens our focus and structures our thinking with respect to the application of Data Science to HR. The scope of application is huge, both with respect to HR decision making for HR policy purposes and for direct embedding of machine learning models in our HR practices and processes.
+
+**What are those questions in the HR Context?**
+
+Let's do some quick 'sample brainstorming' in the HR functions and HR Metrics:
+
+**Recruitment**
+
+· Is this hire going to be successful or unsuccessful in our organization? (Two-Class Classification)
+
+· Will this candidate pass probation if we hire them? (Two-Class Classification)
+
+· What is the probability of this candidate being successful if hired? (Two-class classification as regression)
+
+· What is the probability of this candidate passing probation? Two-class classification as regression
+
+· What will our hiring need to be next year based on historical terminations? (Regression)
+
+**Absenteeism**
+
+· Is this person's absenteeism excessive as compared to other employees? (Anomaly Detection)
+
+· What is are projected absenteeism costs for next year? (Regression)
+
+**Compensation and Salary Administration**
+
+· What is the proper job family classification for this position I am classifying? (Multi-class classification)
+
+· We are trying to broadband our numerous job classes into a smaller number of categories. How many groups should we really have? (Clustering)
+
+· What is the proper paygrade for this new position? (Multi-class classification)
+
+· Is this position a professional or managerial level position? (Two-Class Classification)
+
+· What management level is this position (Multi-class classification)
+
+**Terminations**
+
+· Is our turnover rate abnormally high this year? (Anomaly Detection)
+
+· What is our projected turnover rate next quarter? (Regression)
+
+· Who exactly would we predict as terminates for next year? (Two-Class Classification)
+
+· What is the probability that this specific individual will quit next year? (Two-class classification as regression)
+
+**Health and Safety**
+
+· What will be our predicted accident/injury rate for next year? (Regression)
+
+· Is the occurrence of this type of accident unusual? (Anomaly Detection)
+
+· Is this type of work high risk? (Two-Class Classification)
+
+**Labour Relations**
+
+· We have fairly high rate of grievances in this area or this year. Is this unusual? (Anomaly Detection)
+
+The above is just a 'smattering' of example HR questions that are asked often. And each of them is an HR context 'specific' question of what would otherwise be a variation of a data science question. Perhaps is would be useful to gather other questions of some internet site somewhere, that emanate from HR on a regular basis, with the intent of determining whether the HR question is something that is really a data science question in disguise.
+
+The whole point of the above examples is to illustrate the wider scope of application of HR Analytics. 'Data-driven' really means a rethink of how we do 'ALL' of HR. Its not an add-on area of HR. It concerns itself with the very fabric of HR management and how HR decisions are made. It means we look for opportunities to improve and make better, and that the judging and determination of what is 'improvement and making better' is 'evidence-based' rather than just subjective judgement.
+
+Do we truly believe that HR Analytics IS 'data driven HR management and decision making' or not? If we do, then we must see the scope and breadth of its application as big as what the above definition really implies. To do otherwise, unintentionally limits the contribution of what HR Analytics can do for our organizations.
+
+# Conclusion
+
+I hope that the above ideas are helpful to you as HR Analytics practitioners to both 'keep wide' your understanding of HR Analytics, and to more clearly see how much of the HR analytics picture you are engaging in at any given point in time, and how much is yet to be done.

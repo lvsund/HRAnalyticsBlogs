@@ -1,0 +1,200 @@
+---
+title: "WHY HR MIGHT NOT BE ABLE TO REINVENT ITSELF"
+author: "Lyndon Sundmark"
+date: "2015-01-20"
+categories: [HR Analytics]
+---
+
+## Introduction
+
+From
+
+<http://www.merriam-webster.com/dictionary/reinvent>
+
+**Reinvent:**
+
+To make major changes or improvements to something To present something in a different or new way To make as if for the first time something already invented Recently, I wrote a blog article on whether HR / Workforce / People analytics was a wake-up call for HR.
+
+<https://www.linkedin.com/pulse/workforcehrpeople-analytics-hr-lyndon?trk=prof-post>
+
+In that article, I referred to another article from the internet that was profiling Googles 'data driven' HR practices, and the degree to which that was allowing Google to 'reinvent' HR practices for itself.
+
+<http://www.tlnt.com/2013/02/26/how-google-is-using-people-analytics-to-completely-reinvent-hr/>
+
+That article got me quite excited (in a good way) because it started to give me a peek into the future, of what the future for HR could look like and become IF it chooses to become data driven. As important as that future state could be for HR, I have my doubts that HR in most organizations will see that future anytime soon. And it will be because HR will find it very difficult to reinvent itself.
+
+In the rest of this blog article, I would like to explain why I think this will be the case.
+
+## The Argument In Summary
+
+-   Reinvention (by the above definition) requires major changes or improvements to something.
+
+-   Reinvention (what I infer from the Google People Analytics article above) requires an organization to be data driven in its HR practices
+
+-   Being data driven in HR practices is not something that most organizations are characterized by at the present time. (The idea to be 'data driven' in HR seems relatively recent in HR literature- at least to the point of being able to operationalize it into organizational reality)
+
+-   HR practices themselves do not exist in a vacuum. What HR practices that are in evidence in an organization, are usually related to, based on, and consistent with the wider model of management and management practices within the organization itself. (In other words I accept the premise that current HR practices are not here by accident)
+
+-   The choice of management model or management practices within an organization limit the choices of HR practices, which in turn may limit designing HR practices which are 'data driven' capable or friendly, which then may affect the ability of the organization to make major changes or improvements in its HR practices. This then limits the ability of the organization to reinvent itself.
+
+To help understand the logic behind this argument, I would like to start with the bottom bullet point first and work my way up
+
+## The Choice of Management Model And Practices -What is the DNA, Model or Paradigm of our HR Practices?
+
+Generally, I think there are typically two choices that exist for HR practices in most organizations:
+
+-   A top down orientation of HR, divided into typical recognizable HR functions, traditional HR methodologies and practices. Often communication is one way. Directives are driven ' top down, through the hierarchy and structure of the HR functions, while concurrently customers of HR are clamoring for service to be provided by these HR functions. (This is the choice, most organizations make - that I have seen over the last 35 years)
+
+-   A process orientation to HR, where each traditionally recognizable function with HR is instead seen as a process or set of processes for which the outputs are the services provided to the customers. In this choice the traditional HR functions are not top down silos but are horizontal processes. And these horizontal processes are not silos because of the interdependency on other processes in meeting customer requirements of the service they are providing. (This is seen much less often in organizations)
+
+Given these two choices, one might ask the question 'why do these choices exist'? Why the preponderance of one over the other? What is the DNA, model or paradigm behind these choices for HR?
+
+I have always believed that HR practices do not exist in a vacuum. Rather I believe that HR practices in turn reflect the wider organizational management philosophy, culture, and practices that they are within. We tend to make choices in our HR practices which reflect, and are consistent with, how we manage our organizations.
+
+**What are these wider choices of how we manage our organizations? Generally in management literature, it is the choice between MBO/MBR (Management by Objectives/Management by Results) and Quality Improvement.**
+
+The form and choice of our HR practices will generally line up with which model of management the organization has chosen to operate under. The awareness of an organization that they have made a choice or not may or may not be there. The above management model examples are used because they tend to reflect the choices organizations make.
+
+In any case, these management choices not only can affect the HR practices choices we make, but also the degree to which 'reinvention' may end up being possible. To understand this, I would like to first identify some of the differences between the MBO/MBR and QI models of management. Then I would like to share how that impacts what our HR practices look like. Finally, I would like to show how that might impact the ability to reinvent ourselves as HR.
+
+## What is at the heart of MBR/MBO?
+
+## 
+
+Wikipedia defines Management By Results/Objectives as:
+
+**The process of defining objectives within an organization so that management and employees agree to the objectives and understand what they need to do in the organization in order to achieve them.**
+
+<http://en.wikipedia.org/wiki/Management_by_objectives>
+
+It consists of 5 steps:
+
+1.  Review organizational objectives
+
+2.  Set worker objectives
+
+3.  Monitor progress
+
+4.  Evaluate performance
+
+5.  Give reward
+
+How is this management model operationalized in most organizations?
+
+-   **It generally is a top down approach.** The executive often sets the overall organizational objectives, and these overall objectives are to be cascaded down through each area and of the organization where it is expected cascaded goals and objectives are in some way tied to the level above. (In reality, often this doesn't occur. Various levels and areas may generate their own goals and objectives, especially if it is hard to tie what they do to the overall organizational objectives)
+
+-   **It is based on goals and objectives and plans to carry them out**
+
+-   **When progress is monitored, the monitoring really consists of how far along are we on the achievement of those objectives**. And it's usually tied to time intervals -- i.e. quarterly reviews. Are we 25% underway after the first quarter? Etc.
+
+-   **When performance is evaluated, it's often at the level of 'were all the goals and objectives fully and successfully completed?**' This type of measurement implies little tolerance for 'variation'. You are expected to meet your goals.
+
+-   **It is measured at an individual level.** Every employee has goals and objectives set for them and is evaluated against the achievement of their goals and objectives.
+
+-   **It is dependent on organizational structure- the organizational hierarchy, the organization chart.** The person above you that you report to is the person that evaluates your performance.
+
+-   **Rewards of handed out often at the end of the year** after the organization knows how it performed overall.
+
+## What is at the heart of Quality Improvement Management Approaches?
+
+Ok -- how does a Quality Improvement Management Approaches (Six Sigma and others as examples) compare? Actually it stands in stark contrast to MBO/MBR.
+
+Consider the following about Quality Improvement:
+
+-   **Process Model - Suppliers-Inputs-Process-Outputs-Customers.** The business in not understood in terms of goals and objectives in the abstract or the organizational hierarchy or structure per se. The organization is defined and understood by who its customers are, what the products are services are, what processes exist to provide those products or services to its customers, what inputs are required for those processes and who are providing those inputs.
+
+-   **Definition of the business**-The business is seen as the entirety of all of its business processes that are necessary to produce the products or services that meet the customer's requirements and the 'interdependency' of those processes.
+
+-   **Goals and Objectives are specifically tied to products, services and customers** -- Goals and objectives reflect decisions of getting into or out of products or services, or are related to improvement in the quality of the products or services that will continue to be provided.
+
+-   **Quality improvement management approaches understand that the quality of the end product or service is very much related to the quality of the processes themselves and the quality of the inputs.** Poor quality in inputs or processes will results in poor quality of output. It's not just how much services or product did we produce (i.e. meeting a quota) or did we complete the product or service, but how good these are. And also understand why they are at the level of quality they are.
+
+-   **The only way to know the level of quality of inputs, processes and product and service outputs is by measurement of all of these things on a regular basis**. The only way to understand the interrelationships between inputs process and product or service output quality is through ongoing analysis of these measurements. No measurement- no ability to monitor quality.
+
+-   **Quality improvement approaches to management recognize that variation will be inherent in these measurement outputs- as a natural phenomenon.** In fact it's often variation in the measures that helps us understand the interrelationships. Having said that, it is understood that minimization of variability in our products and services provided, the processes and inputs generally leads to higher quality.
+
+## How Does our Choice of Management Model ANd Practices Affect our HR Practices choices?
+
+**MBO/MBR**
+
+When the above are the overarching characteristics of how we manage organizations, their outcomes, and performance, it has an impact on the choices we make in our HR practices (the list is intended to be illustrative not exhaustive):
+
+-   Performance appraisals take the form of traditional performance appraisals. These include the setting of the individual objectives, monitoring and overall evaluation by the person the employee reports to. These are annual for sure, and sometimes interim review of achievement of goals and objectives will be encouraged and occur as well
+
+-   Organization Charts become the de facto way of understanding and describing the organization to others. Who is at the top? Who are the executive? How are the business functions (LOB and staff) designed within the organization to achieve the overall organization objectives? How many levels top to bottom? And here often one of the most important characteristics and questions- to what degree is the organization decentralized or centralized? Decentralization often more prevalent when organization assumes that will keep business closer to customers. Centralization often being more in evidence when there is an assumption that will control costs.
+
+-   Job Descriptions- take the form of traditional job descriptions. Someone from HR goes out to a supervisor of a position or job, and asks them what the overall purpose of the job in question is, what its duties and responsibilities are and what the proportion of time is spent on each. It will also typically capture what skills, knowledge, and years of experience are required to be successful in positions. Each job or position description is its own entity and is often written up from scratch independent of how it compares to other positions- because its purpose is to accurately describe 'that'
+
+-   Career Planning and Succession Planning will often be completely dependent on and consistent with the job descriptions and organization charts
+
+-   Training will often be focused around the job itself- either for good performance in the current position or in preparation for being able to respond to the demands of future positions- career or succession related training
+
+-   Recruitment too will often center on the job description as well. Job specs and job advertisements will generally describe what the job requires and candidates.
+
+-   Compensation will typically reflect both the external market (based on your occupation) AND where a person is in the organizational hierarchy. The higher you are, the more your pay will be as compared to those below you in the same line of work. Organization hierarchy will have a big impact to on what is perceived as equitable compensation in the organization as compared to others
+
+-   Performance Rewards will typically be based on numerical rating scale, and often a bell curve will attempt to be applied. Additionally there will often be an overall cap will be applied to total salary increase funds or bonuses to be applied
+
+As you can see from the above examples, it's not difficult to see that these types of traditional HR practices are consistent with an MBO/MBR management philosophy and culture within the organization. Dependency on traditional organization charts and goals and objectives are an example here That 'consistency' with the basis of management is what allows the traditional HR practices to 'live' comfortably within the organization. It will likely be rare to find HR approaches inconsistent with MBO/MBR lasting very long in an organization based on a management approach of MBO/MBR.
+
+If we accept the idea that generally HR practices being 'practiced' cannot be inconsistent with the overall management philosophy or model that exists for an organization, it can be reasonable to assume that if the management model is different it's likely that our HR practices will reflect that as well, and they might be different under a different management model. Let's contrast the above management model and HR practices with what a Quality Improvement approach and resultant HR practices might look like.
+
+**Quality Improvement**
+
+What impact is there on HR practices, when the model of management is based on quality improvement?
+
+-   Performance appraisals -- The terminology here almost becomes an inconsistency itself with the quality improvement management model. Quality improvement models of management pay predominant attention to 'process' performance. The prevailing philosophy here is that it isn't individual performance aggregated across the organization and its improvement at the individual level that results in better overall organizational performance. Rather it is improvement in processes which people work within that results in better overall organizational performance. In general, only about 15% of organizational performance can be tied to an individual. The remaining 85% is attributed to the design of systems and processes that people work within. In quality improvement management models, attempting to have a performance evaluation/measurement system based on the individual in the form of traditional performance appraisals (100% individually based) simply is not consistent with the above awareness that only 15% of organizational performance can be attributed to people themselves. Improve the processes people are working within, and organization performance improves.
+
+-   Organization charts -- go from being top down to left to right in their orientation. In top down, employees pay attention to the people above them first because that is where they get their rewards from. To attempt to please the customer can sometimes be at odds with pleasing ones boss. In a quality improvement model of management, the organization chart is more accurately seen as where are my inputs coming from and where my outputs are going to. To the extreme right (which would in top down would be the bottom of the organization chart) you have the employees that are the direct front line serving the customers. Their outputs are what keep your organization in business. To the extreme left (which would be top in a top down model) is the individual who is ultimately responsible for the provision of resources and inputs, and the processes that result in the ability of the front line to provide products and services to their customers. In between the extremes, are all those employees who have the responsibility of distributing those resources and inputs through processes highly designed to provide good quality products and services delivered through the front line. With respect to what drives organizational design, the degree of centralization and decentralization is based not on the latest person brought in (sometimes with a big ego) to solve a problem- but by what design has the appropriate effect on the best performance of processes and satisfaction of the customer on the product or services provided.
+
+-   Job Descriptions- In a quality improvement, process oriented model of management, the focus doesn't start and end individual by individual for job descriptions. It starts with the descriptions of inputs processes and outputs. Individuals work within these processes using inputs and providing outputs. So a job description for an individual becomes 'what part of these processes' does the individual perform. What inputs do they use? What outputs do they produce? Instead of being written one by one independent of any other job description, they are documented based on what portion of the overall process and products or services they are providing. (Think the elephant and blind men example. The elephant is the overall process being described. The blind men describing what they experience is the equivalent of what part of the elephant they are dealing with). What is the significance of this approach to job description creation? You can actually compare job to job directly based on what they have and don't have of the larger picture. This also means you can't document job descriptions without documenting the processes first.
+
+-   Career Planning and Succession Planning -- what changes here is that there is less focus on the organizational ladder and more focus on process knowledge and expertise. If your organization chart is left to right in orientation what exactly are you climbing? Since traditional HR practices would typically look at differences in positions or jobs and their content for career planning and succession planning purposes, the equivalent in quality improvement model of management HR practices is gaining more understanding and knowledge of the processes, inputs and outputs themselves. Since other job descriptions within an area will often be other parts of the same process (picture), understanding the differences between positions or jobs is simply really gaining a bigger understanding of the business processes you are in. What you are 'climbing' is process knowledge, quality knowledge, knowledge of product/service, knowledge of customer, better organizational performance. If you are still determined to climb structure, you are moving left in a 'left to right' organization chart. The further left you go, the more you must be intimately familiar with the above- to distribute resources and inputs effectively. Promotion more likely to be based on what you know than who you know. The idea of 'high fliers' in the 'abstract' (outside of the context of 'high flier for what') -- doesn't fit. If you want to be increasingly recognized in the organization, ability to improve processes and process knowledge becomes the appropriate currency.
+
+-   Training in a quality improvement management model goes from being a 'soft', 'best guess', 'nice to have', 'hope the time spent achieves some useful organizational outcome', 'first to go when times get tough' to being a fundamental part of the success of the organization. Quality improvement models of management understand that improvement is never ending. Learning about the business we are in, our customers, our processes, their quality is also never ending. So training is never ending.
+
+-   Recruitment- while the focus may still be on job requirements based on job descriptions, since the job descriptions themselves are really subset descriptions of wider business processes, the focus of selection is likely to be directed towards the wider processes which the job descriptions reflect than just the individual job descriptions. The impact may also be on the personality types that are hired. Quality improvement models of management have greater dependency on processes than individuals, and have the left to right organization chart mind set. Personality types that seek personal recognition as a result of process improvement leading to better organizational performance, generally would be more conducive to this style of management and HR practices
+
+-   Compensation -- will still be ultimately based on the level of authority you have on resources, inputs, outputs, design, supervision etc.
+
+-   Rewards- in a quality improvement model of management will be based far more on quality improvement of the products and services and market share, often with the entire team receiving whatever the rewards are because ( as mentioned earlier) 85% of the performance of any system is based on the design of the system and process itself. In the quality improvement world, there is no room for bell curves, subjective ratings, forced ranking
+
+## How Do Our HR Practice Choices Impact Our Ability to Be Data Driven and To Reinvent Ourselves?
+
+I think the answer to this question is in part based on what it means to be 'data driven'. Organizations have a propensity to generate mountains of data. But are they driven by that data as the basis upon which they make decisions? In many areas of an organization --yes. The Financial and Accounting area of organizations most quickly comes to mind. HR -- not so much.
+
+When you consider many of the ERP systems in use out there these days by organizations, their design reflects intention for transaction reporting and recording. There is very little in the design of these systems that encourages analysis or decision making. It's like we make our decisions outside of the system and then record them in the system.
+
+These systems reflect traditional HR practices, which in turn reflect 'traditional' MBO/MBR management practices. In many of these, beyond the transactions being recorded, their design has done little more than automate what used to be a paper process. Same old processes- but speeded up to use computers instead of paper. Job descriptions rarely are 'databasized'. Rather they are often in the form of Word documents on a network drive. Performance Appraisals, where automated, capture text and ratings and store them in a database. But this still results in little more than what their former paper processes were based on. (Little other than the scores can be summarized or analyzed.) Succession Planning/Career Planning, where automated, does little more than document names of replacements and text- nothing in the form that can be used for human resource forecasting. As mentioned before they are 'transactional' -- capturing data after events have occurred and decisions made. . **Do we see this as 'robust' data driven automation that fundamentally reinvents HR?** Traditional HR practices being automated often does very little to 'measure' anything and therefore limits the ability to be data driven ( data collected that actually assists in decisions being made on the basis of the data collected). Goals and objectives completion and rating tell you what happened but not why it happened or necessarily how or how well it happened.
+
+Current HR systems do not lend themselves well to allowing an organization to be data driven, because they are based on traditional HR practices. And that is because traditional HR practices continue to be so pervasive- as pervasive as the management practices they, in turn, are based on.
+
+Quality improvement models of management and the resultant HR practices lend themselves much more to being data driven. These require much more data and measures to be gathered on an ongoing basis. When we measure -we can see whether change is occurring and whether in the right direction. Continuous data gathering and analysis are fundamental to how a quality improvement approach to management and HR practices work.
+
+One other major missing piece in many current HR ERP systems is automation of HR service requests themselves. When you think about it, almost everything we do in HR is a 'request' from someone and what we do in HR is provide HR Services. We are a service business. **How well we provide those services determines how satisfied our customers are and how much we cost the organization.** Few HR ERP systems have this capability. Nor do they then link these requests to the actual transactions that are recorded in the HR systems. And yet, these types of features would be totally consistent a quality improvement management model impact on HR practices and with being data driven.
+
+I think it's also important to re-remind ourselves of what reinvention means and how it is defined. Per the definition provided at the beginning of this article, reinvention means to make major changes or improvements to something. In this definition. Improvements usually mean the attention is 'constant' to the entities we are paying attention to. In a quality improvement management model and related HR practices, this occurs because by design the entities we are paying attention to are processes, inputs, outputs, customer satisfaction and the improvement of these. Reinvention means that we are making changes or improvements in these. MBO/MBR has no guarantee of this 'constancy of attention' to our object of attention. In MBO/MBR the attention is on, for the most part, the goals and objectives and achievement of them. These goals and objectives and what they are paying attention to often change each year. These goals and objectives are not required to reflect existing customers, products and services. They might- but there is nothing in the MBO/MBR design itself that forces or guarantees this. From my own experience I can share with you that over many years in many organizations typical MBO/MBR goals and objectives are agnostic in awareness of the existing customers, products and services we are already in (especially if you are a staff area) So in effect, you not only have to provide all the existing services you currently are, but new projects goals and objectives on top of that. Often this is without any additional resources being provided to complete these, or an awareness of what resources are required to provide for the existing products and services. The mindset is 'we don't care how you get it done, just get it done'. How do you know you are 'improving' anything if what you focus your attention on isn't constant? And if you are not changing for the purpose of improving how are you reinventing anything?
+
+There is one final thought we might want to consider with respect to being data driven. Does our management model and the subsequent HR practices in our organizations cause the issue of incongruity or lack of linkage between our HR activities/metrics and organizational outcomes in the first place? IF MBO/MBR is predominantly dependent on the setting of goals and objectives and the achieving of them by a deadline, there is little requirement for measurement of HR activity as it is occurring. Quality improvement approaches, which fundamentally assume the quality of the end service to the customer is tied to the quality of the processes and inputs and measurement of all these, depend heavily on measurement. One approach tries to understand linkages between HR activity and organization outcomes after the fact. The other pays attention to these in real time as the basis upon which management practices and HR practices actually occur.
+
+Our HR practices do impact our HR systems and vice versa and our ability to be data driven.
+
+## Conclusion
+
+HR Reinvention -- Is it possible? Absolutely. Any time soon for many organizations? Less likely.
+
+This is because I think there are still many obstacles that organizations are facing in an attempt to become data driven:
+
+-   Data driven means that data for making decisions being collected and analyzed is a fundamental part on ongoing organizational activity and HR practices. If being data driven means that HR, Workforce, or People analytics are in evidence- these are the 'new kids' on the block in the HR field in terms of them being recognized. Traditional data collection in HR has predominantly been for transactional reporting purposes not reinvention.
+
+-   Reinvention requires improvement. Improvement requires change. Noticing change requires measurement and making changes in the right direction. Measurement requires that our attention on what we pay attention to remains relatively constant.
+
+-   HR ERP systems will need to change to enhance the ability of an organization to use its data to make data driven decisions.
+
+-   HR practices themselves will need to change to become more data driven in decision making
+
+-   Management practices will need to change to support the needed changes in HR practices. Can organizations change their management model?
+
+-   
+
+Can they give their HR group the permission to reinvent itself? Is HR willing to reinvent itself? IS HR willing to become far more analytic and data driven? The challenges here are significant for HR, but necessary. What do you think?

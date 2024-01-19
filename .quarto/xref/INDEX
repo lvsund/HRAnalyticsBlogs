@@ -1,0 +1,128 @@
+{
+  "posts/post-with-code/index.qmd": {
+    "index.html": "e087bd26"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "768b0ea3"
+  },
+  "index.qmd": {
+    "index.html": "6d10a7a3",
+    "index.tex": "71fc0cf9",
+    "index.docx": "431da8b3",
+    "index.epub": "d3f3759b"
+  },
+  "about.qmd": {
+    "about.html": "4b448eac"
+  },
+  "posts/Contrarian/Contrarian.qmd": {
+    "Contrarian.html": "3a7a9ca6",
+    "Contrarian.tex": "be5da74b",
+    "Contrarian.docx": "dabac91e",
+    "Contrarian.epub": "e2ebea28"
+  },
+  "posts/Wakeupcall/WakeupCAll.qmd": {
+    "WakeupCAll.html": "48d76c36",
+    "WakeupCAll.tex": "8c3ec04a",
+    "WakeupCAll.docx": "4f1d74ec",
+    "WakeupCAll.epub": "b4a96ae7"
+  },
+  "posts/HRInnovator/HR_Innovator_Caretaker_Undertaker.md": {
+    "HR_Innovator_Caretaker_Undertaker.html": "c95ceeb1"
+  },
+  "posts/HRInnovator/HR Innovator Caretaker Undertaker.qmd": {
+    "HR Innovator Caretaker Undertaker.html": "d90258b1"
+  },
+  "posts/DDJobAnalaysis/DDJobAnalysisDescription.qmd": {
+    "DDJobAnalysisDescription.html": "5c7dc3c5"
+  },
+  "posts/HRWhatsStoppingUS/HRANalyticsWhatsStopppingUs.qmd": {
+    "HRANalyticsWhatsStopppingUs.html": "c2a3a178"
+  },
+  "posts/CalculatingEmployeeTurnover/CalculatingEmployeeTurnover.qmd": {
+    "CalculatingEmployeeTurnover.html": "8b05d92d",
+    "CalculatingEmployeeTurnover.tex": "ac006d6c",
+    "CalculatingEmployeeTurnover.docx": "45eda965",
+    "CalculatingEmployeeTurnover.epub": "cc2f5b63"
+  },
+  "posts/WhyHRMightNotReinvent/NotReinvent.qmd": {
+    "NotReinvent.html": "99f3b158"
+  },
+  "posts/PAExampleUsingR/PAExampleUsingR.qmd": {
+    "PAExampleUsingR.html": "e1ca5d14",
+    "PAExampleUsingR.tex": "32791cb6",
+    "PAExampleUsingR.docx": "86b60bd6",
+    "PAExampleUsingR.epub": "30d8b7fd"
+  },
+  "posts/PAExampleChurn/PAExampleChurn.qmd": {
+    "PAExampleChurn.html": "eeff5bf9"
+  },
+  "posts/PAExampleClassification/PAExampleClassification.qmd": {
+    "PAExampleClassification.html": "794d4b86",
+    "PAExampleClassification.tex": "23708de9",
+    "PAExampleClassification.docx": "a1abcee3",
+    "PAExampleClassification.epub": "c9d90aa7"
+  },
+  "posts/HRAnalyticsPrepare/HRAnalyticsPrepare.qmd": {
+    "HRAnalyticsPrepare.html": "b3e5fe24",
+    "HRAnalyticsPrepare.tex": "d5db0a75",
+    "HRAnalyticsPrepare.docx": "42cfbb78",
+    "HRAnalyticsPrepare.epub": "e5485ad6"
+  },
+  "posts/kaggle/kaggle.qmd": {
+    "kaggle.html": "266c02e8"
+  },
+  "posts/Doing HRA1/DoingHRA1.qmd": {
+    "DoingHRA1.html": "54866c19",
+    "DoingHRA1.tex": "70a6afc6",
+    "DoingHRA1.docx": "4a471a75",
+    "DoingHRA1.epub": "ab4821ce"
+  },
+  "posts/DoingHRA2/DoingHRA2.qmd": {
+    "DoingHRA2.html": "7194d248"
+  },
+  "Rattle/Rattle.qmd": {
+    "Rattle.html": "dd323c0e",
+    "Rattle.tex": "09225b83",
+    "Rattle.docx": "2f5eae6a",
+    "Rattle.epub": "3695e3a3"
+  },
+  "posts/Rattle/Rattle.qmd": {
+    "Rattle.html": "2af513f9"
+  },
+  "posts/ScopeAmdBreadth/ScopeAndBreadth.qmd": {
+    "ScopeAndBreadth.html": "cb628388"
+  },
+  "posts/HRAnalyticsChallenge/HRAnalyticsChallenge.qmd": {
+    "HRAnalyticsChallenge.html": "eb1f748a",
+    "HRAnalyticsChallenge.tex": "4c3495a6",
+    "HRAnalyticsChallenge.docx": "4668bc64",
+    "HRAnalyticsChallenge.epub": "d2109d3c"
+  },
+  "posts/DDHROperations/DDHROperations.qmd": {
+    "DDHROperations.html": "33d9475d"
+  },
+  "posts/ddjobclasspt2/ddjobclasspt2.qmd": {
+    "ddjobclasspt2.html": "4d004e2e"
+  },
+  "posts/HRAWayOfDoing/HRWayOfDoing.qmd": {
+    "HRWayOfDoing.html": "11778430"
+  },
+  "posts/Automl/automl.qmd": {
+    "automl.html": "1a3d0ced",
+    "automl.tex": "f997a873",
+    "automl.docx": "b66081cf",
+    "automl.epub": "42caf2d5"
+  },
+  "posts/EmbedHRAnalytics/EmbedHRAnalytics.qmd": {
+    "EmbedHRAnalytics.html": "74a6c512",
+    "EmbedHRAnalytics.tex": "a914ebb5",
+    "EmbedHRAnalytics.docx": "4932e284",
+    "EmbedHRAnalytics.epub": "55ca6591"
+  },
+  "posts/ddjobclass/ddjobclass.qmd": {
+    "ddjobclass.html": "c3e28029"
+  },
+  "posts/PowerBIandR/PowerBIAndR.qmd": {
+    "PowerBIAndR.html": "e4c3fb45"
+  }
+}

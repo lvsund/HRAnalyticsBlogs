@@ -1,0 +1,22 @@
+---
+title: "A Good Article On the R 'Rattle' GUI"
+author: "Lyndon Sundmark, MBA"
+date: "2018-07-04"
+categories: [HR Analytics]
+---
+
+Hi Everyone,
+
+This is just a short post.
+
+For those of you who have read my previous LinkedIn blog articles and also for those who purchased my book- you will know that I referred to the use of R Rattle library as a GUI to do an immense amount of machine learning and data science analyses quickly on HR Data you may have authorization to analyze.
+
+Because its a GUI it allows for a lot of point and click to do your initial analyses and also to generate the R core necessary behind the scenes for you -very powerful.
+
+I just came across this article on R Bloggers and r4stats.com on describing the GUI part of this and its use- and found it to be a very good one:
+
+<http://r4stats.com/articles/software-reviews/rattle/>
+
+Just thought I would share by forwarding it on.
+
+Thanks

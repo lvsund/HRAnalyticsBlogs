@@ -1,0 +1,298 @@
+---
+title: "The Challenge for HR Analytics -2020 And Beyond"
+author: "Lyndon Sundmark, MBA"
+categories: [HR Analytics]
+date: "2020-01-15"
+---
+
+# Introduction
+
+It's been about six years since I started writing blog articles related to HR Analytics. This is because of the increasing visibility of activity in this field.
+
+Any of us with an interest in this field has witnessed the evidence of the following during that time:
+
+-   Increasing numbers of people writing in this field- either books or blog articles or both (myself included)
+
+-   The emergence of increasing options for education in this field whether it be:
+
+    -   Online through courses offered by AnalyticsInHR, Datacamp, Udemy and others
+
+    -   Degree programs in Universities offering courses in this area
+
+-   An Increasing frequency of HR Analytics meetups across the globe
+
+-   An explosion of job postings on places like Indeed or Monster for specialized analytics roles.
+
+This increasing visibility is extremely gratifying to see. Those of you who have read my book and/or LinkedIn blog articles will remember one of the things that I have shared- the ability to do HR Analytics is not new. The basic building blocks:
+
+-   the existence of HR information
+
+-   the technology to store that information and
+
+-   the means to statistically analyze that information
+
+have been around for at least 40 years. I think what we have seen in the last 6 years is a great awakening to this. The tools and technologies have increased in their robustness over that time, but the means to be 'data-driven' at some level have been there for quite some time.
+
+It's an exciting time to be in HR. One might think then that HR Analytics has finally arrived in HR and that its future is certain. Yet, despite the increasing visibility and presence, it's future is likely not to be without challenges.
+
+Most of my writing in HR Analytics focuses on definitions, concepts, frameworks, and hands-on examples to stir up passion and interest in this field. And I will continue to write on those areas periodically for that reason.
+
+In this blog article, I will take a slight turn in direction and make this a personal opinion piece or commentary. My reason is that because we have just finished another decade in this millennium. It seemed like an appropriate time for reflection. Your experiences may or may not have been similar to mine.
+
+With that in mind, I think that for 2020 and beyond, there are still going to be fundamental challenges for HR Analytics going forward.
+
+# Challenges for 2020 and Beyond
+
+I see at least two major challenges for HR Analytics going forward. There may be many others, but these are the two that most come to mind:
+
+-   **Continuing to get into the mainstream of HR thinking**. As I read the comments on articles written by many others, I think this perception is shared by many - myself included.
+
+-   **Enduring for the long term.** This acknowledges that even if HR Analytics gets wide visibility and foothold across most organizations, it may or may not have the means to stay there.
+
+## Challenge 1 - Continuing to get into the mainstream of HR thinking
+
+As mentioned earlier, there has been much evidence in the last 6 years or so that this field is increasing in its visibility and being recognized. But I am not convinced that it is yet universally in the mainstream of HR thinking. And it's because of the presence of a few obstacles.
+
+### Obstacle 1 - lack of standardization of definitions
+
+Nowhere is this more evident than in job postings.
+
+You often see:
+
+-   the same terminology describing vastly different things and
+
+-   vastly different terminology describing the same thing.
+
+A cursory review on any given day on the job boards for HR Analytics jobs will bear this out. The term HR Analytics in jobs covers everything from simple traditional HR Reporting jobs to make them sound more enticing and exciting, to HR data warehousing roles, to data scientist roles, to those responsible for the entire infrastructure of HR Analytics.
+
+For the most part - this is due to the reality that recruitment is the 'marketing' function of HR. The goal here to attract good candidates. The need is to make your place of employment sound cooler and more attractive than your competitor. And your job postings should achieve that.
+
+But not at the expense of consistent use of terminology.
+
+Almost 40 years ago I came across a quote that I will never forget (although I forgot the source):
+
+***"Any discipline will rise, or fall based on the reliability and validity of the observations on which it's based"***
+
+This applies to terminology in any field or discipline as well.
+
+The degree to which we use terminology in a consistent and coherent fashion is particularly important as a field or discipline is emerging. It clarifies our thinking. When we standardize on definitions - then measurement can be standardized. When measurement is standardized, good quality research is possible because research can then be replicated and confirmed by others. When research can be replicated and confirmed by others the field moves forward.
+
+While at any given time there may be a degree of standardization evident in our terminology, when a field is just emerging it tends to be characterized by more a 'lack of it' than 'presence of it'. Often this is because people are still just trying to get their heads around it.
+
+-   If a job is truly an HR Reporting job, advertise it as such.
+
+-   If its HR Data Warehousing and Infrastructure- advertise it as such.
+
+-   If you are looking for HR Data Scientists -advertise it as such.
+
+We shouldn't throw in the term 'HR Analytics' just for the sake of sounding competitive or 'hip'.
+
+While inconsistent use of terminology is often found in job postings, this isn't to say that at the same time there aren't activities/initiatives that work toward consistent use of terminology.
+
+When you look at the four evidences mentioned previously, at least 3 of them generally are mostly geared towards having the effect of helping standardize on the terminology. This is because they are educational in their intent.
+
+-   You can't really write about this field unless you start with defining it and going from there.
+
+-   You can't really develop educational courseware for it for the same reason.
+
+-   And I suspect the reason for most HR Analytic meetups is to network with like-minded professionals and for purposes of developing a common language about the subject and for shared experiences.
+
+Suffice to say, lack of standardization of terminology or inconsistent use of it will always work against a discipline being part of the mainstream thinking in organization because it creates confusion and therefore lack of trust.
+
+### Obstacle 2- lack of high-quality foundational definitions
+
+Even if we are vigilant in our use of consistent terminology, how we 'define' HR Analytics can still be an obstacle to mainstream HR thinking.
+
+It goes without saying, that 'quality' builds of anything start with quality foundations. And foundations generally limit whatever is build after they are laid. This is particularly true of HR Analytics. How you define it determines what you will build. What you build determines what you can do with it.
+
+-   **Organizations CAN define HR Analytics as just a fancy term for HR Reporting as some job postings do.** In this case there is very little to build. And, of course, you will be limited to what 'this' HR Analytics role will be able to do for the organization other than HR reporting.
+
+-   **Organizations CAN define it as just HR data warehousing and fancy graphics and storytelling and KPIs**. Lots of data with nowhere to go. This is the problem with most HR metrics initiatives these days. Traditional HR metrics are a fundamental and important part of the HR Analytics picture- but they are only a part. Define HR Analytics as just HR Metrics with storytelling and again you are limiting your impact, successes etc. The inevitable question becomes: "ok -now what". This is because HR Metrics often are just provided/generated at the 'descriptive analytics' level which simply answers the question- what happened? or what is happening? Very often external vendors will describe HR Analytics in this way (metrics and storytelling) where the agenda is 'selling their product'. Your organizational success may or may not be on their radar.
+
+The problem with both of the above is that organizations are defining only part of the picture and thinking it's the whole picture and having expectations of success that would only be achievable by the whole picture. Additionally, the effect of defining 'parts' of the picture -- artificially and unintentionally limit the 'what could be' in our efforts.
+
+Good foundational definitions describe the lay of the land in its entirety which then allows for whatever activities we engage in within that entirety to be seen accurately for what they are and equally important for what they aren't. They allow for an organization to know what is still left to do. This results in expectations that are realistic for the level and nature of the activity that they have engaged in.
+
+While it's not the only good definition, its why I always come back to defining HR Analytics as:
+
+**"Data-Driven HR Management and Decision Making"**
+
+It's wide enough to encompass:
+
+-   HR Reporting
+
+-   HR Data Warehousing
+
+-   Traditional HR Metrics
+
+-   HR Service Operations Measurement and Improvement
+
+-   HR Data Science
+
+-   All HR Functions
+
+These activities all characterize in some way 'data-driven' and the definition covers 'why we do it'- for HR Management and Decision Making -- be it operations, policies, or methodologies. It's all of HR.
+
+Consistency in terminology and good foundational definitions will both be necessary for HR Analytics to get into the mainstream of HR thinking.
+
+## Challenge 2 -Enduring for The Long Term
+
+Assuming that HR Analytics finally gets widely into the mainstream of HR, there still is the challenge of it enduring for the long term. Here too there are obstacles that work against this. At least a couple come to mind.
+
+### Obstacle 3- Seeing HR Analytics as an add-on to HR rather than 'the way we do HR from now on'
+
+This is a huge obstacle. 2020 marks 40 years that I have been in the HR profession. I don't know if others' experience in this field has been the same as a mine, but changes in the way we do HR over that period of time have been agonizingly and painfully slow. This is true at least for both truly integrating technology deeply in the way we do business in HR and /or understanding the 'informational' dimension of our work.
+
+As I periodically attended HR conferences over the years, it became more and more apparent to me that peoples' interest in these were often more for professional networking and for vendors hawking their wares, or for consultants to make a name for themselves and their business. In other words, what seemed to drive change in these 'professional development' events educationally were what was cool currently, or the flavor of the month. I often didn't get the impression that there was a whole lot of academic research/evidence behind the latest and greatest. Maybe that's just me.
+
+If you are comfortable with the HR Analytics definition I previously shared, it should raise the somewhat uncomfortable and unsettling question 'If HR Analytics is 'data-driven' HR Management and Decision Making -- what is driving HR Management and Decision Making currently? What drives our choices in HR Mainstream thinking and professional development in the absence of 'data-driven'?
+
+When we don't fully grasp that 'data-driven' is THE way of conducting HR Management and Decision Making going forward, we tend to see HR Analytics as an add-on. It's not an add-on. HR Analytics means that we inject 'data-driven' into the DNA of HR practices, knowledge and professional education itself.
+
+Every aspect of HR practices and methodology to be understood in terms of its informational implications:
+
+-   what does this HR function or practice generate in terms of information
+
+-   what does it do with it
+
+-   how do we make better decisions from it, and
+
+-   how do we measure that we are making better HR decision outcomes and measure the 'how of making decisions better'. (i.e. processes and outcomes)
+
+In other words, truly 'data-driven', not business as usual. If we see it as an add-on, we're missing the point, and it will have the propensity to fail -or at least severely limit the potential contribution it can make.
+
+### Obstacle 4- Seeing HR Analytics as a special project or an initiative requiring special funding/resources/permission to get started
+
+It's been my experience in too many organizations that good ideas often die on that altar of 'business case':
+
+-   Have a good idea?
+
+-   Ok, make a business case for it.
+
+-   Anyone else done it?
+
+-   Was it successful?
+
+-   Where's the proof?
+
+-   How much are we risking in the provision of resources?
+
+-   How does this stack up to other organizational initiatives that are competing for the same pool of resources?
+
+You get the idea.
+
+We often see doing anything here as a special project when we think of HR Analytics as an add-on and when we ask for permission to engage in 'that' add-on. It also doesn't help when we think that 'that' special project isn't our responsibility as current resources within the HR function. Data-driven HR management and decision making-- means that, from now on, all of us are involved in changing the way we do business in HR. It ISNT someone else's job.
+
+It used to be that we could use cost as an excuse (i.e. the business case approach needed). And this may have been true when statistical software and data manipulation and data munging and graphics tools were all commercial and costed money. These days you have choices for completely free statistical tools and often free or 'near-free' data manipulation tools for developers/prototyping ideas. If you have rightful access to information for organization purposes, there are very few barriers to being 'data-driven' if any. It's more of a 'current mindset' limitation than it is an 'organizational' limitation. If you know Excel, understand CSV files and are prepared to learn the R Statistical software along with learning Statistics and the Data Science process/framework, then you have the beginning building blocks to be data-driven.
+
+Yes -- as the demand for data-driven HR grows, the need for more robust infrastructure grows. This may cost money and require the need for business cases. But the point is that your business case is justified based on what you have already accomplished -- not starting will a completely untested unknown.
+
+Starting HR Analytics begins with:
+
+-   rightful access to data
+
+-   understanding HR informationally
+
+-   free statistical tools
+
+-   An organization problem/question requiring an answer
+
+-   An understanding of basic univariate and multivariate statistics.
+
+-   And as you get more advanced, learning machine learning algorithms for prediction and classification problems.
+
+HR Analytics isn't them or they- it's all of us. We simply need to decide to do HR differently.
+
+# How do we meet these challenges going forward?
+
+I'm not sure that the answers to these are quick fixes - but rather things that reflect the magnitude of what's necessary to not engage in 'business as usual' in HR going forward. Several things we can do as HR professionals come to mind.
+
+**Start with deciding that 'business as usual' in HR -- I.e. 'status quo' isn't likely to be in our best interest going forward.** Status quo in this case more than anything means continuing to practice HR as if it didn't have any informational, measurement, or technical implications to it -a soft area that is only concerned with the interpersonal dimensions of work. That's like thinking that the financial aspects of business are only concerned with bookkeeping and little else. Or thinking that IT is only concerned with the hardware and little else. All of these would be incomplete pictures of a 'field' or 'discipline'. It means recognizing that in the absence of 'data-driven' we need to step back from our current practices and ask the question 'what drives our current HR practices choices?':
+
+-   Latest consultant recommendations?
+
+-   Latest flavor of the month?
+
+-   Latest technique from an HR conference?
+
+-   What everyone else is doing?
+
+-   What we've always done?
+
+HR Analytics is 'data-driven' HR Management and Decision Making. Apart from costing out collective bargaining agreements and job classification /salary surveys most HR Management and Decision Making has not been traditionally heavily 'data-driven'. If you want HR Analytics to become mainstream in HR thinking and to endure for the long term, this must change. Like anything else you can't do this overnight, but there must be a commitment in the long term by HR to go in this direction. This isn't something HR as a function asks permission for. HR as a function is assumed to know its field and profession. In other words, this doesn't come from 'outside of' but rather 'within' HR.
+
+**Retool our skills on a personal level.** In my book "Doing HR Analytics -- A Practitioner's Handbook with Examples in R", I mention that for HR Analytics to be 'data-driven HR management and decision making', it sits at the intersection of 3 disciplines- HR, IT, And Statistics/Data Science. This means that in addition to the core HR Management concepts, HR must learn many other accompanying/ complementary skills including:
+
+-   statistics
+
+-   statistical analysis
+
+-   data science
+
+-   machine learning
+
+Without that, we have the reality that we have in many organizations today with respect to HR Information systems -- Lots of information with NOWHERE TO GO.
+
+When we talk about analytics in general, we often talk about the idea that there are different levels of analytics possible:
+
+-   descriptive
+
+-   diagnostic
+
+-   predictive
+
+-   prescriptive
+
+Much of the HR Analytics being done in organizations these days is at the descriptive level only. This includes:
+
+-   Traditional HR Metrics generation
+
+-   Dashboarding
+
+-   KPIs
+
+-   Storytelling
+
+These tell the organization what is happening or has been happening. And with KPIs, how it compares to some expectation or standard. That's its purpose and function at this level. This might be helpful in giving the organization a picture for the first time that it didn't have before- but at this level, it proposes no future action- because it is not designed to do that. If anything, doing just descriptive analytics will often raise more unanswered questions with further descriptive statistics and 'storytelling'. Again -- lots of information with nowhere to go.
+
+As important a part of HR Analytics as traditional HR Metrics are, they often beg the question raised earlier- ok what now? In statistical terms, these are often thought of 'univariate' statistics- things/measures looked at one at a time. Only diagnostic, predictive, and prescriptive analytics are designed to answer questions of how, where, why, how much, can we predict the best fit or likelihood of something ahead of time. These allow multiple pieces of information/ variables to be looked at simultaneously.
+
+To fully embrace Analytics and therefore HR Analytics- we must retool our skills to include statistics and be adept in information technology-particularly organizing and sourcing data for the questions you want to be answered. These other levels of analytics mentioned above cannot be done without this knowledge.
+
+**Start with the basics.** This blog article, my book, and books and articles written by others, should all be painting the picture that HR Analytics is vast -- if you agree with the previously mentioned definition. You will inevitably start with HR Analytics at a descriptive analytics level and by necessity need to proceed to higher levels as your HR organizational issues require it/demand it. **Start somewhere at the entry-level and recognize what part of the vast picture of HR Analytics this is, and equally important what it isn't- so that your expectations are appropriate for the level you are engaging in**
+
+-   Are people asking what is happening or what has happened? Then concentrate on descriptive statistics. (often univariate i.e. Traditional HR Metrics)
+
+-   Are people asking not only what is happening but why, where, how then move to the next level of analytics - diagnostic. Using multivariate statistics - look at more than one measure at a time and or start looking at how that measure varies across different slices and dices of the organization and demographic data and whether there are statistically significant differences.
+
+-   Are people asking for increased predictability of outcomes? Then pursue knowledge of predictive analytics using machine learning algorithms.
+
+-   If strong predictive relationships exist, then pursue further work into the prescriptive level of analytics.
+
+None of this requires extensive or expensive infrastructure in the beginning. You don't need a business case or an organizationally visible project to do much of this work initially. What you need is rightful access to data, the skills to munge and organize it, statistical skills, and the free R Statistical software to start. It's far better and easier to justify increased expenses for more formal infrastructure when you have already solved organizational issues more robustly with free tools.
+
+**Push for more universities and colleges in their degree and diploma programs to incorporate changes in their curriculum to embed information technology and statistics right into the DNA of how Human Resource Management is taught.** Ideally, this means that HR degrees and diplomas should not only encompass traditional HR content and courses, but basic information technology, HRIS, and business statistics courses as well- and hopefully some project/course/practicum to integrate these course areas. HR courses need to be taught from an 'informational' perspective in addition to the classical content.
+
+To learn most areas of HR in coursework
+
+-   Concepts
+
+-   Definitions
+
+-   Frameworks
+
+-   Methodologies
+
+-   Sometimes the history of the discipline and where its heading are taught.
+
+We need to add to this understanding the HR business process behind the various HR functions, the information that these processes generate (informational inputs-processes-outputs), and how this information generated can be used to be 'data-driven' in our decisions.
+
+Additionally, there should be much stronger requirements in HR professional certification for these statistical, informational, and analytics skills.
+
+# Bottom Line
+
+**Getting HR Analytics into the mainstream of HR thinking in organizations and staying there will require us to rethink how we do HR**. The concepts, terminology, frameworks that have characterized how we understand and see HR will for the most part continue to be there in some form. But 'data-driven' and 'evidence-based' HR management and decision making will require much more infusion of information technology and statistical analysis into the DNA of HR.
+
+If you believe that HR Analytics is 'data-driven' HR, it's clear where this role should be in the organization -HR.
+
+Is HR as a profession up for these challenges?

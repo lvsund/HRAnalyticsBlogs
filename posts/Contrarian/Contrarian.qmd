@@ -1,0 +1,326 @@
+---
+title: "People/HR Analytics - What Is your Paradigm ? It Matters"
+author: "Lyndon Sundmark, MBA"
+date: "2023-05-30"
+categories: [HR Analytics]
+---
+
+::: {.callout-note appearance="simple"}
+*TL;DR; People/HR Analytics long term sustainability into the future does not rest on continuing to promote and treat it as an add-on to HR but on the fundamental retooling of HR practices, methodologies, and education within the HR profession itself so that it becomes the DNA of how we 'do' HR.*
+:::
+
+# Introduction
+
+Its been about 10 years since I started to see things written about HR Analytics / People Analytics / Workforce Analytics - whichever term you choose to use.
+
+Much has happened in these last 10 years which has been incredibly positive:
+
+-   There has been much written in this area -both blog articles and books.
+
+-   Global and local conferences in this area have been going strong for the last 10 years and continue to do so.
+
+-   There have been innumerable job postings by the major job boards for HR/People/Workforce Analytics roles at all levels including leadership levels in organizations.
+
+All of this has served to hugely increase the visibility of HR/ People / Workforce Analytics. Its gone from an unknown to wide visibility.
+
+Enough time has passed and enough has been written to give a sense of at least two paradigms that have emerged for People/HR Analytics. By paradigms I mean:
+
+-   ways of defining it
+
+-   the assumptions you make of it
+
+-   how you might operationalize it
+
+-   what you expect from it.
+
+-   how you define and measure success in it.
+
+The choice of your paradigm, in many ways, will determine the success and long term sustainability of your efforts. So your choice is important.
+
+# Where are we in 2023?
+
+My sense is that at least these two paradigms have emerged:
+
+-   People/HR Analytics is seen an add-on to the discipline or field of HR requiring its own team, resources,expertise and function with the rest of HR remaining its traditional self.
+
+-   People/HR Analytics is seen as a fundamental rethink and retooling of HR methodologies/practices/services of 'traditional HR' to be 'data-driven' and 'evidence-based' (top to bottom).
+
+Both of these share the recognition of the importance of HR information and its analysis. But beyond that they differ in many ways.
+
+The first of these seems to be the current 'goto' to show evidence and credibility of People /HR Analytics being in existence in organizations. However, this paradigm may unnecessarily and unintentionally limit both the scope of People/HR Analytics activities and its ultimate long term success and sustainability. The second paradigm will likely dramatically alter the HR landscape and increase the likelihood of successes and longevity. It will be more challenging to achieve.
+
+Unfortunately, too much of what is being currently written about People/HR Analytics currently seems to be reflecting the first paradigm. And not enough is being written regarding the second paradigm. Its almost like there is an 'echo chamber' present where the same thinking gets repeated over and over and then becomes firmly entrenched in 'best practices' thinking.
+
+In the rest of this blog article, I would like to explore further these two paradigms and their possible implications. As I hinted at earlier, a paradigm often reflects your definitions and terminology, the assumptions you make, how you operationalize your efforts, what outcomes you expect and how you measure your success.
+
+## What Typifies The 'Add-On' Paradigm ?
+
+In the 'add-on' paradigm, the way in which people / HR analytics is defined usually as an activity separate from either existing HR functions or activities. It sees it as 'gathering employee information and carrying out analysis and processing of that information with the hopes that this information will impact business outcomes'.
+
+The way in which it is suggested to be operationalized in organizations is to create a specially functioning HR analytics team charged with the responsibility of making breakthrough discoveries that will impact business outcomes. This team is distinct from all other 'traditional' functional HR teams.
+
+To operationalize this often requires a business case to be made for the resources to bring this team into existence- since it is perceived to be an 'add-on' function to the traditional functions that already exist in HR. In most cases-inherent in that business case (and the hopefully subsequently obtained resources) is an implied expectation that this investment of additional resources will pay off. In effect the analytics team needs to 'produce' and 'keep on producing' to retain its existence.
+
+Some of the first deliverables are the automation of HR metrics through the use of Business Intelligence technologies and tools- including data warehousing and dashboards. Often these initiatives make the provision and visibility of HR information to decision makers in organizations both efficient and timely for the first time. For some organizations they equate these initiatives as being the whole of People / HR Analytics. These initiatives can be terribly alluring because it is both a tangible and visible deliverable. Its the starting point of HR Analytics in many organizations and often it should be.
+
+Once these are in place, the attention then often focuses then on what kinds of questions are we able to look at and answer with this information that would have been too cumbersome or impossible before.
+
+The expectations are that this team will get the attention of executive decision makers with breakthrough insights that will fundamentally improve and optimize business performance, and that the team will keep on delivering these insights.
+
+In fact the criteria for success in this paradigm will often be exactly that- continual delivery of new breakthrough insights. After all, scarce organizational resources have been committed and this team must keep on delivering and impressing or its 'why did we do this in the first place?' time. The team must earn its keep and keep on jusstifying its existence.
+
+You can tell by the description above, that everything about this paradigm shouts 'add-on'- from its definition, to its assumptions, operationalization , expectations, and measures of success.
+
+### How does this compare/contrast with the alternate paradigm?
+
+In the alternate paradigm, People/ HR Analytics is not seen as a separate activity or function of HR.
+
+In this paradigm, People/ HR Analytics is defined as 'data-driven', 'evidence-based' HR Management and Decision Making. This means several things:
+
+-   Its scope covers ANYTHING related to HR Management and Decision Making.
+
+    -   HR management and decision making is impacted by the analysis of data generated by the interaction of people with the organization- their onboarding (applicants), their interactions while within the organization, and their exit (terminations). BUT it also includes the scope of **ALL** HRIS information. This is much more than just employee and applicant information.
+
+    -   HR management and decision making is ALSO impacted by **how well we conduct the operations of business of HR - the provision of HR Services.** This means looking at ourselves as a business within a business -with our own internal customers and collectiing and analyzing information on the provision of those services.
+
+    -   Finally, HR management and decision making is impacted by the degree to which we pay attention to improving the very practices and methodologies we use in HR injecting 'data-driven, evidence based' into these wherever possible to improve the accuracy, reliability of them and to enhance the explainability of and trust in their results.This too requires the generation and analysis of data. We concern ourselves not only with what we do and how well we do it, but on exactly how we do it and improve that. We seek to leverage AI and machine learning to assist and change how we do what we do.
+
+-   This paradigm does not assume a separate 'add-on' function. In fact it recognizes /sees People /HR Analytics as a change in and a choice of how we conduct the business of HR we are already in- HR Management and Decision Making which are 'data-driven', 'evidence-based'. Historically, HR decision making and management have been notoriously subjective and non data driven, with possibly the exception of information used in collective bargaining, salary surveys, and workforce forecasting/ planning where practiced. In most recruitment activities, performance appraisal, job descriptions -data drivenness evidence-based has been minimal or non-existant.
+
+-   This paradigm does not automatically assume that extra resources will be necessary to engage in data-driven, evidence-based HR Management and Decision Making. Initially much of this paradigm can be operationalized within existing resources.
+
+# Why is this distinction so important?
+
+When we see People Analytics / HR Analytics as the second paradigm (data driven and evidence based HR management and decision making - the HR management and decision making part of this is something that already exists in organizations.
+
+Making it 'data driven' and 'evidence based' in terms of our HR practices -is simply a choice. **A choice that HR makes as to how it conducts the business of HR.** HR can choose to do this or 'not' - both in an organization in terms of its practices, or as an HR profession as to how we tool and retool ourselves for the future.
+
+As HR - we don't ask for 'outside permission' to do this. We either recognize the contributions that data driven and evidence based make to the quality and performance of our HR services and do this- or we don't.
+
+The start of the HR Analytics journey doesn't require a big resource ask or the selling of a product or service in search for a need or need for recognition.
+
+For example - If you have an HR issue that data might solve, and you either have the data or can get it, and have the knowledge/skills in statistics and machine learning- you have the ability to be data driven and evidence based in your decision making on a standalone basis. The statistical tools can be free, and these days your access to computers and processing power on your desktop is not a barrier either. Period. This doesnt require an extra team and resources to start showing evidence of data-driven and evidence-based.
+
+How much this effort or activity can be organizationally 'enhanced' however might be a function of additional resources.
+
+# What Happens When We Adopt The First Paradigm?
+
+Several of the following may occur:
+
+-   We tend to define People/HR Analytics based on our immediate organizational needs rather than on a standardized set of taxonomies, concepts and definitions
+
+-   We focus on the wrong decision makers and on the wrong things for the wrong reasons.
+
+-   We define our successes or failures the wrong way
+
+-   We start thinking in terms of territoriality
+
+Let look at each of these in detail.
+
+**We tend to define People/HR Analytics based on our immediate organizational needs rather than on a standardized set of taxonomies, concepts and definitions**
+
+On a personal level, when I seek to understand a field or body of knowlege, I want to understand it in a manner where I can see it both from a whole/totality perspective and its parts when and where necessary. For me then - how we define it is fundamentally important. Its definition has to be broad enough to achieve the above.
+
+As HR we often allow consultants and vendors to define it in terms of a product or service that they sell. Inevitably- doing that causes it to be defined in terms of part of the picture rather than the 'whole'.
+
+-   Some have defined it as simply the collection and analysis of employee data.
+
+-   Some have equated it to HR metrics. If you have these then they claim you are doing HR analytics.
+
+-   Some claim that pre-packaged software they have created is HR Analytics software, and if you purchase it you are doing HR Analytics. (ie no need to take responsbility for it -we do it for you)
+
+-   Some mistakenly equate HR data warehousing/tools/initiatives as HR Analytics.
+
+All of these narrowly define it to operationalize it to something that they are selling.
+
+This may be good for their business or product, but works against a clear understanding and adoption of HR Analytics by HR professionals and HR functions within organizations.
+
+It leads to confusion in terms of when we are dealing with just a part of the whole versus the whole. We may have expectations of success for the whole, when in fact we are doing just a part. The 'part' will not meet the expectations of the 'whole'
+
+Definitions, concepts and taxonomies in People Analytics should be driven by the HR profession in conjunction with unversities and educational institutions. Vendors and consultants should understand these and should be able to explain how 'their' products or services fit into that , and what 'part' of the overall picture they address within it.
+
+**We focus on the wrong decision makers and on the wrong things for the wrong reasons.**
+
+There have been articles written about People/HR Analytics on how to get the C suite to pay attention to this and to get the resources to do it. Or even worse complaining 'why HR isn't at the executive table'- and feeling that People Analytics will finally be their key to this table.
+
+This happens in part, because we see People /HR Analytics as something 'in and off itself'- separate from the rest of HR functions. Something that requires its own resources, life , and existence. Something that needs to prove itself to remain in existence or to be brought into existence in the first place. Something that cant be done without additional resources.
+
+We chase after extra resources (along with every other area of the organization). We have to focus on the C suite to get them. To request additional resources for something completely new- we end up needing to make a business case. This is often very difficult if not impossible in these circumstances. Ofteni in the time it takes to make a business case to a skeptical executive, you could have developed a prototype of an application demonstrating its use. Its often easier to get additional resources for something that pre-exists prior to the request. Personally, over my own career, I saw far too many significant business breakthough ideas die on the altar of the 'business case' gods.
+
+When we finally see People/HR Analytics as changing the way we do HR- then our focus shifts:
+
+-   off of the c-suite
+
+-   off of the business cases
+
+-   off of the need at least initially for extra resources.
+
+We finally recognize that the right decision makers we have to focus on is ourselves -HR from top to bottom. Its up to us to make it happen - not anyone else- and we dont need outside permission to do this.
+
+The only people that can re-tool HR into 'data-driven' and 'evidence-based' management and decision making is HR itself. No amount of new resources will make any difference without HR itself fundamentally thinking differently.
+
+Which brings me to the other point above about HR complaining about not being represented in the C - suite. I think that's the wrong focus. The premise itself can often come with baggage of inferiority, because we're not good enough to be represented there. That somehow HR needs to justify its existence and worthiness to be there. Consider the following:
+
+-   Can organizations manage effectively without their financial representation, resources and professionals at the executive table?
+
+-   Can they without their operational representation, resources and professionals?
+
+-   Can they without their IT representation, resources and professionals?
+
+-   Can they without their supply chain representation, resources and professionals?
+
+I think not.
+
+Why then should organizations and their executives think differently with regard to HR?
+
+If HR is required to justify their existence or inclusion into the C suite, then something much more serious is wrong and People/HR Analytics isn't going to fix that. HR not being represented there would be as much an executive credibility problem as an HR credibility problem.
+
+**We define our successes or failures the wrong way**
+
+There seem to be at least a couple of widely held misconceptions out there about how to define success or failure of HR analytics efforts under the first paradigm (add-on and its assumed need for additional resources):
+
+-   We must find something significant or earth shattering in our efforts that will benefit the organization for HR Analytics to have value. And we must keep on doing that to justify our existence.
+
+-   We must see the various levels of analytics- descriptive, diagnostic, predictive and prescriptive as a 'maturity' model and strive to be at the prescriptive level for HR Analytics to have any value to the organization.
+
+-   HR Analytics must result in our presence in the c-suite, or must help the organization strategically or it doesn't have any value.
+
+Its hard to know where to begin with correcting the above misconceptions.
+
+-   At the heart of all statistics and research is determining **whether there are patterns in the data or not**, and if so what they are and how strong are they. The reality is that in our data- there may not be any significant patterns. But even the absence of patterns in the data is still a valuable finding. You now know something you did not know before. The value is in the inquiry and the research, not on whether there was something earthshaking or not, or an answer was found in an organizationally desired direction. When we make HR Analytics a 'thing' that has to justify its existence through earth shattering findings- we have the wrong criteria for success and we doom HR Analytics longevity.
+
+-   Seeing the level of analytics as a maturity model is erroneous, and betrays an accurate understanding of statistics and machine learning. There is no such thing as prescriptive being more mature than predictive, predictive more mature than diagnostic, diagnostic more than descriptive. These levels, at best, represent different levels of statistical complexity and skills to understand and use. But each of them are specific to the questions asked:
+
+    -   descriptive - what happened
+
+    -   diagnostic - why did it happen
+
+    -   predictive - what will happen ( assuming a time dimension). ie you can predict categories of things by their features.
+
+    -   prescriptive - what should happen
+
+    You dont apply a 'what should happen' analysis to 'what did happen', You dont apply a 'what will happen' analysis to a 'why something happened' question. Each type of analysis is suited to answering specific types of questions. That is why a 'maturity' model perspective here is so damaging to evaluating HR Analytics value on the basis of it.
+
+-   Leveraging HR Analytics to gain entrance to C-suite, or requiring it to provide only 'strategic' value or it isnt useful- again simply is a misundertanding of HR Analytics. **It exists to serve all HR needs.** This includes giving the organization a current picture/snapshot of its human resources and trends, operational effectiveness and efficiency measurements, AND also to serve future/ strategic needs None of these are more important than the others. All are part of the picture. HR Analytics may be something that assists credbility ( because it is data driven and evidence based by it s nature). But it should never be held up as a panacea for ongoing orgnaization problems that have nothing to do with HR data.
+
+**We start thinking in terms of territoriality**
+
+This happens , in part , again from poor definitions and understanding of what HR Analytics is.
+
+Sometimes this occurs in turf wars between IT and HR, and this some times occurs because IT thinks that HR analytics is a data warehousing business intelligence tools problem and issue.
+
+Sometimes this is combined with a Finance area also not trusting HR to properly understand the calculation of metrics especially HR ones based on financial data. So an initiative can end up resulting in little more than HR dashboards with some self service slice and dice. And it is presumed by those that created it that HR Analytics has now been achieved. In reality - a tool has been produced with no guarantee that it will be used for data-driven decision making. This is kind of like a -if you build it they will come- mentality. A technology looking for a use or a customer.
+
+Sometimes in can come in the form of turf wars between decision support and HR. This often comes when data scientists are seen as a generic field or job. On social media you often see many people asking the question 'how do I get into the data science field?' as if it were a separate field independent of a context.
+
+It may be an independent area, study or discipline in academia (and rightly so). But data science in organizations only has value within a context of application- whether it be in medical research, industrial research, organization or operational research to find answers to critical questions. That 'application' requires 'domain' knowledge. Otherwise it is simply a set of tools looking for an application or customer. It takes some domain knowledge to be in a position to recognize what the critical questions are to ask, even more domain knowledge to know what type of data will be either necessary or need to be available to answer them. And, by the way, if you are proactive as an HR service, you should often be the ones that generate some of these critical questions - not waiting for the C suite to ask them.
+
+These turf wars occur when a part is seen as the 'whole', or we mistake having built a tool and conclude we have now achieved analytic success.
+
+The bottom line is that HR Analytics is the 'synergy' where HR domain knowledge comes together with the data tools and the statistical knowledge necessary of how to turn a business question into acquiring the needed data and applying appropriate statistical tests and algorithms. In other words the synergy of IT, Data Science , and HR. In recognizing that there should be no need for turf wars. The IT tools and infrastructure, and the data science knowledge in an organization are useless for HR Analytics without this synergy.
+
+# So How Do We Move Towards The Second Paradigm?
+
+I think many things can help here:
+
+**We need to draw a distinction between the technology and tools and their complexity and sophistication- and the business questions being asked, data needed,and statistical analyses and tests required.**
+
+Being data-driven, evidence based, doesnt necessarily require additional or new resources. Some of the best data science tools are free these days. In HR, we are awash in HR data that we already have that is accumulating and never analyzed. **We aren't making use of what we already have.**
+
+Want to impress the C-suite? See patterns in your HR data that lead to cost savings, with what you already have and you will catch their attention. I have always been a proponent of 'skunkworks' (informal and often behind the scenes) projects in organizations.
+
+If you have been given authority for your role and function within the organization, its up to you to test out new ideas, and make better use of what you have. Once you have proven or shown a prototype of something that works, you can often get further organization support and more resources for it in a much easier fashion.
+
+The sophistication and complexity of tools isn't and shouldn't be a road block for HR Analytics.
+
+**We need to recognize that the roadblocks to HR Analytics are not predominantly from outside of HR, but from within HR**.
+
+Its quite easy for HR to shift the blame for not being as 'data-driven' and 'evidenced-based' as they should/could be:
+
+-   'The executive doesnt support this'.
+-   'We aren't represented in the C-Suite".
+-   "IT and Finance are taking over ownership of the production of all metrics, leaving HR out".
+
+Certainly,some of the blame can rest on groups outside of HR. But how often is that then used as an excuse for 'status quo' in HR. None of the above prevent HR Analytics. 'Traditional' HR methodologies and practices are often the biggest roadblock to 'data driven', 'evidence based' HR. This may be because of a number of factors:
+
+-   the historical context from which those practices took root in and evolved from
+
+-   the degree to which HR has become very comfortable over the decades with being reactive in the provision of their function- waiting for something to happen then have mechanisms policies and procedures in place to respond;
+
+-   the way in which HR has been taught in educational institutions and professional bodies over the decades.
+
+**We need to recognize the need as a profession to maintain ownership of HR Analytics definitions, taxonomies, concepts with the help of colleges and universities and require research and evidenced based backing in these where applicable.**
+
+My sense over 4 decades in HR is that too much of the above and the resultant HR practices have been driven by vendors selling approaches and solutions , and not enough by rigorous evidence-based research in conjunction with universities and colleges.
+
+There should be far more interaction between academia and HR professional bodies to support the above ownership and drive it forward. How often are presentations at annual HR professional conferences dominated by vendors and consultants selling a product vis-a-vis actual research or examples of new organizational application of HR Analytics in real life circumstances?
+
+**We need to recognize that HR Automation and HR Analytics are not the same thing.**
+
+These are different and both are important. HR Analytics may be assisted by HR Automation and often this can be very helpful. But the two can exist relatively independently of each other.
+
+You can have all the automation of HR information in the world and automation of HR processes and still not have HR analytics (data driven and evidence based HR management and decision making).
+
+And you can have HR Analytics with little more that a spreadsheet with the required HR data and statistical software and the knowledge of how to transform a question into the required analysis to answer it. Most often we have the data. The tools are free. Whats missing is HR having an informational/data mindset the statistical knowledge of how to do it.
+
+**We need to recognize that any long term success and sustainability for HR Analytics wont come from an 'add-on' .**
+
+HR Analytics -to be data driven and evidence based with longevity requires HR to re-educate and retool itself skills wise - top to bottom. Without that, it will die quickly because as an add-on **the traditional HR functions, practices and methodologies will continue as they always in their same direction**- no ownership of for 'data driven and evidence based' because thats the responsibility of the 'add-on' resources/team. Every area of HR, every HR function has to take ownership and responsibility for their practices and methodologies to be data -driven and evidence-based and obtaining the skills necessary to do that.
+
+**We need to recognize that simply collecting and analyzing 'employee' or 'applicant' data is insufficient as a scope for HR Analytics.**
+
+These hardly begin to describe the totality of the landscape of analytics as applied to HR. Data-driven evidence-based HR Management and decision making concerns itself with all HR data:
+
+-   HRIS data of all kinds, employee data ,position data, job description data, applicant data, payroll data, time and labor data
+
+-   HR operational data -data related to measuring the activity and quality of your HR services
+
+-   HR methodologies/practices data- data related to the efficiency/effectiveness of how you do what you do -applying AI and machine learning directly in these wherever possible.
+
+    These go far beyond just analysis of employee data. All of these contribute to HR management and decision making and therefore must be part of the scope.
+
+# What Changes Are Required By The HR Profession?
+
+If you you agree that your choice of paradigm is important, and that the first paradigm is insufficient or at best just a starting point then much will probably be required in terms of changes to the HR profession.
+
+**'Data Driven' and 'Evidence Based' HR management and decision making requires HR to fundamental rethink of how we do the business of HR.**
+
+This means that all HR practices and methodologies need to be reviewed in the light of what information they generate, where it stored (assuming that it is even stored), how those methodologies and practices can be made to be more data driven. This needs to be done at an organizational level, and at an academic/teaching level within HR curriculums at college and universities.
+
+As mentioned previously, some traditional HR functions, methodologies and practices have been more prone to be somewhat 'data-driven' even traditionally than others. For example the following:
+
+-   Collective Bargaining and the costing out of agreements
+
+-   salary administration and surveys
+
+-   human resource forecasting.
+
+But wide swaths of HR methodologies and practices have been either minimally or 'non' data driven for decades. The following come to mind:
+
+-   **Job Analysis and Job Descriptions.** These have been way too manual, subjective and non-automated nor data-driven for far too long. And this is because the HR profession is locked into traditional thinking and traditional methodologies. The entirety of job analysis and descriptions can be totally be made to be much more data driven and evidence-based by changing our methodologies. And these alternative methodologies need to be taught in university and college curriculums and be subsequently adopted by HR professionals at an organizaional level.
+
+-   **Job Classification.** Those involved in this area of HR- need to open themselves to new ways of thiinking and methods that go beyond the traditional job classification and valuing schemes found in most organizations. Data-driven here means that we recognize that AI, machine learning and statistics have a whole lot to say and contribute to this area of HR. At the heart of job classification is 'classiifcation'. There are whole categories of machine learning algorithms dedicated to 'classification' that have the potential to improve both the speed, accuracy and explainability of these decisions in organization. The earliest of these is probably 40 years old, and many more have evolved in the last 40 years. Why do we see almost no evidence of use of these for job classification purposes in organization, and little if any understanding of their applicability?
+
+-   **Evaluating Performance.** Traditional performance appraisals and 360 degree assessments are not data-driven performance measurement. These tools are a subjective assessment and an attempt to objectify these assessments with more than one opinion.
+
+    -   Real performance measurement concerns itself with an organizations business processes and the improvement of these to achieve better products and services (recognizing that we all work within these business processes). W. Edwards Deming recognized this decades ago, and warned organizations of its dangers and weaknesses in favor of continuous process improvement.
+
+    -   Why does HR still have an addiction to these? Performance is almost always a team effort within existing business processes. When these are improved and efficiency gains are made they should be rewarded on a team basis. The one by one individual performance appraisals approach should often be used only in performance improvement plans where often beahvioural issues incompatible with the business processes might be what needs to be addressed.
+
+**It also means seeing HR as business within the business- seeing HR as a provider of services with internal customers that use those services and with business processes that provide those services.**
+
+A big part of the role of HR Analytics is to measure our HR Services, business processes and their quality. Reducing the time and cost of these processes by increasing quality and efficiency is always consistent and compatible with organizational outcomes. Reducing costs and improving quality always affects the bottom line. Measuring HR business activity and business processes are fundamentally data-driven and evidence based. HR needs to rethink their often current role of reactive administration and move to proactive continuous improvement.
+
+How many CHROs have systems in place to log every service request that comes in to HR services and then measures the time taken between receipt and actually starting it and then the actual time to complete it? These are the absolute basic minimum data gathering and measurement requirements to be data driven and evidence based in our HR operations.
+
+Without these, are we as HR really 'managing' and providing 'leadership' in HR, or are we 'administering, caretaking and reacting' only in HR?
+
+# Conclusion
+
+My purpose in this blog article is to have HR as a profession and its professional bodies consider very carefully their paradigm for People/HR analytics. Your choice may very well artificially limit its success it isn't defined or operationalized properly right from the very beginning. AI, statistics, and machine learning hold so much promise to bring HR into levels of relevancy and organizational breakthoughs not seen historically in the profession. But these will occur only to the extent that HR fundamentally rethinks its role, operations , methodologies and practices. Traditional HR -business as usual - will not cut it nor bring these promises or potential to fruition.
+
+::: {.callout-note appearance="simple"}    
+About Lyndon Sundmark, MBA
+
+Lyndon is a retired HR Professional with over 40 years experience of applying a 'data-driven', 'evidence based' mindset to HR practices in organizations in a variety of roles and industries.
+:::

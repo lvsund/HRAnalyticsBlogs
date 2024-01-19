@@ -1,0 +1,20 @@
+---
+title: "Doing HR Analytics - A Practitioner's Handbook With R Examples -paperback now available"
+author: "Lyndon Sundmark, MBA"
+date: "2017-09-20"
+categories: [HR Analytics]
+---
+
+Hi Everyone,
+
+For those of you who are interested, the e-book that I announced in the last couple of weeks is now available in paperback form as well.
+
+The e-book as per the previous information is available from www.analyticsinhr.com.
+
+The paperback is available from amazon.com
+
+Searching for 'Doing HR Analytics' on amazon.com should find it.
+
+<https://www.amazon.com/Doing-HR-Analytics-Practitioners-Handbook/dp/1973716372/ref=sr_1_1?ie=UTF8&qid=1510155844&sr=8-1&keywords=doing+hr+analytics+-+a+practitioner%27s+handbook+with+r+examples>
+
+Hope it will be helpful to you on your People/HR Analytics journey...

@@ -1,0 +1,509 @@
+---
+title: "Data-Driven' Job Analysis And Job Descriptions"
+author: "Lyndon Sundmark"
+categories: [HR Analytics]
+date: "2021-03-03"
+---
+
+# 'Data-Driven' Job Analysis And Job Descriptions
+
+*"Job Analysis and Job Descriptions in their current form, for the most part, are **NOT** data-driven."*
+
+## Introduction
+
+If you have read any of my previous blog articles- but particularly the last one- you will get the clear impression that I don't see HR Analytics as an 'add-on' to HR. I see it fundamentally as a means to change the way 'we do' HR.
+
+If you accept HR Analytics as 'data-driven HR management and decision making', then it's all about making 'traditional' HR Management and Decision Making- 'data-driven'. It means 'data-driven' is infused into **all** of HR in some fashion and at some level.
+
+This includes Job Analysis and its end results as well.
+
+In this article I therefore wanted to focus on Job Analysis and Job Descriptions concerning 'data-driven'.
+
+The reason for this is because Job Analysis impacts the many other HR practices that are dependent on it. Being data-driven here enables many 'other' HR practices to start becoming more data-driven.
+
+These HR practices include:
+
+-   salary administration
+
+-   classification
+
+-   recruitment /talent acquisition
+
+-   labor relations/ collective bargaining
+
+-   training
+
+-   career planning
+
+-   human resource planning
+
+-   occupational health and safety
+
+-   and others...
+
+You can probably regard this article again as an 'opinion' piece. Its intent is to get you to 'think differently' about job analysis and job descriptions.
+
+This blog article will:
+
+1.  Revisit what 'data-driven' requires and what this might mean when it is applied to this area of HR.
+2.  Take a brief look at what makes up much of traditional job analysis and its methodologies, and job descriptions content over the last 50 or more years and how those approaches reflect the larger management systems that HR finds itself in.
+3.  Evaluate the degree to which 'traditional' job analysis methodologies and job descriptions lend themselves to the requirements of 'data-driven'.
+4.  Explore in practical terms why we should care about 'data-driven' in job analysis
+5.  Explore an alternative way of thinking and methodology for job analysis and descriptions that is 'data-driven'.
+6.  Show what new possibilities 'data-driven' Job Analysis and Descriptions give us in terms of truly transforming the work of HR in the organization.
+
+## 1. Revisiting What "Data-Driven" Means
+
+"Data-Driven" is at the heart of what HR Analytics is all about - 'Data-driven' HR management and decision making . We are interested in **'evidence-based'** management and decision-making regarding people.
+
+This means at least three things:
+
+-   committing to making more HR decisions based on objective information and more rigorous analysis.
+
+-   organizing ourselves around making 'that' objective information more visible and accessible in our HR practices
+
+-   keeping that information in a form that readily lends itself to automation and analysis. This requires the information to:
+
+    -   exist
+
+    -   be standardized
+
+    -   be structured
+
+    -   be quantifiable or categorizable
+
+    -   be stored in a database
+
+    -   allow for the summary, comparison, and contrast readily and quickly across the entire set of data.
+
+    -   allow for appropriate statistical analyses and reporting to answer questions posed of that data.
+
+## 2. Revisiting Traditional Job Analysis And Job Description Approaches
+
+To answer this question, it is always helpful to look at a variety of definitions from a variety of different sources, to get a sense of the commonalities that emerge.
+
+A quick and cursory Google search turned up many definitions.
+
+[Job Analysis Definition Google Search](https://www.google.com/search?q=job+analysis+definition&rlz=1C1CHBF_enCA922CA922&oq=job+analysis+&aqs=chrome.0.69i59l2j69i57j0i67i395l5.7991j1j15&sourceid=chrome&ie=UTF-8){.uri}
+
+One of them that came up in my Google search was from Wikipedia:
+
+**Wikipedia**
+
+<https://en.wikipedia.org/wiki/Job_analysis>
+
+***"Job** analysis (also known as work analysis\[1\]) is a family of procedures to identify the content of a job in terms of activities involved and attributes or job requirements needed to perform the activities.*
+
+Job analysis provides information of organizations which helps to determine which employees are best fit for specific jobs. Through job analysis, the analyst needs to understand what the important tasks of the job are, how they are carried out, and the necessary human qualities needed to complete the job successfully.
+
+The process of job analysis involves the analyst describing the duties of the incumbent, then the nature and conditions of work, and finally some basic qualifications. After this, the job analyst has completed a form called a job psychograph, which displays the mental requirements of the job.\[2\] The measure of a sound job analysis is a valid task list. This list contains the functional or duty areas of a position, the related tasks, and the basic training recommendations. Subject matter experts (incumbents) and supervisors for the position being analyzed need to validate this final list in order to validate the job analysis.\[3\]"
+
+I wont profile all the google hits above in this blog article, but if you look at many of them they are identical or very similar- and have many commonalities between them.
+
+What are some of these commonalities?
+
+They:
+
+-   study the **job** to identify its content which can include:
+
+    -   activities
+    -   responsibilities
+    -   qualifications
+    -   working conditions
+    -   tasks
+    -   duties
+    -   knowledge
+    -   skills
+    -   abilities
+    -   importance of tasks
+    -   human qualities
+    -   how often tasks are performed
+
+-   have multiple purposes in mind for the usage of the gathered information.
+
+-   have a job description often as the most immediate end result. Typically this **written narrative** describes tasks, duties and responsibilities of a position. This relationship between job analysis and job description is described as well in Wikipedia:
+
+<!-- -->
+
+```         
+-   [Wikipedia definition of a job description](https://en.wikipedia.org/wiki/Job_description)
+
+    -   *"According to Torrington, a job description is usually developed by conducting a [job analysis](https://en.wikipedia.org/wiki/Job_analysis "Job analysis"), which includes examining the tasks and sequences of tasks necessary to perform the job. The analysis considers the areas of [knowledge](https://en.wikipedia.org/wiki/Knowledge "Knowledge"), [skills](https://en.wikipedia.org/wiki/Skills "Skills"), and [abilities](https://en.wiktionary.org/wiki/abilities "wikt:abilities") needed to perform the job. Job analysis generally involves the following steps: collecting and recording job information; checking the job information for accuracy; writing job descriptions based on the information; using the information to determine what skills, abilities, and knowledge are required to perform the job; updating the information from time to time."*
+
+-   Historically-once produced- these job descriptions would be stored in filing cabinets for retrieval when needed.
+    In the 1980s and later these would be 'Word' documents stored on a network file server somewhere.
+    Some organizations took it a step further and put them in HTML format on web server.
+    Regardless though, these job descriptions are still 'narrative documents' in whatever technology form they're in.
+```
+
+The above methods and formats have been in the literature, textbooks and professional HR education for 40-50 years with very little change. Two key questions at this point might be:
+
+-   why is this the past and current paradigm for job analysis?
+
+-   Does this paradigm lend itself to being data-driven?
+
+We will explore the first of these questions in this section immediately below and the second in the next.
+
+**Why is this the past and current paradigm for job analysis?**
+
+To answer this, we have to step back a bit and realize that the **job** and/or the **position** is and has almost always been the focal starting point of all **job analysis**.
+
+From above:
+
+*"**Job** analysis (also known as work analysis\[1\]) is a family of procedures to identify the content of a **job** in terms of activities involved and attributes or job requirements needed to perform the activities.*
+
+**Job** analysis provides information of organizations which helps to determine which employees are best fit for specific **jobs**. Through **job** analysis, the analyst needs to understand what the important tasks of the job are, how they are carried out, and the necessary human qualities needed to complete the **job** successfully."
+
+Notice that the focus is the **JOB .**
+
+[In this paradigm, if you wanted to understand the organization and document its work, you study and document the jobs -one by one**.** The assumption is that the 'work of the entire organization is really seen as the aggregate of all of these together.]{.underline} You start at the individual level and you 'aggregate' to get the entire picture of an organization's work. This is a 'proxy' for understanding the business that the organization is in. The assumption here is aggregating from individual jobs and positions will synthesize into an overall 'coherent' picture of the work of the organization.
+
+[This 'job by job' analysis paradigm]{.underline} is not independent of the other organization management paradigms they are within. To map out and to know when you have the work of the entire organization covered, you traditionally have depended on organization charts. When you have covered every position/job in the organization chart you supposedly have the work of the organization documented.
+
+That got me doing a little detective work on how organization charts originated and why they are so pervasive. This would be a whole other topic in itself which I won't go into detail here. But that minor detective work led me to the following book:
+
+[The Leaders Handbook -Peter Scholtes](https://www.amazon.ca/Leaders-Handbook-Making-Things-Getting/dp/0070580286/ref=sr_1_1?dchild=1&keywords=peter+scholtes&qid=1612292165&sr=8-1)
+
+In that book, Peter indicates that organization charts came from 'train-wreck' charts (an apt metaphor? ;) tongue in cheek). The intent was to prevent train wrecks that occurred in the 1800s from happening in the future. These 'train-wreck' charts among other things illustrated:
+
+-   chains of commands
+
+-   functional divisions
+
+-   clear descriptions of responsibility
+
+In his book, Peter goes through a chronological analysis of how the above eventually resulted in Management By Objectives (MBO) as a system of management.
+
+Out of those larger management systems such as MBO would have likely come the HR methodologies for job analysis. (i.e. [clear descriptions of responsibility]{.underline} sound an awful lot like job descriptions to me)
+
+The point I am raising is that our HR practices didn't emerge in a vacuum. They were responses intended to be consistent with the larger management systems they found themselves within.
+
+These larger management systems aren't 'without' impact or consequences.
+
+In MBO, the consequence is that if you want to 'understand' a business, you look at an organization chart. You look at the chain of commands, functional divisions, and descriptions of responsibility. For what it's worth, personally I never found that to be true. Looking at the above helped me understand how the business was organized or structured - but that isn't the same as understanding the business.
+
+In HR, the impact was 'job descriptions' and a methodology for job analysis that was 'one by one' and with the assumption that aggregating from the 'bottom up', you would then have a picture of the work of the organization and the business it was in. The 'one by one' ultimately weaves itself into traditional performance appraisal systems. We evaluate the performance of employees 'one by one'. MBO requires it, and traditional job analysis and descriptions support it -'one by one'.
+
+The 'bottom up', 'one by one' paradigm rarely leads to a coherent picture of the work of the organization and the business it is in- more often than not it is an incoherent, fractured picture.
+
+Let me illustrate why.
+
+**Picture Puzzle Analogy**
+
+Most of you are familiar with picture puzzles (a **picture** that has been carved up into several hundred pieces). You probably grew up with them as kids. The reason why these puzzles work is that they start with a 'whole picture' and carve it up into pieces. When you put those pieces together they from the whole original picture.
+
+Now imagine instead that you have half a dozen people independently who are attempting to create puzzle pieces from scratch. Even if they know that the end result is 'a picture' (hopefully a coherent business purpose), their differences (as human beings) will result in a variety of puzzle pieces which are unlikely to fit together well or at all.
+
+When you start with the pieces, rather than the entire picture, those pieces will find it almost impossible to form an entirely coherent picture. There is very little commonality between those pieces.
+
+I would suggest that traditional job analysis methods are a lot like that. You may have all the pieces, but you have very little way of linking them together- finding pieces that fit and join together. We are so focused on the **'job'** as the entity under study that we cant see the larger picture under this paradigm. (It's also noteworthy in the above wikipedia definition it said 'also known as work analysis'. I think we have forgotten that.)
+
+**We need a paradigm with job analysis methodologies and end results (job descriptions) that start with the overall picture and deliver puzzle pieces that stand on their own - AND still fit back together as a unified whole.**
+
+Being 'data-driven' in our job analysis methodologies and job description results is a potential enabler in this direction.
+
+## 3.Evaluating The Degree To Which Traditional Job Analysis and Descriptions Meet The Criteria Of Data-Driven
+
+Let's look at the characteristics of 'data-driven' and evaluate the degree to which traditional job analyses and descriptions meet these requirements.
+
+### **3.1 Information Exists (Requires Data or Information)**
+
+Loosely speaking- even traditional job analyses and descriptions meet this criterion. Traditional job analyses are a manual process for 'generating' **information** about the contents of a job. And as the methods mentioned above indicate- there are quite a few ways of generating that information. **PASS**
+
+### **3.2 The Data or Information Needs To Be Standardized**
+
+Loosely speaking we could say that this requirement is also met (at least in part). Our study of jobs through job analysis focuses on **standardizing the content**. This is reflected above in what the typical content areas are:
+
+-   activities
+-   responsibilities
+-   qualifications
+-   working conditions
+-   tasks
+-   duties
+-   knowledge
+-   skills
+-   abilities
+-   importance of tasks
+-   human qualities
+-   how often tasks are performed
+
+**If** you cover some or all of these 'consistently' in every job analysis and resulting description you are 'standardizing' your 'approach' to the **content**. (but maybe not the expression of that content)
+
+At least at a 'narrative' level then most organizations achieve standardization through guidelines and procedures. Undoubtedly though, some variation will occur in the standardization due to different people with different writing styles. **PASS**
+
+### **3.3 The Data or Information Needs To Be Structured**
+
+This means:
+
+-   not only are the contents standardized but they also
+
+-   are expressed in a way that we can easily see and find the equivalent information from job to job.
+
+This will be a **PASS** most of the time if the narrative descriptions are standardized and well written. **But in my opinion -a bare pass** because there can be a lot of subjectivity and judgment around the equivalence around the job content and characteristics.
+
+Those of you who have done job classification by comparing job descriptions to 'narrative' job class specifications could probably attest to the fact that even when policies, procedures, and guidelines are in place for writing job descriptions- the ease of slotting it into the most appropriate job class is not easy. It is definitely partly a function of how well the job description was written in terms of structure and standardization and the job class specifications as well.
+
+In other words, even with the best of intentions and guidelines for writing, the use of traditional narrative job descriptions can be very difficult.
+
+### **3.4 The Data or Information Needs To Be Quantified**
+
+Because most traditional job analyses and descriptions end up being narrative documents derived from narrative information gathering, **this requirement is typically not met**. At best there may be some quantification of time spent (i.e. proportion of time spent) on major responsibilities. But for such things as skills, knowledge, and abilities required, these may be vague statements of whether there is more of something or less of something required, and these are usually 'narrative' -**NOT quantified**.
+
+Even if minimum information is quantified, if the structuring of job information or the standardization of it is weak, quantification in these circumstances doesn't help us much. We really don't know if X% time spent on Y responsibility is really comparable to Z% time on the same responsibility in another job.
+
+Without strict attention to standardization- we may or may not be comparing the same responsibility. **True standardization means that we capture the same types of common data on EVERY JOB.** Narrative job descriptions (unless heavily standardized, structured, and written with an eye to eventual quantification of that information) rarely meet this criteria. **FAIL**
+
+### **3.5 The Data or Information Needs To Be Stored In A Database**
+
+**Right from the 'get-go' this requirement in traditional job analysis and descriptions is rarely, if ever, met.** Combing and scouring narrative sources of written information, verbal content from interviewing Subject Matter Experts (SMEs), etc. is not in a format needed for storage in a database. Automating job descriptions to the point of being either Word documents on a file server or HTML documents on a web server for easy access **isn't 'being stored in a database'.**
+
+For job analysis information and resulting descriptions to be stored in databases:
+
+-   Each job must be stored as a single entity (often a record) in the database. (often somewhat comparable to thinking of a row in Excel)
+-   All the information used to describe that job and its characteristics must be represented by [data elements or fields]{.underline} for that record or sub-records. (often comparable to thinking columns in Excel for a single row)
+-   The information must be structured and standardized in the database. (In Excel, all columns appear in every row)
+-   If information is to be used to compare one job to another, all information to be used for comparison must be categorized into standardized qualitative information if textual (ie non-numeric) or quantified into measures if numeric. The reason for this is to have common denominators on which to compare and contrast different jobs.
+-   The database must hold the information on all documented jobs.
+
+The verdict on 'traditional' job analysis and descriptions: **FAIL**
+
+**Nothing is preventing an organization from thinking non-traditionally here**. The idea of storing job information in a structured, quantifiable, measurable way is **NOT NEW**. I am not the originator of this idea. Early attempts to use the technology to do this are at least 30 years old if not older. Even 30 years ago, it gave me some sense of the future possibilities and how things could change if we wanted them to.
+
+So why no huge uptake?
+
+A lot of the answer to that goes back to the difference that HR Analytics requires. 'Data-driven' HR Management and Decision Making absolutely requires structured and standardized information and measurement. Traditional HR doesn't. It's why the literature and methods around this part of HR haven't changed much for 50 years. I'm not sure that's a good thing.
+
+### **3.6 The Data or Information Needs To Readily Allow for Quick Contrast, Comparison, and Summary Across The Entire Dataset (i.e. ALL JOBS)**
+
+This too is an immediate **FAIL** on the criteria of 'data-driven'.
+
+Word documents on a file server or HTML documents on a web server do not allow for any quick comparison or contrast across all jobs. At best Word documents would be a manual effort of perusal, and HTML documents would offer keyword search capabilities. But there is no ability to quantitatively compare information across all jobs.
+
+**So, on balance, how do traditional job analysis and job descriptions stack up against 'Data-Driven' HR?**
+
+**Poorly.**
+
+## 4. Why Should We Be Concerned With 'Data-Driven' In Job Analysis and Job Descriptions? Why Is This Important?
+
+I think the answer to this comes down to a few major reasons.
+
+-   Traditional job analysis and descriptions and their methodologies make the process of doing this far more manual than it needs to be and far longer than it needs to be.
+
+-   Some things in HR are way more difficult to do or do efficiently and well, or do at all -with traditional job analysis and descriptions.
+
+-   As mentioned earlier there are many uses made of job information in HR, so by making improvements here, we improve many areas of HR.
+
+Let's look at each of these reasons in turn.
+
+### 4.1 Traditional Job Analysis and Descriptions-Too Time Consuming
+
+Those of you whose job is job analysis can probably attest to this. Traditional Job Analysis and Job Descriptions are a laborious, manual, and slow processes- whether its in the creation of these or usage of them when job descriptions are done.
+
+**For creation:**
+
+-   a request for a new job is created.
+
+-   you will likely be required to interview the person to who this job will report to.
+
+-   you will likely need to interview SMEs if there are any
+
+-   if it's an existing job that is changing- you will likely have to interview an incumbent
+
+-   you will likely have to review your organizational standards for job analyses and descriptions
+
+-   you will likely have to review other jobs to understand how this is similar or different from them
+
+-   you will prepare new job description from all your analysis
+
+Best guess-a few days to organize all of this into an end result.
+
+**For HR usage:**
+
+Let's use job classification (using narrative job class specs) as an example:
+
+-   you will need to read the job description in question- getting some sense of its content.
+
+-   if you are a season classification officer, you will form an initial impression of the job family it falls into.
+
+-   you will then need to review at least a few job classification specs, and perhaps many other comparable positions/jobs to ballpark your decision on classification.
+
+-   you meet with the requester and present findings and hopefully justify the decision made to their satisfaction.
+
+Best guess-a few days to organize all of this into a completed decision.
+
+[What if being 'data-driven' in our approach resulted in job analysis and descriptions taking no more than a couple of hours? What if upon obtaining the information- classification took only minutes?]{.underline}
+
+*Do we in HR actually care about increasing the efficiency of our methods, procedures, and techniques and resulting customer response time?*
+
+### 4.2 Some Things We Do In HR Much More Difficult If Not Impossible Using Traditional Job Analysis and Description Approaches
+
+There are at least a few examples here that come to mind.
+
+Consider the following:
+
+### An example
+
+-   Strategic planning, career planning, and succession planning are all dependent on good job information and to be able to use that information in a specific way. The common denominator in all these planning efforts is the the successful 'defining and bridging of gaps'.
+
+    -   For strategic planning it's defining the gap between who, where, and what you are now as a business and the desired future for your business- desired by you as an organization and by your customers - and bridging that gap with plans and activities. ( strategic planning is really career planning at a 'business entity' level).
+
+    -   For career planning, it's defining the gap between who you are and where you are right now and what you desire to be in the future and then bridging that gap with plans and activities. (career planning is really strategic planning at an 'individual' level)
+
+    -   For succession planning, it's defining the gap between job requirements needed for the future, and succession candidates current capabilities and coming up with developmental plans and activities to reduce or bridge that gap.
+
+Doing any/all of these, at some point, requires us to bring this down to a job content, job analysis, job description level. To truly get down to the nuts and bolts of defining gaps- you have to define differences. To define differences, you must be expressing things in a standardized way that allows you to say for instance:
+
+-   these items belong to job 1 and only job 1
+
+-   these items belong to job 2 and only job 2
+
+-   these items belong to both job 1 and job 2
+
+-   to get from job 1 to job 2, the person must keep all things common to both and learn items in job 2
+
+The same goes for strategic planning:
+
+-   These activities/products/services are current and only current
+
+-   These activities/products/services are what we desire for future and are only future
+
+-   Some activities/products/services will be both current and continue into future
+
+-   To get from current to future successfully we will need to drop some activities /products /services, understand that some will continue to need to be maintained, and some new initiatives will need to be introduced and plan for all of these.
+
+Even strategic planning eventually has to be expressed in terms of how it affects jobs, their contents, and differences.
+
+If your job analysis methodologies and job descriptions don't quantify, standardize, structure job information and stored in a database - allowing for the summary, comparison, and contrast readily and quickly across the entire set of data- the quality of the above planning processes and their implementation may be limited.
+
+**Are your existing traditional job analysis methods and traditional job description format and contents capable of this and up to the challenge?** 'Data-driven' in this area of HR is likely to be an enabler for this.
+
+### Another Example
+
+If you wanted to extend the strategic planning example:
+
+At some point in strategic planning, as per the above, you should;
+
+-   identify the products and services you are no longer engaging in
+
+-   identify the products and services that you are going to continue to engage in
+
+-   identify the new initiatives, products, and services that will come on stream
+
+Each of these steps requires understanding how this will affect your current jobs and the employees that are in them.
+
+**Do we know how many FTEs will be saved by those products and services no longer engaged in and exactly where?**
+
+**Do we know how many FTEs will need to continue to support continued products and services and exactly where?**
+
+**Do we know how many FTEs will be needed to properly support new initiatives and exactly where?**
+
+Without good, robust, and data-driven job analysis methodologies and job description content and storage it's very difficult for HR to answer these questions and to do it promptly.
+
+### 4.3 Data-Driven in our Job Analysis Methods / Job Description Content Will Improve Many Areas of HR
+
+The primary goal of analytics, and for our purposes HR analytics- is to improve performance in the organization whether it be through
+
+-   HR metrics- so that the organization knows what is happening to its human resources over time and can be more proactive
+
+-   HR Services- being much more aware of the level and quality of services we provide to our organizational customers and making improvements as a result of that
+
+-   HR methodologies- efficiency and effectiveness- to do what we do better and quicker (without sacrificing better)
+
+\
+Job content is interwoven and related to all of these.
+
+In short- THIS IS WHY WE SHOULD CARE ABOUT DATA-DRIVEN JOB ANALYSIS AND DESCRIPTIONS.
+
+## 5. What Is An Alternative Way Of Thinking About Job Analysis and Job Descriptions?
+
+[The short answer is to change our paradigm]{.underline} and its associated methods, increase our use of technology, and quantify our job information.
+
+Here are some practical ways to change our '50-year-old' thinking in this area and move on from historical and current approaches.
+
+-   Our job analysis methods need to start with the entire picture and work back from there.
+
+    -   The concentration/focus is not on 'job' analysis but [***'work' analysis.***]{.underline}
+
+    -   Jobs just happen to be the way we segment out that work into understandable and manageable chunks for a position or person.
+
+    -   any one job is just a subset or snapshot of the much larger picture of the work of the organization.
+
+    -   As a subset of a larger whole- differences and similarities are more readily discernible
+
+-   Understand that starting point of understanding the entire picture of the work of the organization **can't be** the organization chart (aka train wreck chart). An organization chart tells you nothing about the work of the organization, only how you are structured. The starting point is:
+
+    -   Confirm what business the organization is in.
+
+    -   Then identify and enumerate all of the products and services the organization produces/performs in being in that business
+
+    -   Then the identification and enumeration of the business processes that produce those products and services
+
+    -   Then identification and enumeration of the tasks, knowledge, skills, qualifications necessary to perform those business processes.
+
+    -   Finally determine how to apportion those tasks, knowledge, skills, and qualifications into individual jobs and positions. A 'job' description then is the documentation of assigning tasks and knowledges within the business processes that lead to the provision of products and services to those individual jobs and positions. That way you can go both directions (up and down) in job analysis/work analysis for the organization. You 'could' represent these via an organization chart- but you would probably find it equally and possibly more useful to represent your organization via business process charts and identify (in some manner) how the positions are integrated into them. Each job is a 'subset' of those tasks and knowledges.
+
+-   Understand what measurement means in relation to job information and job analyses and realize much is measurable and quantifying that job information. This includes:
+
+    -   understanding the presence or absence of tasks, knowledge, and skills, qualifications in any 'one' job out of the total picture the tasks knowledge, skills and qualifications needed is a form of measurement
+
+    -   understanding that capturing of 'levels' of knowledge, skills, and qualifications on some sort of scale is in fact -measurement.
+
+    -   understanding that time spent on various tasks is measurement
+
+-   Understand that when you standardize the job information and quantify it, you are enabling that information to be more readily stored in a database.
+
+-   Understand that when job information is structured and standardized in a database, this is what enables much more extensive and robust use of that information.
+
+-   **Understand that when job information is structured, standardized, and quantified in a database that web applications can be developed to serve out much of the functionality expected from the traditional approaches but also 'much more'.** It's actually a two way street here- if we change to a new paradigm for job analysis- the tools supporting it must change. Traditional job analysis fundamentally requires job descriptions, paper documents, word docs on a file server, or HTML docs on a web server. Data-driven requires databases and computer applications to manage, house, process an analyze the job information.
+
+## 6. What Are New Possibilities When We Become More Data-Driven in Job Analysis and Job Descriptions?
+
+### 6.1 Administrative Related
+
+-   Job Descriptions that are dynamically kept up to date. Storage in a database means they are as current as the last time they were update and from a central source
+
+-   Job Descriptions that are often available in a variety of formats- HTML, Word, PDF etc
+
+-   Job Descriptions that are keyword searchable
+
+-   Job Descriptions that can be created from online wizards that guide the process or printed questionnaires to select job content from.
+
+-   Security separation from those who are consumers of job information from those responsible for creating the job content in web applications.
+
+### 6.2 More Organizational Impact Related
+
+-   Better organizational HR planning processes - through detailed defining gaps/differences/ similarities between positions for planning purposes including career planning and succession planning
+
+-   Better organizational strategic planning processes - by helping the organization understand the effect on existing FTEs of dropping, maintaining, and adding new product and service expectations will have on the organization.
+
+-   Much more robust HR Management and Decision-Making processes - by putting job information more in the form necessary to be able to be used in machine learning and artificial intelligence to complement the current strengths of this in the organization.
+
+-   Better HR and organization performance through recognizing that organizing job information around products/services and their corresponding business process provides a paradigm for naturally gravitating the organization in the direction of ongoing continuous improvement.
+
+## Conclusion
+
+As mentioned earlier, my intent in this blog article is to stimulate 'thinking differently' as to how we understand this area of HR **and** give some thought as to whether we should operationalize it differently in our HR practices. Are we motivated as HR professionals to do that?
+
+I have often had the thought that many of us might unintentionally be doing a 'Rip Van Winkle' when it comes to some of our HR practices and methodologies. We could go to sleep for 50 years, wake up, and still do HR work with our skill sets because so little changes.
+
+The changes that 'do occur' are often externally imposed on the organization and HR profession in the form of meeting changes in legislative regulatory requirements. It often isn't driven with an eye of stepping back and asking fundamental questions about our practices and methodologies on how we could do them better.
+
+-   How often do we go to annual HR conferences with an intent of and an eye toward truly learning new skills and applying them to change the way we conduct the business of HR vis-a-vis seeing the latest vendor options that promise to do things for us but require no changes in our skill sets?
+
+-   How often does HR complain about not being taken seriously or being represented at the executive table?
+
+As much as I believe that HR representation is essential at the executive level, it's much more likely that representation will be seen as more credible when we actually exhibit leadership- through continuous improvement of our HR practices and methodologies, and enable the whole organization to perform better as a result. **Continuous improvement is intentional and proactive**. Too many traditional HR practices are reactive, and demonstrate little, if any, innovation.
+
+Technology can support innovation in our HR practices. In fact it's increasingly fundamental to it. Change in our paradigm will require changes in methodologies and supporting tools-technological or otherwise. The biggest obstacle to innovation is often simply being willing to 'think differently'.
+
+'Data-driven', 'evidence-based' HR management and decision making (HR Analytics) helps to mitigate complacency with the status quo. And changing our paradigm of Job Analysis and Descriptions is also very much part of that picture.
+
+Food for thought ...
+
+## Quick Addendum- For Anyone Interested
+
+As I mentioned above job analysis and description rely on methodologies and tools regardless of traditional or new paradigms.
+
+I have been prototyping a 'proof-of-concept' web application and database for data-driven job analysis as a hobby. (Part of my software development interests and skills). The prototype is being written using Microsoft's .Net technologies in C#. If and when I get most of the base functionality working, I **might** put it out in the public domain under the GPL license on Github.com. The intent would be to illustrate [one way]{.underline} of how a new paradigm could actually be operationalized for use in job analysis and descriptions.
+
+If I succeed in that, the documentation of that 'proof of concept' would be the subject of a possible future blog article.
