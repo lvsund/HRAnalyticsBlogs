@@ -57,7 +57,10 @@
     "PAExampleUsingR.epub": "30d8b7fd"
   },
   "posts/PAExampleChurn/PAExampleChurn.qmd": {
-    "PAExampleChurn.html": "eeff5bf9"
+    "PAExampleChurn.html": "eeff5bf9",
+    "PAExampleChurn.tex": "90aa950a",
+    "PAExampleChurn.docx": "d391ed2e",
+    "PAExampleChurn.epub": "5bcf0296"
   },
   "posts/PAExampleClassification/PAExampleClassification.qmd": {
     "PAExampleClassification.html": "794d4b86",
