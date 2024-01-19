@@ -75,7 +75,10 @@
     "HRAnalyticsPrepare.epub": "e5485ad6"
   },
   "posts/kaggle/kaggle.qmd": {
-    "kaggle.html": "266c02e8"
+    "kaggle.html": "266c02e8",
+    "kaggle.tex": "2d8612c4",
+    "kaggle.docx": "4d699756",
+    "kaggle.epub": "84110bb7"
   },
   "posts/Doing HRA1/DoingHRA1.qmd": {
     "DoingHRA1.html": "54866c19",
