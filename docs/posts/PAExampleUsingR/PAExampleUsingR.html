@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lyndon Sundmark, MBA">
+<meta name="dcterms.date" content="2016-02-28">
+
+<title>HRAnalyticsBlogs - People Analytics - An Example Using R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">HRAnalyticsBlogs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">People Analytics - An Example Using R</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">HR Analytics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Lyndon Sundmark, MBA </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 28, 2016</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="PAExampleUsingR.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="PAExampleUsingR.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="PAExampleUsingR.epub"><i class="bi bi-file"></i>ePub</a></li></ul></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Over last 18 months or so I have been writing LinkedIn blog articles on analytics and their potential use for HR. Most of these articles have hinted that there are many obstacles to the application of analytics to HR.</p>
+<p>These obstacles for widespread evidence and use are predominantly human not technical:</p>
+<ul>
+<li><strong>Data generation is not the problem.</strong> HR data availability and accessability has never been greater to HR professionals.</li>
+<li><strong>Technology is not problem.</strong> Data science, machine learning, and analytic tools are exploding on to the scene these days. Whether it is enhancements to the R statistical package, or other statistical packages, or developments in other tools like Microsoft Azure Machine Learning or RapidMiner as examples- there have never been more tools to be brought to bear on HR data.</li>
+<li><strong>Application of the tools on the data IS the problem.</strong> (In this case lack thereof).</li>
+</ul>
+<p>This lack of application can occur from:</p>
+<ol type="1">
+<li><p><strong>The HR profession not seeing that most of HR is highly technical.</strong> In the past HR might have acknowleged the traditional areas such as salary and wage administration, or labor relations/collective bargaining costing was technical because it was seen as heavily dependent on calculation and data. But for most of the rest of the HR domain HR professionals think its non-technical- whether it be recruitment,training, Health and Safety, Benefits, engagement. To be sure, there are the ‘human’ sides of all areas of HR, but they are all ’as much technical as well. The technical has far too long being ignored by HR professionals.</p>
+<p>Dr.&nbsp;John Sullivan, in the following article:</p>
+<p>http://www.tlnt.com/2013/02/26/how-google-is-using-people-analytics-to-completely-reinvent-hr/</p>
+<p>describes this as ‘reliance on relationships’. ‘Relationships are the antithesis of analytical decsions making.’ .</p></li>
+<li><p><strong>Not enough HR professionals seeking the informational and analytical side of the picture in their university/college HR studies</strong> in preparation for the HR field, and not enough universities/colleges offering studies in People Analytics.</p></li>
+<li><p><strong>People Analytics- where it exists- being defining too narrowly as just HR metrics or predictive analytic tools to the HR domain.</strong> These are part of the picture-yes- but ‘data driven’ can include much more of the statistical methods than just predictive.</p></li>
+<li><p><strong>Obstacles that organizations inadvertently put in the way</strong> - the ‘sacred’ requirement to develop a business case to ‘get’ resources to do any of this- particularly when ‘starting’ can be relatively free to develop proof of concepts.</p></li>
+</ol>
+<p>I am a firm believer in ‘skunkworks’ projects-making do with, and showing what can be done with, what you already have or with what can be obtained free. <strong>You will often need to show by simple example what can be done</strong> to justify more elaborate formal initiatives later and request additional formal resources.</p>
+<p>Its in that spirit, I wanted to walk through an example of People Analytics, and using free tools. <strong>This wont be a full fledged best practices or even a robust example.</strong> Rather it is intended to be a simple example to illustrate the process and some of the tools. Best practices and robustness comes with learning, use, and mastery over a period of time. Most of us need to start ‘simply’ to start ‘somewhere’.</p>
+<p>This example will be on one particular HR metric- absenteeism. <strong>The data will be contrived.</strong> But it will illustrate very rudimentary People Analytics using the R statistical programming language.</p>
+<p>But before we get into this though, we should cover some basic helpful definitions and frameworks. These will help show why we are doing what we are doing.</p>
+<p>#Terminology</p>
+<p>##People Analytics First of all, I do prefer the term ‘People Analytics’ as compared to some of the other terms used interchangeably. Per the title, I am going to use the term ‘People Analytics’ the way its implicitly defined in the previous article link provided</p>
+<p><strong>People analytics is a data-driven approach to managing people at work.</strong></p>
+<p>‘Data-driven’ is key. It dispels any notion that data and measurement are not part of managing people. (Sorry to those of you who felt managing people was restricted only to ‘reliance on relationships’)</p>
+<p><strong>People Analytics is what happens when you apply Data Science and its principles to the realm of People Management (HR).</strong></p>
+<p>It means ‘analysis of data’ <strong>then</strong> ‘action’. And it means analysis <strong>and</strong> action. You are managing people through being ‘data driven’ A lot of organizations who try to get people analytics started, get stuck at creation of HR metrics and the use of Business Intelligence tools. These can be and are part of the people analytics picture, to be sure. But slicing and dicing , graphics and visualizations by themselves only take you so far. The addition of statistical analyses and taking informed action on your data are what will propel you forward.</p>
+<p>Another reason why I like this definition is that ‘data-driven’ doesn’t unintentionally restrict the type of analyses we do to be data driven. This can include exploratory analysis, predictive analysis, and experimental design. (Often people think only ‘predictive’ in the context of ‘data driven’.)</p>
+<p>Because we mention ‘Data Science’ in the context of People Analytics, it is important to define it next to understand why it is so tied to People Analytics.</p>
+<p>##Data Science I will share a few definitions.</p>
+<ul>
+<li><p>In their book Practical Data Science With R by Nina Zumel and John Mount https://www.manning.com/books/practical-data-science-with-r on page xix, they define data science as : ‘. managing the process that can transform hypotheses and data into actionable predictions.’</p></li>
+<li><p>Another definition is from the ‘Field Guide to Data Science’ by Booz, Allen , Hamilton- page 21: http://www.boozallen.com/insights/2015/12/data-science-field-guide-second-edition They define data science as : ‘the art of turning data in actions’</p></li>
+<li><p>And still another definition from ‘Data Science For Business’ by Foster Provost And Tom Fawcett: http://shop.oreilly.com/product/0636920028918.do Data Science is a set of fundamental principles that guide the extraction of knowledge from data (page 2) . The ultimate goal of data science .improving decision making. (page 5)</p></li>
+</ul>
+<p>All of these definitions clearly line up as being totally consistent with the above definition provided for People Analytics. It means transforming HR hunches, guesses (or really hypotheses) into information/data , analyses, and management actions- actions supported by the data.</p>
+<p>#A Framework</p>
+<p>Zumel/Mount ‘s definition mentions ’process’. Processes are always require to ‘transform’ something from ‘what it is’ to ‘what it is to become’ - ‘data’ into ‘actions’. This becomes a framework that can guide our efforts and understanding. In their book ‘Practical Data Science With R’ they define the following process for data science on page 6:</p>
+<p>Data Science</p>
+<ul>
+<li><strong>Define a goal</strong></li>
+<li><strong>Collect and Manage Data</strong></li>
+<li><strong>Build The Model</strong></li>
+<li><strong>Evaluate and Critique Model</strong></li>
+<li><strong>Present Results and Document</strong></li>
+<li><strong>Deploy Model</strong></li>
+</ul>
+<p>I don’t want to belabor the above process significantly in this blog article, because entire books have and are being written on the subjects of data science, predictive analytics, data mining etc. But I will make some general comments about the above steps to set the stage for the illustrative, simple ,rudimentary R example to follow.</p>
+<ol type="1">
+<li><strong>Define a goal</strong> ,as mentioned above, means identifying first what HR management business problem you are trying to solve. Without a problem/issue we don’t have a goal.</li>
+<li><strong>Collect and Manage data.</strong> At its simplest, you want a ‘dataset’ of information perceived to be relevant to the problem. The collection and management of data could be a simple extract from the corporate Human Resource Information System, or an output from an elaborate Data Warehousing/Business Intelligence tool used on HR information. For purpose of this blog article illustration we will use a simple CSV file. It also involves exploring the data both for data quality issues, and for an initial look at what the data may be telling you</li>
+<li><strong>Build The Model.</strong> This step really means, after you have defined the HR business problem or goal you are trying to achieve, you pick a data mining approach/tool that is designed to address that type of problem. With absenteeism as an HR issue, are you trying to predict employee with propensity to high absenteeism from those who aren’t? Are you trying to predict future absenteeism rates? Are you trying to define what is normal absenteeism from that which is atypical or and anomaly? The business problem/goal determine the appropriate data mining tools to consider. Not exhaustive as a list, but common data mining approaches used in modelling are classification,regression, anomaly detection, time series, clustering, association analyses to name a few. These approaches take information/data as inputs , run them through statistical algorithms, and produce output.</li>
+<li><strong>Evaluate and Critique Model.</strong> Each data mining approach can have many different statistical algorithms to bring to bear on the data. The evaluation is both what algorithms provide the most consistent accurate predictions on new data, and do we have all the relevant data or do we need more types of data to increase predictive accuracy of model on new data. This can be necessarily repetitive and circular activity over time to improve the model</li>
+<li><strong>Present Results And Document.</strong> When we have gotten out model to an acceptable ,useful predictive level, we document our activity and present results. The definition of acceptable and useful is really relative to the organization, but in all cases would mean , results show improvement over what would have been otherwise. The principle behind data ‘science’ like any science, is that with the same data, people should be able to reproduce our findings/ results.</li>
+<li><strong>Deploy Model.</strong> The whole purpose of building the model ( which is on existing data) is to:</li>
+</ol>
+<ul>
+<li>use the model on future data when it becomes available, to predict or prevent something from happening before it occurs or</li>
+<li>to better understand our existing business problem to tailor more specific responses</li>
+</ul>
+<p>Both R and other solutions allow you to save the model, so it can be used on other data. Lets now turn to a rudimentary People Analytics (Data driven People Management(HR) example in R.</p>
+<p><strong>This blog article is ‘Part 1’.</strong> The length of covering this in a single article would push the limits of comfortable reading length for a single article. So <strong>part 1 will cover the first 2 steps</strong> of the above process.</p>
+<p>#An R Example</p>
+<p>##1.Define the goal (or HR business problem/issue).</p>
+<p>A hypothetical company MFG has decided that it needs to at absenteeism. It wants answers to the following questions:</p>
+<ul>
+<li><strong>What is its rate of absenteeism?</strong></li>
+<li><strong>Does anyone have excessive absenteeism?</strong></li>
+<li><strong>Is is the same across the organization?</strong></li>
+<li><strong>Does it vary by gender?</strong></li>
+<li><strong>Does it vary by length of service or age?</strong> Its guesses are that initially age and length of service may be related to absenteeism rates.</li>
+<li><strong>Can it predict next year’s absenteeism?</strong></li>
+<li><strong>If so, how well can it predict?</strong></li>
+<li><strong>Can we reduce our absenteeism?</strong></li>
+</ul>
+<p>If they can make future People Management decisions “driven” by what the data is telling them, then they will feel they have started the People Analytics journey.</p>
+<p>##2.Collect and Manage Data.</p>
+<p>Let us suppose this is a skunkworks project. Formal separate resources have not be identified for this initiative. Only an initial look at recent data is possible. The HRIS system is able to provide some rudimentary information covering absences only for 2015 It was able to generate the following information as a CSV file (comma separated values):</p>
+<ul>
+<li>EmployeeNumber</li>
+<li>Surname</li>
+<li>GivenName</li>
+<li>Gender</li>
+<li>City</li>
+<li>JobTitle</li>
+<li>DepartmentName</li>
+<li>StoreLocation</li>
+<li>Division</li>
+<li>Age</li>
+<li>LengthService</li>
+<li>AbsentHours</li>
+<li>BusinessUnit</li>
+</ul>
+<p>###Let’s read in the data provided</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MFGEmployees &lt;- read.csv("~/R Files/MFGEmployees4.csv")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>MFGEmployees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"MFGEmployees4.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(MFGEmployees,<span class="at">width=</span><span class="dv">80</span>,<span class="at">strict.width =</span><span class="st">"wrap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   8336 obs. of  13 variables:
+$ EmployeeNumber: int 1 2 3 4 5 6 7 8 9 10 ...
+$ Surname : chr "Gutierrez" "Hardwick" "Delgado" "Simon" ...
+$ GivenName : chr "Molly" "Stephen" "Chester" "Irene" ...
+$ Gender : chr "F" "M" "M" "F" ...
+$ City : chr "Burnaby" "Courtenay" "Richmond" "Victoria" ...
+$ JobTitle : chr "Baker" "Baker" "Baker" "Baker" ...
+$ DepartmentName: chr "Bakery" "Bakery" "Bakery" "Bakery" ...
+$ StoreLocation : chr "Burnaby" "Nanaimo" "Richmond" "Victoria" ...
+$ Division : chr "Stores" "Stores" "Stores" "Stores" ...
+$ Age : num 32 40.3 48.8 44.6 35.7 ...
+$ LengthService : num 6.02 5.53 4.39 3.08 3.62 ...
+$ AbsentHours : num 36.6 30.2 83.8 70 0 ...
+$ BusinessUnit : chr "Stores" "Stores" "Stores" "Stores" ...</code></pre>
+</div>
+</div>
+<p>The first thing we should do is check on quality of data. Data will rarely be clean or perfect when we receive it. Either questionnable data should be corrected(preferred) or deleted.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MFGEmployees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> EmployeeNumber   Surname           GivenName            Gender         
+ Min.   :   1   Length:8336        Length:8336        Length:8336       
+ 1st Qu.:2085   Class :character   Class :character   Class :character  
+ Median :4168   Mode  :character   Mode  :character   Mode  :character  
+ Mean   :4168                                                           
+ 3rd Qu.:6252                                                           
+ Max.   :8336                                                           
+     City             JobTitle         DepartmentName     StoreLocation     
+ Length:8336        Length:8336        Length:8336        Length:8336       
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+   Division              Age         LengthService      AbsentHours    
+ Length:8336        Min.   : 3.505   Min.   : 0.0121   Min.   :  0.00  
+ Class :character   1st Qu.:35.299   1st Qu.: 3.5759   1st Qu.: 19.13  
+ Mode  :character   Median :42.115   Median : 4.6002   Median : 56.01  
+                    Mean   :42.007   Mean   : 4.7829   Mean   : 61.28  
+                    3rd Qu.:48.667   3rd Qu.: 5.6239   3rd Qu.: 94.28  
+                    Max.   :77.938   Max.   :43.7352   Max.   :272.53  
+ BusinessUnit      
+ Length:8336       
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   </code></pre>
+</div>
+</div>
+<p>The only thing that stands out initially is that age has some questionable data- some one who is 3 and someone who is 77. The range for purposes of this example should be 18 to 65 .Normally you would want to clean the data by getting the correct information and then changing it. For expediency of the example we will delete the problem records</p>
+<p>###Clean the data</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="ot">&lt;-</span><span class="fu">subset</span>(MFGEmployees,MFGEmployees<span class="sc">$</span>Age<span class="sc">&gt;=</span><span class="dv">18</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="ot">&lt;-</span><span class="fu">subset</span>(MFGEmployees,MFGEmployees<span class="sc">$</span>Age<span class="sc">&lt;=</span><span class="dv">65</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now lets summarize again with cleaned up data</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MFGEmployees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> EmployeeNumber   Surname           GivenName            Gender         
+ Min.   :   1   Length:8165        Length:8165        Length:8165       
+ 1st Qu.:2081   Class :character   Class :character   Class :character  
+ Median :4166   Mode  :character   Mode  :character   Mode  :character  
+ Mean   :4165                                                           
+ 3rd Qu.:6245                                                           
+ Max.   :8336                                                           
+     City             JobTitle         DepartmentName     StoreLocation     
+ Length:8165        Length:8165        Length:8165        Length:8165       
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+   Division              Age        LengthService       AbsentHours    
+ Length:8165        Min.   :18.20   Min.   : 0.05328   Min.   :  0.00  
+ Class :character   1st Qu.:35.46   1st Qu.: 3.58261   1st Qu.: 20.07  
+ Mode  :character   Median :42.10   Median : 4.59800   Median : 55.86  
+                    Mean   :41.99   Mean   : 4.78887   Mean   : 60.47  
+                    3rd Qu.:48.51   3rd Qu.: 5.62358   3rd Qu.: 93.38  
+                    Max.   :65.00   Max.   :43.73524   Max.   :252.19  
+ BusinessUnit      
+ Length:8165       
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   </code></pre>
+</div>
+</div>
+<p>###Transform the data: Now calculate absenteeism rate by dividing the absent hours by total standard hours for the year (52 weeks* 40 hours =2080)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="sc">$</span>AbsenceRate<span class="ot">&lt;-</span>MFGEmployees<span class="sc">$</span>AbsentHours<span class="sc">/</span><span class="dv">2080</span><span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(MFGEmployees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   8165 obs. of  14 variables:
+ $ EmployeeNumber: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ Surname       : chr  "Gutierrez" "Hardwick" "Delgado" "Simon" ...
+ $ GivenName     : chr  "Molly" "Stephen" "Chester" "Irene" ...
+ $ Gender        : chr  "F" "M" "M" "F" ...
+ $ City          : chr  "Burnaby" "Courtenay" "Richmond" "Victoria" ...
+ $ JobTitle      : chr  "Baker" "Baker" "Baker" "Baker" ...
+ $ DepartmentName: chr  "Bakery" "Bakery" "Bakery" "Bakery" ...
+ $ StoreLocation : chr  "Burnaby" "Nanaimo" "Richmond" "Victoria" ...
+ $ Division      : chr  "Stores" "Stores" "Stores" "Stores" ...
+ $ Age           : num  32 40.3 48.8 44.6 35.7 ...
+ $ LengthService : num  6.02 5.53 4.39 3.08 3.62 ...
+ $ AbsentHours   : num  36.6 30.2 83.8 70 0 ...
+ $ BusinessUnit  : chr  "Stores" "Stores" "Stores" "Stores" ...
+ $ AbsenceRate   : num  1.76 1.45 4.03 3.37 0 ...</code></pre>
+</div>
+</div>
+<p>We can now see our metric AbsenceRate has been calculated and created.</p>
+<p>###Explore The Data Part of collecting and managing data is ‘Exploratory’ Analysis.</p>
+<p>Lets start with bar graphs of some of the categorical data</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">table</span>(MFGEmployees<span class="sc">$</span>BusinessUnit)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">main =</span> <span class="st">"EmployeeCount By Business Units"</span>, <span class="at">horiz =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">table</span>(MFGEmployees<span class="sc">$</span>Gender)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">main =</span> <span class="st">"EmployeeCount By Gender"</span>, <span class="at">horiz =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">table</span>(MFGEmployees<span class="sc">$</span>Division)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">main =</span> <span class="st">"EmployeeCount By Division"</span>, <span class="at">horiz =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Lets ask some of our questions answered through this exploratory analysis.</p>
+<p><strong>First of all, what is our absenteeism rate?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(MFGEmployees<span class="sc">$</span>AbsenceRate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.907265</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> AbsenceRate, <span class="at">x =</span><span class="dv">1</span>), <span class="at">data =</span> MFGEmployees) <span class="sc">+</span> <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The absence rate is 2.9.</p>
+<p><strong>Does anyone have excessive absenteeism?</strong></p>
+<p>The boxplot shows the mean and standard deviation of the data. Any observations beyond 3 standard deviations shows up as dots. So at least under that definition of outliers, some people show way more absenteeism than 99% of employees</p>
+<p><strong>Does it vary across the organization?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#library(RcmdrMisc)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> AbsenceRate, <span class="at">x =</span> Gender), <span class="at">data =</span> MFGEmployees) <span class="sc">+</span> <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>AnovaModel<span class="fl">.1</span> <span class="ot">&lt;-</span><span class="fu">aov</span>(AbsenceRate <span class="sc">~</span> Gender, <span class="at">data=</span>MFGEmployees)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(AnovaModel<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Df Sum Sq Mean Sq F value Pr(&gt;F)    
+Gender         1    496   495.6   97.77 &lt;2e-16 ***
+Residuals   8163  41379     5.1                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(MFGEmployees<span class="sc">$</span>AbsenceRate, <span class="fu">list</span>(MFGEmployees<span class="sc">$</span>Gender), <span class="at">FUN=</span>mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Group.1        x
+1       F 3.157624
+2       M 2.664813</code></pre>
+</div>
+</div>
+<p>It varies significantly by Gender.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> AbsenceRate, <span class="at">x =</span> Division), <span class="at">data =</span> MFGEmployees) <span class="sc">+</span> <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>AnovaModel<span class="fl">.2</span> <span class="ot">&lt;-</span><span class="fu">aov</span>(AbsenceRate <span class="sc">~</span> Division, <span class="at">data=</span>MFGEmployees)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(AnovaModel<span class="fl">.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Df Sum Sq Mean Sq F value  Pr(&gt;F)   
+Division       5     91  18.240   3.562 0.00322 **
+Residuals   8159  41783   5.121                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(MFGEmployees<span class="sc">$</span>AbsenceRate, <span class="fu">list</span>(MFGEmployees<span class="sc">$</span>Division), <span class="at">FUN=</span>mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Group.1        x
+1            Executive 2.323580
+2 FinanceAndAccounting 1.921890
+3       HumanResources 2.651743
+4             InfoTech 1.925995
+5                Legal 2.471724
+6               Stores 2.920856</code></pre>
+</div>
+</div>
+<p>It varies significantly by Division.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>AnovaModel<span class="fl">.3</span> <span class="ot">&lt;-</span><span class="fu">aov</span>(AbsenceRate <span class="sc">~</span>Division<span class="sc">*</span>Gender, <span class="at">data=</span>MFGEmployees)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(AnovaModel<span class="fl">.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  Df Sum Sq Mean Sq F value  Pr(&gt;F)    
+Division           5     91    18.2   3.602 0.00295 ** 
+Gender             1    496   495.9  97.942 &lt; 2e-16 ***
+Division:Gender    5      5     0.9   0.178 0.97078    
+Residuals       8153  41283     5.1                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(MFGEmployees<span class="sc">$</span>AbsenceRate, <span class="fu">list</span>(MFGEmployees<span class="sc">$</span>Division,MFGEmployees<span class="sc">$</span>Gender), <span class="at">FUN=</span>mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                Group.1 Group.2        x
+1             Executive       F 2.976419
+2  FinanceAndAccounting       F 2.172804
+3        HumanResources       F 3.014491
+4              InfoTech       F 3.298112
+5                 Legal       F 3.298112
+6                Stores       F 3.169049
+7             Executive       M 1.779546
+8  FinanceAndAccounting       M 1.634077
+9        HumanResources       M 2.214311
+10             InfoTech       M 1.773538
+11                Legal       M 2.058530
+12               Stores       M 2.680788</code></pre>
+</div>
+</div>
+<p>If varies significantly by the interaction of gender and division.</p>
+<p>These are just a handful of the categorical summaries we could do.</p>
+<p><strong>Does AbsenceRate vary by length of service and age?</strong></p>
+<p>Scatterplots and correlations help answer this.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age,<span class="at">y =</span> AbsenceRate),<span class="at">data=</span>MFGEmployees) <span class="sc">+</span> </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age,<span class="at">y =</span> AbsenceRate),<span class="at">data=</span>MFGEmployees,<span class="at">method =</span> <span class="st">'lm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(MFGEmployees<span class="sc">$</span>Age, MFGEmployees<span class="sc">$</span>AbsenceRate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8246129</code></pre>
+</div>
+</div>
+<p>There is a strong correlation of Age and Absence Rate</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggplot2)</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot() + geom_point(aes(x = LengthService,y = AbsenceRate),data=MFGEmployees) + </span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_smooth(aes(x = LengthService,y = AbsenceRate),data=MFGEmployees,method = 'lm')</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co"># cor(MFGEmployees$LengthService, MFGEmployees$AbsenceRate)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There is not a strong correlation between length of service and Absence Rate.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> LengthService,<span class="at">y =</span> Age),<span class="at">data=</span>MFGEmployees) <span class="sc">+</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> LengthService,<span class="at">y =</span> Age),<span class="at">data=</span>MFGEmployees,<span class="at">method =</span> <span class="st">'lm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(MFGEmployees<span class="sc">$</span>Age, MFGEmployees<span class="sc">$</span>LengthService)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.05623405</code></pre>
+</div>
+</div>
+<p>There is not much correlation between age and length of service either.</p>
+<p>This is as far as we will go in this article. We will defer the rest of the analyses to the part 2 blog article. In Part 1 of this blog article</p>
+<p>we:</p>
+<ul>
+<li>Indicated that People Analytics is something that organizations can do themselves</li>
+<li>Indicated that it can be done in the R programming language as at least one possible tool</li>
+<li>Provided some basic terminology for People Analytics and Data Science.</li>
+<li>Provided a sample suggested framework for Data Science.</li>
+<li>Covered the first 2 steps of that framework for a People Analytics example- defining the problem and collecting and managing data.</li>
+</ul>
+<p>Let us know move on to step 3.</p>
+<p>Reload the data and adjust it for corrections again</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>MFGEmployees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"MFGEmployees4.csv"</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(MFGEmployees,"~/R Files/MFGEmployees4.csv")</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="sc">$</span>AbsenceRate<span class="ot">&lt;-</span>MFGEmployees<span class="sc">$</span>AbsentHours<span class="sc">/</span><span class="dv">2080</span><span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MFGEmployees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> EmployeeNumber   Surname           GivenName            Gender         
+ Min.   :   1   Length:8336        Length:8336        Length:8336       
+ 1st Qu.:2085   Class :character   Class :character   Class :character  
+ Median :4168   Mode  :character   Mode  :character   Mode  :character  
+ Mean   :4168                                                           
+ 3rd Qu.:6252                                                           
+ Max.   :8336                                                           
+     City             JobTitle         DepartmentName     StoreLocation     
+ Length:8336        Length:8336        Length:8336        Length:8336       
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+   Division              Age         LengthService      AbsentHours    
+ Length:8336        Min.   : 3.505   Min.   : 0.0121   Min.   :  0.00  
+ Class :character   1st Qu.:35.299   1st Qu.: 3.5759   1st Qu.: 19.13  
+ Mode  :character   Median :42.115   Median : 4.6002   Median : 56.01  
+                    Mean   :42.007   Mean   : 4.7829   Mean   : 61.28  
+                    3rd Qu.:48.667   3rd Qu.: 5.6239   3rd Qu.: 94.28  
+                    Max.   :77.938   Max.   :43.7352   Max.   :272.53  
+ BusinessUnit        AbsenceRate     
+ Length:8336        Min.   : 0.0000  
+ Class :character   1st Qu.: 0.9196  
+ Mode  :character   Median : 2.6926  
+                    Mean   : 2.9463  
+                    3rd Qu.: 4.5329  
+                    Max.   :13.1024  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="ot">&lt;-</span><span class="fu">subset</span>(MFGEmployees,MFGEmployees<span class="sc">$</span>Age<span class="sc">&gt;=</span><span class="dv">18</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>MFGEmployees<span class="ot">&lt;-</span><span class="fu">subset</span>(MFGEmployees,MFGEmployees<span class="sc">$</span>Age<span class="sc">&lt;=</span><span class="dv">65</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>##3. Build The model One of the questions asked in the defining the goal step was ‘whether it was possible to <strong>predict</strong> absenteeism?’</p>
+<p>Absence Rate is a numeric continuous value. In the ‘Building a model’ step we have to chose what models/statistical algorithms to use. Prediction of a numerics continous values suggests a couple of models that could be brought to bear: Regression trees and linear regression. There are many more but for purposes of this article we will look at these</p>
+<p>###3.1 Regression Trees Regression Trees will allow for use of both categorical and numeric values as predictors.Lets choose the following data as potential predictors in this analysis:</p>
+<ul>
+<li>Gender</li>
+<li>Department Name</li>
+<li>Store Location</li>
+<li>Division</li>
+<li>Age</li>
+<li>Length of Service</li>
+<li>Business Unit</li>
+</ul>
+<p><strong>Absence Rate</strong> will be the the ‘target’ or thing to be predicted.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rattle)   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: tibble</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: bitops</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rattle: A free graphical interface for data science with R.
+Version 5.5.1 Copyright (c) 2006-2021 Togaware Pty Ltd.
+Type 'rattle()' to shake, rattle, and roll your data.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr) </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>building <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>scoring  <span class="ot">&lt;-</span> <span class="sc">!</span> building</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>crv<span class="sc">$</span>seed <span class="ot">&lt;-</span> <span class="dv">42</span> </span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>MYdataset <span class="ot">&lt;-</span> MFGEmployees</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(MYdataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   8165 obs. of  14 variables:
+ $ EmployeeNumber: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ Surname       : chr  "Gutierrez" "Hardwick" "Delgado" "Simon" ...
+ $ GivenName     : chr  "Molly" "Stephen" "Chester" "Irene" ...
+ $ Gender        : chr  "F" "M" "M" "F" ...
+ $ City          : chr  "Burnaby" "Courtenay" "Richmond" "Victoria" ...
+ $ JobTitle      : chr  "Baker" "Baker" "Baker" "Baker" ...
+ $ DepartmentName: chr  "Bakery" "Bakery" "Bakery" "Bakery" ...
+ $ StoreLocation : chr  "Burnaby" "Nanaimo" "Richmond" "Victoria" ...
+ $ Division      : chr  "Stores" "Stores" "Stores" "Stores" ...
+ $ Age           : num  32 40.3 48.8 44.6 35.7 ...
+ $ LengthService : num  6.02 5.53 4.39 3.08 3.62 ...
+ $ AbsentHours   : num  36.6 30.2 83.8 70 0 ...
+ $ BusinessUnit  : chr  "Stores" "Stores" "Stores" "Stores" ...
+ $ AbsenceRate   : num  1.76 1.45 4.03 3.37 0 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>MYinput <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"DepartmentName"</span>, <span class="st">"StoreLocation"</span>, <span class="st">"Division"</span>,</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Age"</span>, <span class="st">"LengthService"</span>, <span class="st">"BusinessUnit"</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>MYnumeric <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"LengthService"</span>)</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>MYcategoric <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"DepartmentName"</span>, <span class="st">"StoreLocation"</span>, <span class="st">"Division"</span>,</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>     <span class="st">"BusinessUnit"</span>)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>MYtarget  <span class="ot">&lt;-</span> <span class="st">"AbsenceRate"</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>MYrisk    <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>MYident   <span class="ot">&lt;-</span> <span class="st">"EmployeeNumber"</span></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>MYignore  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Surname"</span>, <span class="st">"GivenName"</span>, <span class="st">"City"</span>, <span class="st">"JobTitle"</span>, <span class="st">"AbsentHours"</span>)</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>MYweights <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart, <span class="at">quietly=</span><span class="cn">TRUE</span>)</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(crv<span class="sc">$</span>seed)</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>MYrpart <span class="ot">&lt;-</span> <span class="fu">rpart</span>(AbsenceRate <span class="sc">~</span> .,</span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>MYdataset[, <span class="fu">c</span>(MYinput, MYtarget)],</span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">method=</span><span class="st">"anova"</span>,</span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">parms=</span><span class="fu">list</span>(<span class="at">split=</span><span class="st">"information"</span>),</span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">control=</span><span class="fu">rpart.control</span>(<span class="at">minsplit=</span><span class="dv">10</span>,</span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">maxdepth=</span><span class="dv">10</span>,</span>
+<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">usesurrogate=</span><span class="dv">0</span>, </span>
+<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">maxsurrogate=</span><span class="dv">0</span>))</span>
+<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a><span class="fu">fancyRpartPlot</span>(MYrpart, <span class="at">main=</span><span class="st">"Decision Tree MFGEmployees $ AbsenceRate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The regression decision tree shows that age is a big factor in determining absence rate with gender playing a small part in one of the age ranges: &gt;43 and &lt;52 with males having a lower absence rate in this group. Almost all categorical information other than gender doesnt look like its helps in prediction.</p>
+<p>Now lets look at linear regression as another model. The restriction in linear regression is that it can only accept non-categorical variables. Categorical variables can sometimes be made numeric through transformation, but that is beyond the scope of this article.</p>
+<p>###3.2 Linear Regression</p>
+<p>In linear regression, then, we will need to restrict it to numeric variables:</p>
+<ul>
+<li>Age</li>
+<li>Length of Service</li>
+</ul>
+<p>being used to predict absence rate.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Linear Regression Model</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>RegressionCurrentData <span class="ot">&lt;-</span> <span class="fu">lm</span>(AbsenceRate<span class="sc">~</span>Age<span class="sc">+</span>LengthService, <span class="at">data=</span>MFGEmployees)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(RegressionCurrentData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = AbsenceRate ~ Age + LengthService, data = MFGEmployees)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.3578 -0.8468 -0.0230  0.8523  5.1030 
+
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   -5.190213   0.068959  -75.27   &lt;2e-16 ***
+Age            0.202593   0.001510  134.16   &lt;2e-16 ***
+LengthService -0.085309   0.005652  -15.09   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.264 on 8162 degrees of freedom
+Multiple R-squared:  0.6887,    Adjusted R-squared:  0.6886 
+F-statistic:  9027 on 2 and 8162 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>The summary shows an adjusted R-squared of .68 which means approximately 68% of the variance is accounted by age and length of service. The variables are both significant at Pr(&gt;|t|) of &lt;2e-16. These results are using the entirety of the existing data to predict itself.</p>
+<p>Graphically it look like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">#2D plot of Age and AbsenceRate</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age,<span class="at">y =</span> AbsenceRate),<span class="at">data=</span>MFGEmployees) <span class="sc">+</span><span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age,<span class="at">y =</span> AbsenceRate),<span class="at">data=</span>MFGEmployees,<span class="at">method =</span> <span class="st">'lm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#3D Scatterplot  of Age and Length of Service with Absence Rate - with Coloring and Vertical Lines</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and Regression Plane </span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scatterplot3d) </span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>s3d <span class="ot">&lt;-</span><span class="fu">scatterplot3d</span>(MFGEmployees<span class="sc">$</span>Age,MFGEmployees<span class="sc">$</span>LengthService,MFGEmployees<span class="sc">$</span>AbsenceRate, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">highlight.3d=</span><span class="cn">TRUE</span>,</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">type=</span><span class="st">"h"</span>, <span class="at">main=</span><span class="st">"Absence Rate By Age And Length of Service"</span>)</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(MFGEmployees<span class="sc">$</span>AbsenceRate <span class="sc">~</span> MFGEmployees<span class="sc">$</span>Age<span class="sc">+</span>MFGEmployees<span class="sc">$</span>LengthService) </span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>s3d<span class="sc">$</span><span class="fu">plane3d</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PAExampleUsingR_files/figure-html/unnamed-chunk-17-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<section id="evaluate-and-critique-model" class="level2">
+<h2 class="anchored" data-anchor-id="evaluate-and-critique-model">4.Evaluate And Critique Model</h2>
+<p>Up till now we have concentrated on producing a couple of models. The effort so far has had one weakness. <strong>We have used all of our data for 2015 to generate the models.</strong> They can both predict, but the prediction are based on existing data- dat already known. We dont know how well it will predict on data it hasnt seen yet.</p>
+<p>To evaluate and critique the models, we need to train the model using part of the data and hold out a portion to test on.We will divide the data into 10 parts- using 9 parts as training data and 1 part as testing data, and alternate which are the 9 and the 1, so that each of the 10 parts gets to be training data 9 times and testing data once.</p>
+<p>The R “caret” library helps us do that. We will run both a regression tree and linear regression and compare how they do against each other.</p>
+<p>First the Linear Regression</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MFGEmployees &lt;- readRDS(file="c:/Users/Lyndon.A3HR/Documents/MFGEmployees.Rda")</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lattice</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">998</span>)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>inTraining <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(MFGEmployees<span class="sc">$</span>BusinessUnit, <span class="at">p =</span> .<span class="dv">75</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>training <span class="ot">&lt;-</span> MFGEmployees[inTraining,]</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>testing <span class="ot">&lt;-</span> MFGEmployees[ <span class="sc">-</span> inTraining,]</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>fitControl <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="do">## 10-fold CV</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="at">method =</span> <span class="st">"repeatedcv"</span>,</span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">number =</span> <span class="dv">10</span>,</span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>                           <span class="do">## repeated ten times</span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a><span class="at">repeats =</span> <span class="dv">10</span>)</span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">825</span>)</span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>lmFit1 <span class="ot">&lt;-</span> <span class="fu">train</span>(AbsenceRate <span class="sc">~</span> Age <span class="sc">+</span> LengthService, <span class="at">data =</span> training,</span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"lm"</span>,</span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> fitControl)</span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>lmFit1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear Regression 
+
+6124 samples
+   2 predictor
+
+No pre-processing
+Resampling: Cross-Validated (10 fold, repeated 10 times) 
+Summary of sample sizes: 5511, 5511, 5512, 5512, 5511, 5512, ... 
+Resampling results:
+
+  RMSE      Rsquared   MAE     
+  1.269977  0.6909094  1.007153
+
+Tuning parameter 'intercept' was held constant at a value of TRUE</code></pre>
+</div>
+</div>
+<p>The rSquared shows a value of .688 which means even with sampling different parts of the data on 10 fold cross validation the use of age and length of service seems to be pretty robust so far.</p>
+<p>Next the decision tree. The first time with just the numeric variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">825</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>rpartFit1 <span class="ot">&lt;-</span> <span class="fu">train</span>(AbsenceRate <span class="sc">~</span> Age <span class="sc">+</span> LengthService, <span class="at">data =</span> training,</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"rpart"</span>,</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> fitControl,</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">maxdepth =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
+: There were missing values in resampled performance measures.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>rpartFit1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>CART 
+
+6124 samples
+   2 predictor
+
+No pre-processing
+Resampling: Cross-Validated (10 fold, repeated 10 times) 
+Summary of sample sizes: 5511, 5511, 5512, 5512, 5511, 5512, ... 
+Resampling results across tuning parameters:
+
+  cp          RMSE      Rsquared   MAE     
+  0.06330829  1.431901  0.6062148  1.140352
+  0.09451716  1.557060  0.5344593  1.260302
+  0.48920642  1.963226  0.4741241  1.607013
+
+RMSE was used to select the optimal model using the smallest value.
+The final value used for the model was cp = 0.06330829.</code></pre>
+</div>
+</div>
+<p>You will notice that the decision tree with 10 fold cross validation didnt perform as well with an RSquared of approximately .60</p>
+<p>The second time with the original categorical and numeric varibles used.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">825</span>)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>rpartFit2 <span class="ot">&lt;-</span> <span class="fu">train</span>(AbsenceRate <span class="sc">~</span> Gender <span class="sc">+</span> DepartmentName <span class="sc">+</span> StoreLocation <span class="sc">+</span> Division <span class="sc">+</span> Age <span class="sc">+</span> LengthService <span class="sc">+</span> BusinessUnit, <span class="at">data =</span> training,</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"rpart"</span>,</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> fitControl,</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">maxdepth =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
+: There were missing values in resampled performance measures.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>rpartFit2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>CART 
+
+6124 samples
+   7 predictor
+
+No pre-processing
+Resampling: Cross-Validated (10 fold, repeated 10 times) 
+Summary of sample sizes: 5511, 5511, 5512, 5512, 5511, 5512, ... 
+Resampling results across tuning parameters:
+
+  cp          RMSE      Rsquared   MAE     
+  0.06330829  1.431901  0.6062148  1.140352
+  0.09451716  1.557060  0.5344593  1.260302
+  0.48920642  1.963226  0.4741241  1.607013
+
+RMSE was used to select the optimal model using the smallest value.
+The final value used for the model was cp = 0.06330829.</code></pre>
+</div>
+</div>
+<p>Here when you include all originally used vaiables in 10 fold cross validation, the RSquared changed little and is still around .60.</p>
+<p>So far the linear regression is performing better</p>
+<p>##5.Present Results and Document</p>
+<p>The presenting of results and documenting is something that R helps in. You may not have realized it, but the R Markdown language has been used to create the full layout of these two blog articles. HTML,PDF and Word formats can be produced.</p>
+<p>R Markdown allows the reader to see exactly what you having been doing , so that an independent person can replicate your results, to confirm what you have done. It shows the R code/commands, the statistical results and graphics.</p>
+<p>These are:</p>
+<ul>
+<li>Absenteeism-Part1.Rmd and</li>
+<li>Absenteeism-Part2.Rmd</li>
+</ul>
+<p>For presentation formats beyond this, you may have to use other tools.</p>
+<p>##6.Deploy Model Once you have evaluated your model(s) and chosen to use them, they need to be deployed so that they can be used. At the simplest level, ‘deploy’ can mean using the ‘predict’ function in R (where applicable) in conjunction with your model.</p>
+<p>In R, you can also ‘publish’ you model as an R HTTP service so that others can use it.(That is beyond the scope of this article)</p>
+<p><strong>Can it predict next year absenteeism?</strong></p>
+<p>Lets predict the 2016 Absenteeism from the 2015 model.</p>
+<p>If we make the simplifying assumption that nobody quits and nobody new comes in, we can take the 2015 data and add 1 to age and 1 to years of service for an approximation of new 2016 data before we get to 2016.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply model</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate 2016 data</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="ot">&lt;-</span>MFGEmployees</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>Age<span class="ot">&lt;-</span>Absence2016Data<span class="sc">$</span>Age<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>LengthService<span class="ot">&lt;-</span>Absence2016Data<span class="sc">$</span>LengthService<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>AbsenceRate<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>Absence2016Data<span class="sc">$</span>AbsenceRate<span class="ot">&lt;-</span><span class="fu">predict</span>(lmFit1,Absence2016Data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To get single estimate for 2016 we ask for mean of absence rate.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Absence2016Data<span class="sc">$</span>AbsenceRate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.040885</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(MFGEmployees<span class="sc">$</span>AbsenceRate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.907265</code></pre>
+</div>
+</div>
+<p>The first figure above is the 2016 prediction, the second is the 2015 actual for comparison.</p>
+<p><strong>If so, how well can it predict?</strong></p>
+<p>As mentioned previously, about 68% of the variation is accounted for in a linear regression model using age and length of service.</p>
+<p><strong>Can we reduce our absenteeism?</strong></p>
+<p>On the surface, only getting the age reduced and length of service increased will reduce absensteeism with this model.</p>
+<p>Obviously, absenteeism is much more complex that just the rudimentary data we have collected. A serious look at this metric and problem would require more and different kinds of data. As mentioned before , the raw data used in this article and analysis is totally contrived to illustrate an example.</p>
+<p>#Final Comments</p>
+<p>The purposes of these two blogs articles was to:</p>
+<ul>
+<li>show that R could be used to do People Analytics</li>
+<li>show that People Analytics is the application of the Data Science to People (HR) Management and decision making.</li>
+<li>show by a rudimentary/simple (not necessarily rigorous) example that the ‘data science’ capability is in your hands.</li>
+<li>show that ‘free’ tools can be used to start the ‘People Analytics’ journey.</li>
+</ul>
+<p>Its time to apply data science to People Management, and be data-driven.</p>
+<p>Enjoy the journey!</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

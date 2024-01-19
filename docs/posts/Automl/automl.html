@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lyndon Sundmark, MBA">
+<meta name="dcterms.date" content="2019-06-12">
+
+<title>HRAnalyticsBlogs - Automated Machine Learning –Does This Benefit HR Analytics?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">HRAnalyticsBlogs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Automated Machine Learning –Does This Benefit HR Analytics?</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">HR Analytics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Lyndon Sundmark, MBA </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 12, 2019</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="automl.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="automl.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="automl.epub"><i class="bi bi-file"></i>ePub</a></li></ul></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>One of the things you can assume about HR Analytics (“Data Science being applied to HR management and decision making” or “Data-Driven HR”) is that this field is not standing still. Things are changing all the time, and this reflects the fact that things are changing constantly in the three fields from which HR analytics draws upon:</p>
+<ul>
+<li><p>Data Science and Statistics</p></li>
+<li><p>HR&nbsp;</p></li>
+<li><p>Information Technology</p></li>
+</ul>
+<p>We don’t go too far down the path of HR Analytics before we realize that there are frameworks out there that guide our thinking and help us place ourselves in this gigantic landscape of analytics:</p>
+<ul>
+<li><p>One of those frameworks is the “Life Cycle of A Data Science Project” in Nina Zumel and John Mount’s book “Practical Data Science With R”. It provides us with a conceptual process that helps us start at the beginning and end at the end of our efforts.</p></li>
+<li><p>Another helpful framework from a variety of sources on the internet has been to understand the various types of analytics we can engage in our data science efforts:</p>
+<ol type="1">
+<li><p>Descriptive Analytics</p></li>
+<li><p>Diagnostic Analytics</p></li>
+<li><p>Predictive Analytics</p></li>
+<li><p>Prescriptive Analytics</p></li>
+</ol></li>
+</ul>
+<p>We know that <strong>descriptive analytics</strong> concerns itself for the most part on answering the questions of what have in our population of data (or what happened in the case of historical data). It covers the activities of ‘data cleansing’, as well as understanding the ‘distribution of the data’ for each of the fields we’ve captured. And this could be considered as the ‘first level’ of EDA ‘Exploratory Data Analysis’. Often it looks as each field separately.</p>
+<p>We know that <strong>diagnostic analytics</strong> is often thought of as the ‘second level’ of EDA. It concerns itself with answering the questions of why or how in the data. It does this through looking at the relationship of the fields in the data- both relationships between independent variables, or between independent variables and a dependent variable. It often goes beyond the descriptive statistics used at the previous level of analytics and delves into many of the statistical procedures found in multivariate statistical analysis.</p>
+<p>When it comes to answers to HR or business questions that require us to predict some value (present or future) or determine the best fit category of something that is currently uncategorized, or even to figure out some naturally occurring groupings where there currently aren’t any, this is the domain of <strong>predictive analytics</strong>.</p>
+<p><strong>This is the focus of ‘machine learning’-</strong> building <strong>predictive models</strong> which hopefully produce a high level of accuracy based on patterns it finds in data.</p>
+<p>Often- <strong>prescriptive analytics</strong> can be tied into predictive, in that, when a good predictive model is found, we may want to play with it and vary its input to see how well the relationship holds for trying to get to point of optimizing a particular ‘desired’ outcome. There may be other definitions for this, but this one makes the most sense to me.</p>
+<p>The sharing of all of this serves as a reminder to us as to <strong>why machine learning is important</strong> and re-acquaint us to where it fits into our analytics endeavors. To help us understand what automated machine learning is, it’s useful for us to revisit what traditional machine learning is.</p>
+</section>
+<section id="what-is-traditional-machine-learning" class="level1">
+<h1>What is Traditional Machine Learning?</h1>
+<p>These are relatively representative steps:</p>
+<ol type="1">
+<li><p>We have an organizational problem that needs a solution.</p></li>
+<li><p>We have a hunch, theory, or hypothesis as to what may be causing the problem</p></li>
+<li><p>We look for and gather data that we think is relevant to the problem</p></li>
+<li><p>We organize this data in such a way that it contains a target outcome that we are trying to predict, along with all those pieces of information that might be predictors.</p></li>
+<li><p>We need to determine whether the problem is to predict a numeric value or categorize something to known categories that is new, or whether we are attempting to determine naturally forming groups in the population of data that we have for the first time. These are some of the major categories that machine learning algorithms fall into. And there are others are well.</p></li>
+<li><p>When we know the category of business problem and therefore the category of machine learning algorithms that is applicable, we then run our data through a wide variety of machine learning models/algorithms within ‘that’ category of models to figure out whether any of them do an acceptable job of predicting and, if so, how well. Different models and categories of model use different statistics to do this. But generally, in each category of models, the evaluation of such models typically is able to be done because the statistical outcomes measures will often be able to be expressed in ‘common denominator’ measures allowing for cross comparison.</p></li>
+</ol>
+<p>If you look at the sheer number of machine learning algorithms out there, and if you want to be thorough, you realize that this is a time consuming, interactive, and necessary process. You have to review all the models you have created to determine which is the best performing and whether that performance is good enough for use and application to your real-world problem.</p>
+<p>Up till recently your choices would have been to run:</p>
+<ul>
+<li><p>all these models manually by generating the code necessary to run them</p></li>
+<li><p>&nbsp;or if you were fortunate enough to find a machine learning GUI you could pick the models to be run and have the GUI generate the code for you.</p></li>
+</ul>
+<p>And you would still need to evaluate from all the output which was the best model/algorithm to use of the data. These are all valuable and necessary steps.</p>
+<p><strong>But what if these steps didn’t have to be this manual /people intensive?</strong> This is what automated machine learning is all about.</p>
+</section>
+<section id="what-is-automated-machine-learning" class="level1">
+<h1>What is Automated Machine Learning?</h1>
+<p>A very good definition can be found at Wikipedia:</p>
+<p><a href="https://en.wikipedia.org/wiki/Automated_machine_learning" class="uri">https://en.wikipedia.org/wiki/Automated_machine_learning</a></p>
+<p>In brief it says:</p>
+<p><strong>Automated machine learning</strong>&nbsp;(<strong>AutoML</strong>) is the process of automating the end-to-end process of applying&nbsp;<a href="https://en.wikipedia.org/wiki/Machine_learning">machine learning</a>&nbsp;to real-world problems…&nbsp;Automating the end-to-end process of applying machine learning offers the advantages of producing simpler solutions, faster creation of those solutions, and models that often outperform models that were designed by hand.</p>
+<p>In effect it automates many of the above steps for you:</p>
+<ul>
+<li><p>You tell it where the data is, that you want to be analyzed.</p></li>
+<li><p>You tell it whether there is a target to be predicted, and if so, which field is to be predicted</p></li>
+<li><p>&nbsp;It often regards all other fields as potential predictors unless you direct it otherwise</p></li>
+<li><p>&nbsp;It looks at the target that is to be predicted, determines whether it is numeric or categorical, then figures out all applicable algorithms that can be run (that it is designed to run) and runs them</p></li>
+<li><p>&nbsp;It then looks at the summary evaluation statistics to determine which is the best model</p></li>
+<li><p>Some of the solutions in this area for doing automated ML even give you a ‘leaderboard’ showing the performance of the models in reverse order showing the best first and the next best etc.</p></li>
+</ul>
+</section>
+<section id="how-does-this-benefit-hr-analytics" class="level1">
+<h1>How does this benefit HR Analytics?</h1>
+<p>As above:</p>
+<ul>
+<li><p>Simpler solutions</p></li>
+<li><p>Faster creation</p></li>
+<li><p>Higher performance models</p></li>
+</ul>
+<p>If you are like me, with a passion for HR Analytics, having an HR issue or problem and data available, is like being a kid in the candy store. Data mining gives the opportunity to find hidden treasures- patterns in your data- that maybe no one has seen up until you found them. There can often be a tug-a-war between wanting to find patterns (if they exist) as quickly as possible and wanting to more slowly and methodically extract as much value as you can out of your data.</p>
+<p>In some ways, Automated Machine Learning can be a solution for both. You can get at some gems very quickly if they are there, and this frees up a lot of time to do very in-depth additional analyses.</p>
+</section>
+<section id="what-are-some-of-the-automated-machine-learning-options-out-there" class="level1">
+<h1>What are some of the automated machine learning options out there?</h1>
+<p>There are probably many more out there than what I will mention. But I will share with you some of the ones I have recently come across. Some of these appear to be pretty polished, some are work in progress to varying degrees, and some are both. Even the ones I have looked at will evolve further over time.</p>
+<p>The 3 that I will share some details about are:</p>
+<ul>
+<li><p>autoML library in R</p></li>
+<li><p>h2o.ai</p></li>
+<li><p>ml.net from&nbsp;Microsoft</p></li>
+</ul>
+<p>Each of these has some similarities, but also have differences in their approaches/goals.</p>
+<section id="r-automl" class="level2">
+<h2 class="anchored" data-anchor-id="r-automl">R autoML</h2>
+<p>R autoML is as the name suggests an R library and therefore uses R syntax. Information on it can be found at:</p>
+<p><a href="https://github.com/XanderHorn/autoML/wiki" class="uri">https://github.com/XanderHorn/autoML/wiki</a></p>
+<p>On that page, are links to a few tutorial examples of how to use it.</p>
+<p><a href="https://github.com/XanderHorn/autoML/wiki/Tutorial:-autoML-supervised-learning" class="uri">https://github.com/XanderHorn/autoML/wiki/Tutorial:-autoML-supervised-learning</a></p>
+<p><a href="https://github.com/XanderHorn/autoML/wiki/Tutorial:-autoML-unsupervised-learning" class="uri">https://github.com/XanderHorn/autoML/wiki/Tutorial:-autoML-unsupervised-learning</a></p>
+<p>As implied earlier, it simplifies things, by having you indicate what the dataset is, what it the target to be predicted in that dataset ,and you can either specify the models you want to run, or you can specify ‘ALL’ to run all that have been built into autoML that are relevant to the target you are predicting. It then runs all the machine learning models and provides a ‘summary’ of each of the models tested in a tabular form so that you can easily and conveniently determine which is the best performing model. While it is running and comparing models you can go grab a cup of coffee and allow it to do the ‘grunt’ work for you.</p>
+<p>The various algorithms it uses are</p>
+<p><img src="pic1.jpeg" class="img-fluid"></p>
+<p><strong>Here is some sample R autoML code:</strong></p>
+<p><img src="pic2.jpeg" class="img-fluid"></p>
+<p>The models could have been changed to be “All” to run multiple models.</p>
+<p>The thing to pay attention to is that in the above syntax all you had to specify was the target- that which was to be predicted, an ID field if there, and the dataset name- it knows then that all other fields are to be treated as potential predictors.</p>
+<p>When you look at the R autoML example links above, it shows the nature of the results produced- including a summary leaderboard of the results of the models run.</p>
+</section>
+<section id="h2o.ai" class="level2">
+<h2 class="anchored" data-anchor-id="h2o.ai">H2o.ai</h2>
+<p>H2o.ai seems to be a very polished, powerful and flexible solution at this point. It is somewhat unique as a product because it can be run from R, Python, or from a Java web front end. The library backend itself is written in Java. You can even run your models from R or Python review the output there and then switch to the web-based front end to look at even more output in h2o from the same run you just ran in R or Python.</p>
+<p>It can be found at:</p>
+<p><a href="https://www.h2o.ai/products/h2o/" class="uri">https://www.h2o.ai/products/h2o/</a></p>
+<p>Some of the algorithms it used are:</p>
+<p><strong>Supervised</strong></p>
+<ul>
+<li><p><a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/coxph.html">Cox Proportional Hazards (CoxPH)</a></p></li>
+<li><p>&nbsp;<a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/deep-learning.html">Deep Learning (Neural Networks)</a></p></li>
+<li><p><a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/drf.html">Distributed Random Forest (DRF)</a></p></li>
+<li><p>&nbsp;<a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/glm.html">Generalized Linear Model (GLM)</a></p></li>
+<li><p><a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/gbm.html">Gradient Boosting Machine (GBM)</a></p></li>
+<li><p><a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/naive-bayes.html">Naïve Bayes Classifier</a></p></li>
+<li><p><a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/stacked-ensembles.html">Stacked Ensembles</a></p></li>
+<li><p>&nbsp;<a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/xgboost.html">XGBoost</a></p></li>
+</ul>
+<p><strong>Unsupervised</strong></p>
+<ul>
+<li><p><a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/aggregator.html">Aggregator</a></p></li>
+<li><p>[<a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/glrm.html">Generalized Low Rank Models (GLRM)</a></p></li>
+<li><p>&nbsp;<a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/if.html">Isolation Forest</a></p></li>
+<li><p><a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/k-means.html">K-Means Clustering</a></p></li>
+<li><p><a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/pca.html">Principal Component Analysis (PCA)</a></p></li>
+</ul>
+<p>There are others as well in their documentation.</p>
+<p>This is another one of the automated machine learning solutions that produces a ‘leaderboard’ showing a summary of all the models it ran and their performance ranking them from highest to lowest. This allows you to zero in on the best predictive model very quickly.</p>
+<p>Just as an example, I took a file that had just short of 50,000 records and ran it through all applicable algorithms that h2o has built in. It took about 45 minutes to number crunch through the dataset and all the models (20 or more). Manually it would have taken days to accomplish this coding up one model/algorithm at a time.</p>
+<p><strong>Some example R h2o code;</strong></p>
+<p><img src="pic3.jpeg" class="img-fluid"></p>
+<p>And here is &nbsp;a sample of its ‘Leaderboard’ output:</p>
+<p><img src="pic4.jpeg" class="img-fluid"></p>
+<p>I had mentioned earlier that you could also run h2o from a web-based front end. This is what it looks like- and you will notice the runAutoML choice among others:<img src="pic5.jpeg" class="img-fluid">It presents you with a GUI interface to run automated machine learning:</p>
+<p><img src="pic6.jpeg" class="img-fluid"></p>
+<p>And as I mentioned previously, it also allows you to view the results you originally generated from R:</p>
+<p><img src="pic7.jpeg" class="img-fluid"></p>
+<p>You will notice that the top model in the RStudio console window is listed&nbsp;the h2o window beneath it. In the h2o window, you can click on the model link to get much more details.</p>
+</section>
+</section>
+<section id="ml.net-from-microsoft" class="level1">
+<h1>ML.NET from Microsoft</h1>
+<p>During the Microsoft Build 2019 conference, Microsoft announced version 1.0 of ML.NET – and along with that a <strong>prototype</strong> (still in development) of its own automated machine learning solution (ML.NET Model Builder).</p>
+<p>What makes their offering a little different is that their target seems to be to integrate machine learning algorithms into their more mainstream .Net application development. Their solution doesn’t use R or Python or Java but C# as the programming language.</p>
+<p>It too runs a series of relevant algorithms after you specify the dataset and indicate which field is the target to be predicted. It then creates a zip file of the encapsulated model along with the code necessary to run new data through it. The code is C# code. You can then marry this up with other .NET technologies to create a web front end - for organization use. This allows for the real embedding of machine learning in organizational processes.</p>
+<p>Here is the current prototype interface</p>
+<p><img src="pic8.jpeg" class="img-fluid"></p>
+<p>It too, asks simply for target variable and dataset name and figures out much of the rest:</p>
+<p><img src="pic9.jpeg" class="img-fluid"></p>
+<p>All three of these solutions allow for the creation of machine learning models which can, in turn, be used to predict on ‘new’ data which it hasn’t previously seen.</p>
+<p>It isn’t my purpose in this blog article to dive too much into the ‘how-to’ or the ‘full’ details of the steps and output. Each of these alternatives is extensive in its own right - meriting separate blog articles to show more details. I may, in upcoming blog articles, show how to use each of these automated technologies.</p>
+<p>&nbsp;For those who have read my book:</p>
+<p><a href="https://www.amazon.ca/Doing-HR-Analytics-Practitioners-Handbook/dp/1973716372/ref=sr_1_1?keywords=doing+hr+analytics&amp;qid=1560373640&amp;s=gateway&amp;sr=8-1" class="uri">https://www.amazon.ca/Doing-HR-Analytics-Practitioners-Handbook/dp/1973716372/ref=sr_1_1?keywords=doing+hr+analytics&amp;qid=1560373640&amp;s=gateway&amp;sr=8-1</a></p>
+<p>and its examples, it would be fun to apply these auto machine learning solutions on those examples - that were done the more traditional way.</p>
+</section>
+<section id="does-this-negate-traditional-machine-learning" class="level1">
+<h1>Does This Negate Traditional Machine Learning?</h1>
+<p>My own take on this is – ‘definitely not’.</p>
+<p>Each of the above tools, especially at this point, has a specific set or subset of machine learning algorithms that it runs to find the best one. And any time you try to automate this activity there will be some restrictions in that scope, especially if the interface is a GUI front end.</p>
+<p>To get a better sense of the scope of these above automated tools I compared their choice of algorithms with those found in the R caret library which has a reasonably extensive collection of predictive models to choose from - on a more manual coding basis. These can be found at:</p>
+<p><a href="https://topepo.github.io/caret/train-models-by-tag.html" class="uri">https://topepo.github.io/caret/train-models-by-tag.html</a></p>
+<p>and</p>
+<p><a href="https://topepo.github.io/caret/available-models.html" class="uri">https://topepo.github.io/caret/available-models.html</a></p>
+<p>The above automated machine learning solutions cover many of the more well-known algorithms or categories listed. But my sense is, that after the use of the automated tools to zero in on the best fitting models or categories-one could still explore further with more manual effort.</p>
+</section>
+<section id="wrap-up" class="level1">
+<h1>Wrap-Up</h1>
+<p>At the beginning of this blog article, I posed the question of whether the developments in automated machine learning could benefit HR Analytics?</p>
+<p>For me, the answer is a resounding ‘YES’.</p>
+<p>The use of automated machine learning can cut down significantly the time to determine whether the data we have has meaningful patterns from which predictions, where necessary to solve an HR issue or problem, could be made.</p>
+<p>The quicker that we are able to ‘zero-in’ on ‘best’ performing models, the quicker we can get to and spend more time in the detailed understanding and analysis of our data - to make high-quality changes to our HR decision making and management.</p>
+<p>I hope this blog article has got you at least a little bit excited about the prospects of how this will benefit HR Analytics as things progress.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

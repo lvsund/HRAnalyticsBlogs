@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lyndon Sundmark, MBA">
+<meta name="dcterms.date" content="2015-03-04">
+
+<title>HRAnalyticsBlogs - Data Driven Job Classification</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">HRAnalyticsBlogs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Data Driven Job Classification</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">HR Analytics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Lyndon Sundmark, MBA </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 4, 2015</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ddjobclass.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="ddjobclass.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="ddjobclass.epub"><i class="bi bi-file"></i>ePub</a></li></ul></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>As I have shared in recent previous blog articles, a lot of attention is being paid to ‘data driven’ HR currently. Along with that is the fact that the terminology and what constitutes the <strong>totality</strong> of ‘data driven’ HR is still hugely in flux as well.</p>
+<p>In my last blog article:</p>
+<p><a href="https://www.linkedin.com/pulse/what-does-data-driven-hr-look-like-lyndon-sundmark-mba?trk=prof-post" class="uri">https://www.linkedin.com/pulse/what-does-data-driven-hr-look-like-lyndon-sundmark-mba?trk=prof-post</a></p>
+<p>I mentioned that ultimately the <strong>‘totality’</strong> from a content perspective could largely fall into 3 major categories- based on the ‘why’ we capture HR metrics and measures:</p>
+<ul>
+<li><p>We capture metrics to help us understand what is going on with our human resources- human resource activity related metrics</p></li>
+<li><p>We capture metrics that help us understand how well our HR business processes themselves are performing- metrics related to process measurement and quality improvement</p></li>
+<li><p>We capture metrics to help fundamentally change the HR methodologies themselves-making the how we do the various HR functions more robust by applying data driven statistical methods to them.</p></li>
+</ul>
+<p>This article is intended to illustrate an example of the last bullet point above. <strong>How can we make the HR functions more robust by infusing deeper measures and applying statistical analysis to make improved HR decisions?</strong></p>
+<p>In this blog, I will illustrate how this can be done with an example of one method of <strong>job classification</strong>. The particular method illustrated will be an approach that is typically done in a non-quantitative way. (I am well aware that there are ‘point methods’ etc. for job evaluation that attempt to quantify information through assigning of points and the summing of them)</p>
+<ul>
+<li><p>I will start out by describing one ‘traditional’ non-statistical way this illustrated method is often done.</p></li>
+<li><p>Then I show how that can be transformed into measures/metrics.</p></li>
+<li><p>Finally I will show an example of a statistical procedure that can be used to support this HR function- and actually apply it to the measures created- to show how ‘data driven’ statistics can help support or improve the job classification process.</p></li>
+</ul>
+<p>I should also mention that I have no intent or purpose in this blog article to get into a wider discussion of job classification methods that are out there, many of which have successfully been around for years- quantitative or non-quantitative. My only purpose here is to illustrate the application of statistical methods to an example HR function- especially a traditional non quantitative method. I simply want to show that non quantitative information can often be quantified in some way, and that statistical procedures can be applied, models can be built, and the function can be more data driven as a result.</p>
+<p>For those to whom the application of statistical methods to a business problem is new or unfamiliar, this activity does not require <strong>manual</strong> mathematical/statistical calculations. Computerized statistical software packages do that for you. Your work is not in the calculations. Having said that, <strong>your work is to generate and prepare the data, understand the appropriate statistical tests to run, and how to interpret the output.</strong></p>
+<p>The statistical method I will show is also just one example. As you will see later in this article, predictive ‘classification’ or ‘categorization’ is a huge area of applied statistics. There are many methods possible. In a real life situation, you might want to apply many different statistical methods to see how they vary in their predictive accuracy. Because I would like to keep the blog article at a reasonable length, I will just show one example and touch the surface of what is possible here.</p>
+</section>
+<section id="what-does-this-method-of-job-classification-look-like-from-a-non-statistical-perspective" class="level1">
+<h1>What Does This Method of Job Classification Look Like From a Non-Statistical Perspective?</h1>
+<p>There are a variety of methods have been in use over the years for job classification and evaluation. One is <strong>the use of written job descriptions being evaluated against written job class specifications.</strong></p>
+<p>This approach, generally, has the following characteristics:</p>
+<ul>
+<li><p><strong>Job descriptions are written for every job in the organization</strong>. These are narrative.</p></li>
+<li><p><strong>Job Class specifications are also written and are narrative as well</strong>. These are more general that job descriptions. Their intention is to encapsulate information in more general or summary terms to reflect both job families and pay grade related information.</p></li>
+<li><p><strong>While both are narrative, the content of both is intended to be structured</strong>. Certain types of information are required to exist in both. In addition to being descriptive about what work is done, they will typically include structured information on other <strong>features</strong> of the job.</p></li>
+<li><p>The ‘other’ <strong>features</strong> captured in both the job specifications and the job descriptions might include such things as:</p>
+<ul>
+<li><p>Contact level</p></li>
+<li><p>Financial Responsibility</p></li>
+<li><p>Supervision Exercised</p></li>
+<li><p>Supervision Received</p></li>
+<li><p>Accountability</p></li>
+<li><p>etc.</p></li>
+</ul></li>
+<li><p><strong>Each of those features will likely have descriptions that represent ‘more of’ and ‘less of’ that feature in the various job specifications and descriptions</strong>. For example we would expect financial responsibility to increase the higher the pay grade is in most organizations. The point is that these features will vary in their described amount or level in each job description and specification. Features will either be positive or negatively related to the paygrades- more of the feature or less of the feature as you go up and down paygrades.</p></li>
+<li><p><strong>The ‘features’ will exist in all job descriptions and job specifications</strong> in terms of being described- even if the description is that the feature is not present in that work.</p></li>
+<li><p><strong>When new job descriptions come in for job ‘classification’, the contents of the descriptions is compared to the job specifications for ‘best fit’</strong>. In other words, what job specification does it most closely resemble based on these features.</p></li>
+<li><p><strong>When the analysis is complete, that job description is assigned to a job class code which reflects which job specification it has been assigned to</strong> - based on content similarity of these features.</p></li>
+<li><p><strong>The job description is then assigned to that paygrade</strong>.</p></li>
+<li><p>In this traditional approach, the process is non quantitative, and is clearly dependent on the skills of the job analyst. Also in many cases, job descriptions might have features described that don’t clearly fit into one job class specification- but rather might straddle more than one.</p></li>
+<li><p>Even with this traditional approach not being data driven statistically, you would probably agree with the following:</p>
+<ul>
+<li><p><strong>Once job specifications are written- they represent a ‘known’ population</strong>- a finite list that is intended to represent the entirety of the type of work and pay grades assigned.</p></li>
+<li><p><strong>Once job descriptions themselves are assigned to the job specifications, they too become a ‘known’ population based on paygrade</strong>, because once the job class specification has been assigned to it, it along with the class specs themselves represent a known list that has been assigned a paygrade. Each paygrade represents a ‘group’- those job class specs and job descriptions that have been assigned to it.</p></li>
+<li><p><strong>Any unclassified job description would be deemed to not be part of that ‘known’ population yet until the job analysis and classification has been done</strong>.</p></li>
+<li><p><strong>The whole point of job classification in this method, is to assign a new job description that doesn’t yet exist in the ‘classified’ job descriptions into that population by figuring out which is the best fit group</strong> ( paygrade) in this case- based on how its features are similar of different to the groups of job descriptions already classified.</p></li>
+</ul></li>
+</ul>
+<p>So far so good? Without overstating the obvious, job classification is about ‘classification’ – <strong>classification into ‘known’ groups.</strong></p>
+<p>Why is this important to state? Because <strong>the idea of classifying items into groups, is not restricted to HR and job classification</strong>. Our ability to understand our world and how it works is absolutely dependent on recognizing patterns and being able to group like with like, like from different etc. It should come as NO surprise then, that in statistical analysis there are statistical procedures that are designed to do ‘classification’- to take a set of items and group like with like, different from like etc. These statistical procedures have been used for years in many vocational fields. <strong>So why shouldn’t we use these in HR to help make our decision making with respect to HR decisions more robust- more data driven?</strong></p>
+<p>There are many classification methods possible in statistics, but I will illustrate only one as an example- <strong>Discriminant Analysis</strong>- to illustrate the point that <strong>job classification can be ‘data driven’</strong>.</p>
+</section>
+<section id="what-is-discriminant-analysis" class="level1">
+<h1>What Is Discriminant Analysis?</h1>
+<p>From Wikipedia</p>
+<p><a href="http://en.wikipedia.org/wiki/Linear_discriminant_analysis" class="uri">http://en.wikipedia.org/wiki/Linear_discriminant_analysis</a></p>
+<p><strong>Linear discriminant analysis</strong> (LDA) is a generalization of Fisher’s linear discriminant are methods used in statistics, pattern recognition and machine learning to find a linear combination of features which characterizes or separates two or more classes of objects or events.</p>
+<p>Ok- how can we put this is a job classification vernacular? Linear discriminant analysis (when applied to job classification) is a method used to find a linear combination of job description ‘features’ which characterizes or separates two or more paygrades.</p>
+<section id="what-does-linear-discriminant-analysis-lda-require" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-linear-discriminant-analysis-lda-require">What does Linear Discriminant Analysis (LDA) require?</h2>
+<ul>
+<li><p>There needs to be a population of something. (In our case it’s the full list of job specs – and eventually job descriptions too)</p></li>
+<li><p>That population must be categorized into known groups. (in our case paygrades)</p></li>
+<li><p>Each member of the population must be characterized by a set of measured features. (In our case it could be contact level, financial responsibility, supervision received etc.)</p></li>
+<li><p>In addition to these, there may be other data requirements for ‘interpretability’ of the statistical results -i.e.&nbsp;normality of data. (The coverage of these is beyond my intent in this article)</p></li>
+<li><p>Given the ‘known groups’ that the population is assigned to, and the level of those features in each member of the population, LDA will figure out mathematically the combination of those features that best categorize each group –ultimately through formulas. Those formulas can then be used to figure out mathematically the best fit group would be- when applied to items not yet in the population. (In our case- what combination of the levels of features of contact level, financial responsibility, and supervision received, etc. can best predict the closest fit paygrade).</p></li>
+</ul>
+</section>
+<section id="what-does-lda-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-lda-do">What does LDA do?</h2>
+<p>Given the ‘known groups’ that the population is assigned to, and the level of those features in each member of the population, LDA will figure out mathematically the combination of those features that best categorize each group –ultimately through formulas. Those formulas can then be used to figure out mathematically the best fit group would be- when applied to items not yet in the population. (In our case- what combination of the levels of features of contact level, financial responsibility, and supervision received, etc. can best predict the closest fit paygrade).</p>
+</section>
+</section>
+<section id="how-do-we-apply-discriminant-analysis-to-job-classification-information" class="level1">
+<h1>How Do We Apply Discriminant Analysis to Job Classification information?</h1>
+<p>There are essentially 3 steps:</p>
+<ol type="1">
+<li><p>Quantify and categorize the required information</p></li>
+<li><p>Run the LDA statistical procedure</p></li>
+<li><p>Interpret the results</p></li>
+</ol>
+<section id="quantify-and-categorize-the-information" class="level2">
+<h2 class="anchored" data-anchor-id="quantify-and-categorize-the-information">Quantify and Categorize the Information</h2>
+<p>In this step we are going to use an Excel Spreadsheet (CSV- comma separated value file) to capture the information that is necessary. We will need to translate the information contained in the job specifications into categories and measures. In the example illustrated below- the categorical information is the Paygrade, the quantitative information are the features we decide to measure.</p>
+<p>Let us look at some hypothetical data:</p>
+<ul>
+<li><p>We have 66 job specifications covering 11 paygrades.</p></li>
+<li><p>Each of the 66 job specification narratives include detailed information about the nature of that work. They also include descriptions related to various features that all the job specifications have in common. For purposes of our example, these ‘features’ include:</p>
+<ul>
+<li><p>Minimum education level required</p></li>
+<li><p>Minimum years of experience required</p></li>
+<li><p>Level of organizational impact</p></li>
+<li><p>Degree of problem solving</p></li>
+<li><p>Level of supervision exercised</p></li>
+<li><p>Highest contact Level</p></li>
+<li><p>Level of Financial Budget Responsibilities</p></li>
+</ul></li>
+<li><p>Each of those features is mentioned in every job specification but is a narrative description.</p></li>
+<li><p>We need to go through all of these job class specifications and develop a scale for each of these features. The scale would on the one hand have a value of 0 if that job specification contains none of that feature. As an example, a basic clerk might have no financial budget responsibility. The idea is to summarize all statements describing that feature and at least order them at an ‘ordinal’ level- in other words identify the order of lowest to highest on a scale for that feature. A highest level for Financial/Budget responsibility might be total financial budgetary responsibility across an enterprise and be assigned a value of 5. A 1 might be responsibility for a particular organizational program. A 2 might be at a level of a department etc. The idea is that the level that these features exist at will vary from job specification and pay grade. So to quantify these features, we need to know the range of levels these features can exist at. Once we know these, we can then take each job specification and rate its features levels one at a time.</p></li>
+<li><p>In the example above, it means for each job classification specification we have, we would have one row in our spreadsheet and the columns would represent that which we are trying to eventually predict and the values of each of those ‘features’ for that particular job specification.</p></li>
+<li><p>In a spreadsheet it would look something like this:</p>
+<p><img src="pic1.jpeg" class="img-fluid"></p></li>
+</ul>
+<p>And in my hypothetical example there would be 66 rows.</p>
+<ul>
+<li><p>The id column in this example is simply an integer- but it would relate to a job class specification id in the real world as a label in your data.</p></li>
+<li><p>The Paygrade is what you will eventually want to predict based on the features of Education Level, Experience, Organizational Impact, Problem Solving, Supervision, Contact Level and Financial budget.</p></li>
+<li><p>Every feature would have a value for each job specification, even if the value is 0</p></li>
+<li><p>Each feature would have a range of valid values specific to it. The values can only be in that range.</p></li>
+</ul>
+<p>At this point you have taken what is essentially narrative information and converted it to quantitative data in a meaningful way.</p>
+</section>
+<section id="run-the-lda-statistical-procedure" class="level2">
+<h2 class="anchored" data-anchor-id="run-the-lda-statistical-procedure">Run the LDA Statistical Procedure</h2>
+<p>For this next step you actually perform that statistic analysis. A wide variety of software tools exist for this purpose. Some of the more well-known ones are SPSS, SAS and R. SPSS and SAS are proprietary, R is free.</p>
+<p>I will use R to perform the statistical analysis. (Please note – for this blog article please do not worry if you don’t completely understand the R coding or commands below. My intention here is to illustrate a process. There are other statistical packages out there where the analysis is done by a more point and click type of method. In any approach used though you do need to understand what is being predicted and what are the predictors being used for it).</p>
+<p>Please also note that even within the R statistical package, there are multiple different libraries and functions all capable of producing discriminant analysis output. <strong>You have choices</strong>.</p>
+<p>Finally, it’s important to understand that many statistical procedures not only have the intent of being used for <strong>predictive purposes</strong>- but in getting to the prediction -provide you with a lot of <strong>descriptive information</strong> as well to understand better the dataset you are using.</p>
+<p>Here is an actual set of R commands that will perform this discriminant analysis:</p>
+<p><em>library(MASS)</em></p>
+<p><em>ldaModel &lt;- lda(PayGrade~EducationLevel+Experience+OrgImpact+ProblemSolving+Supervision+ContactLevel+FinancialBudget, data=jobclassinfo2, method=“moment”, tol=0.0001)</em></p>
+<p>The above statement essential says:</p>
+<ul>
+<li><p>Go find the library in R called MASS</p></li>
+<li><p>Create a storage object called ldamodel.</p></li>
+<li><p>Run a LDA procedure –linear discriminant analysis found in the MASS library, with Paygrade being what we are trying to predict, and Education level through to Financial Budget as being the ‘features’ upon which the prediction will be based on. Get the raw data from a file called jobclassinfo2</p></li>
+<li><p>Store the results into ldaModel</p></li>
+</ul>
+<p>This code above is what actually does the process of figuring out what the discriminant equations are. In addition, it generates and provides a wealth of other useful information.</p>
+</section>
+<section id="review-and-interpret-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="review-and-interpret-the-results">Review and Interpret the Results</h2>
+<p>Here is some sample output:</p>
+<p><img src="pic2.jpeg" class="img-fluid"></p>
+<p>Remember earlier I had mentioned that Linear Discriminant Analysis has both a descriptive part and a predictive part? What you see above is the default descriptive part. We will just briefly look at this first.</p>
+<p>The above is provided so that one sees intermediate results eventually used to do the prediction.</p>
+<ul>
+<li><p><strong>The first summary shows the</strong> <strong>prior probabilities of the groups</strong>. That is, given that there were 66 job specs and 11 pay grade groups- what proportion are in each group before the discriminant calculations occur.</p></li>
+<li><p><strong>The second summary shows you group means (averages) for each of the 11 pay groups- what the average value of each of the 7 features was for each group</strong>. This doesn’t necessarily look as cool in the form of a table, but adding graphics to it-gives a good visual as to how the groups are different. For example you can do a box plots on a couple of the features to get an idea of how they differ by group.</p>
+<p><img src="pic3.jpeg" class="img-fluid"></p></li>
+</ul>
+<p><img src="pic4.jpeg" class="img-fluid"></p>
+<p>You could do this for each of the ‘features’ to see how they vary by paygrade.</p>
+<ul>
+<li><p><strong>The third summary shows the coefficients of linear discriminants.</strong> These are necessary for R to eventually predict the category.</p></li>
+<li><p><strong>The final summary is the Proportion of Trace</strong>. What this summary shows is what proportion of the entire variance of the data is accounted for by each discriminant equation. In this example between LD1 and LD2- the first two discriminant equations- 95.16 + 3.54 % (98.6) of the variance in our data is accounted for.</p></li>
+</ul>
+<p>It’s not my intent in this article, to discuss the above output much further. Suffice it to say, the descriptive part of this has the purpose of giving us a deep picture and understanding of our data itself. The descriptive output above is still just a sampling of some of the descriptive output provided. One could write a blog article alone just on illustrating all that can be provided, what it means, and why it’s provided.</p>
+<p>By running the following additional commands in the R statistic package we can get a prediction. This code grabs the features values for <strong>a single new position</strong> <strong>description</strong> <strong>not yet classified</strong> in JobClassInfo2testdata.txt and tells it to predict best fit pay group based on our ldaModel and store the results into GradePred.</p>
+<p>The data case in JobClassInfo2testdata.txt is as follows:</p>
+<p><em>Dataset &lt;- read.table(“C:/Users/Lyndon.A3HR/Documents/JobClassInfo2testdata.txt”,</em></p>
+<p><em>header=TRUE, sep=“\t”, na.strings=“NA”, dec=“.”, strip.white=TRUE)</em></p>
+<p><em>save(“Dataset”, file=“C:/Users/Lyndon.A3HR/Documents/jcinfo2.RData”)</em></p>
+<p><em>GradePred &lt;- predict(ldaModel,Dataset)</em></p>
+<p><em>table(GradePred$class)</em></p>
+<p>In effect, <strong>we are saying to R</strong>- here are the values of the features from a job description for which we do not know what the best fit paygrade is. You tell us based on the model you created from our known population of job class specifications.</p>
+<p>This results in the following output:</p>
+<p>table(GradePred$class)</p>
+<p><img src="pic5.jpeg" class="img-fluid"></p>
+<p>This shows a 1 under the value 5 and 0’s everywhere else. It means that paygroup 5 is the predicted best fit paygroup based on the features of this new job description as compared to the features of the population of all 11 pay groups.</p>
+<p><strong>While we showed the example of taking one new job description above and classifying it into best fit paygrade, doing that at this point would be premature in a real life situation</strong>. We did it at this point to illustrate that <strong>prediction CAN be done</strong>- based on the results of the discriminant analysis.</p>
+<p>In real life we would want to do much more work on this ‘model’ before putting it into extensive use. This ‘work’ would be ‘validation’ and perhaps tweaking of the model. We want to know</p>
+<ul>
+<li><p>How well is the model predicting?</p></li>
+<li><p>How accurate is our prediction?</p></li>
+<li><p>Can we make our prediction even more accurate?</p>
+<h1 id="validation">Validation</h1></li>
+</ul>
+<p>One way to validate our model, is to take the original data and paygrades that we already know for the 66 job class specifications and use the data we have on their feature values to predict what pay grades would be predicted for the population we already know. In other words, given our model, how often would it predict the actual values of paygrade that we already know for each of the 66 job class specs that we have?</p>
+<p>Let’s do that and see:</p>
+<p>Here are the R commands used and the output:</p>
+<p>ldaPredict &lt;- predict(ldaModel, jobclassinfo2 )</p>
+<p>tablepred &lt;- table(jobclassinfo2$PG,ldaPredict$class)</p>
+<p><img src="pic6.jpeg" class="img-fluid"></p>
+<p>The interpretation of the above is as follows:</p>
+<ul>
+<li><p>The line PG01 represents some of the actual original values for the job class specifications in our data. Two of the specs had pay grades of PG01 (1+1 above). When predicted based on the features of the paygrades- one was predicted to be at pay grade 1 and the other at paygrade 2.</p></li>
+<li><p>IF the model predicted the paygrades perfectly- only the main diagonal from top left to bottom right would have non 0 counts in them. If anything falls off that main diagonal in terms of comparing the actual value to the predicted, it is deemed to be an ‘error’- because it didn’t predict its original value.</p></li>
+<li><p>So the error rate is what percentage of the predictions turned out not to be correct based on the original values. Above there was a 22% error rate which means a 78% accuracy rate.</p></li>
+</ul>
+<p>So you might say- ok – is that good or not? Well, you need to remember that if you had none of this and you had neither discriminant analysis or prior knowledge of what proportion were in each pay grade based on what we already knew about the real population of 66 job class specifications, you would have 1 chance in 11 (9%) of getting it correct by chance, and 10 chances out of 11 to get it wrong (91% error rate) by guessing- because there are 11 possible groups. So upping that accuracy rate from 9% to 78% I would say is pretty good.</p>
+<p>Does that get your attention?</p>
+</section>
+</section>
+<section id="some-caveats" class="level1">
+<h1>Some Caveats</h1>
+<p>n the above example we used the original data to predict itself. Statistically speaking the error rates we get when we do that are actually overly optimistic. We call this the ’<strong>training data’ error rate</strong>. <strong>A more accurate error rate is achieved when you predict a completely different set of ‘known’ data but based on the discriminant model derived from the original known dataset that you had</strong>. The error rate on this is known as <strong>testing data error rate</strong> and will often be higher and the accuracy rate lower. There are whole books written on the subject of validating statistical models for prediction and classification. There is no intent in the purpose of this blog article to dive further into that.</p>
+</section>
+<section id="what-else-does-this-analysis-tell-us-about-our-current-job-class-specifications" class="level1">
+<h1>What Else Does This Analysis Tell Us About Our Current Job Class Specifications?</h1>
+<p>Sometimes it can be useful to step momentarily outside of our statistical analysis and come back to what it might be telling us in our non-statistical world.</p>
+<ul>
+<li><p>You will notice that in the summary grid showing actual versus the predicted that for the most part the predictions that were wrong were not far off. If the predicted was not the actual, often the predicted was one paygrade higher or lower- not huge in terms of being interpreted as an anomaly.</p></li>
+<li><p>Since traditional job classification in this method is still subjective based on comparing a written job description to a written job class spec, even our known paygrades assessed manually might not be completely correct. The model may be telling us that if we apply a mathematical rigor to our decisions that the ‘real’ categorization might be different than it currently is. Maybe…</p></li>
+<li><p>Or the differences in predicted versus actual might be in our interpretation of what the ‘feature’ values were for that job class spec after essentially trying to categorize some that is a narrative description into a numeric value. We may need to revisit this too to see if our original ‘measurement’ was in error. Maybe …</p></li>
+<li><p>Sometimes if you use too many feature measurements to predict a category or group, this can sometimes add prediction error. There are statistical approaches to discriminant analysis known as ‘stepwise’ discriminant analysis that attempt to figure out whether ‘less is more’- that possibly using fewer features as predictors might increase the predictive accuracy. Maybe …</p></li>
+</ul>
+<p>You hopefully get the point here. This is a form of ‘data science’ being applied to HR- raising questions of the data, doing the analysis, interpreting the results, asking new questions, doing the analysis, interpreting the results etc. The point is - how can we apply data driven methods to better understand the world around us and make what we do better? <strong>We interact and integrate the world of ‘data driven’ with the world of ‘HR’ that we know.</strong></p>
+<p>Discriminant analysis is one of MANY statistical methods that can be used for ‘categorizing or classification’. Another is <strong>decision trees</strong>- an approach I may show in an upcoming blog article.</p>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>The primary point of this article was to provide a practical example of how we can take a specific methodology from HR- job classification and understand what this might look like if we put it into the world of ‘data driven’. It is trying to help HR practitioners understand that <strong>there indeed is this ‘whole other world’ of HR that is far more technical and quantitative than traditional HR methodologies and practice</strong>. This whole other world exists because ‘data driven’ can be applied to HR. The statistical tools used in being data driven are not unique to HR. For example banks might use linear discriminant analysis to predict who might be a bad loan risk. The statistical tools can be applied to supply chain, marketing and other areas and often already have been. <strong>HR is no different</strong>.</p>
+<p>As a final aside- while I mentioned SPSS, SAS , and R as some of the statistical packages out there that can be used- there are also many others- some commercial, some free. There are also increasingly really good data mining packages that hide much of the statistical complexity from the end user, but allow just enough to allow enough exposure so that thoughtful continued analysis and research can occur. In all of these options it is important to understand that the application of statistics to any endeavor these days is not about the analyst sitting down and hand calculating them. Software packages do that for you. What users do need to do though is learn and understand what statistical procedures answer what types of questions, apply those, and then understand how to correctly interpret the results. This is true whether you are using traditional statistical analysis packages or data mining software.</p>
+<p>To HR practitioners the key question becomes <strong>‘Is HR as a profession interested in becoming ’data driven’ and pick up the needed statistical and data analysis skills’?</strong></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
