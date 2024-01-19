@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Lyndon Sundmark, MBA">
-<meta name="dcterms.date" content="2016-02-28">
+<meta name="dcterms.date" content="2016-04-30">
 
 <title>HRAnalyticsBlogs - People Analytics in R - Job Classification ‘Revisited’</title>
 <style>
@@ -162,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 28, 2016</p>
+        <p class="date">April 30, 2016</p>
       </div>
     </div>
     
@@ -225,9 +225,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For decades we have had job classification as a process in HR, and classification algorithms in statistics- but HR,in most organizations, is not recognizing this and the potential contribution it could/can make .</p>
 <p><strong>So in People Analytics in R -Job Classification:</strong></p>
 <p><strong>* our primary goal is to classify job descriptions into job classifications using the power of statistical algorithms to assist in prediction of best fit.</strong> <strong>* our secondary goal might be to help improve the design of our job classification system/framework.</strong></p>
-<p>##2.Collect And Manage Data</p>
-<p>For purposes of this application of People Analytics, this step in the data science process will take the longest initially. This is because in almost every organization, the existing job classifications or categories, and the job descriptions themselves are not typically represented in numerical format suitable for statistical analysis. Sometimes, that which we are predicting- the pay grade is numeric because point methods are used in evaluation and different paygrades have different point ranges. But more often the job descriptions are narrative as are the job classification specs or summaries. For this blog article, we will assume that and delineate the steps required.</p>
 </section>
+</section>
+<section id="collect-and-manage-data" class="level2">
+<h2 class="anchored" data-anchor-id="collect-and-manage-data">2.Collect And Manage Data</h2>
+<p>For purposes of this application of People Analytics, this step in the data science process will take the longest initially. This is because in almost every organization, the existing job classifications or categories, and the job descriptions themselves are not typically represented in numerical format suitable for statistical analysis. Sometimes, that which we are predicting- the pay grade is numeric because point methods are used in evaluation and different paygrades have different point ranges. But more often the job descriptions are narrative as are the job classification specs or summaries. For this blog article, we will assume that and delineate the steps required.</p>
 <section id="collecting-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="collecting-the-data">Collecting The Data</h3>
 <p>The following are typical steps:</p>
@@ -523,12 +525,12 @@ n= 66
 
         CP nsplit rel error  xerror     xstd
 1 0.137255      0   1.00000 1.00000 0.066756
-2 0.117647      1   0.86275 0.92157 0.072125
-3 0.088235      2   0.74510 0.84314 0.075902
-4 0.058824      4   0.56863 0.66667 0.079611
-5 0.039216      7   0.39216 0.70588 0.079318
-6 0.019608      9   0.31373 0.66667 0.079611
-7 0.010000     10   0.29412 0.64706 0.079647</code></pre>
+2 0.117647      1   0.86275 0.98039 0.068266
+3 0.088235      2   0.74510 0.94118 0.070944
+4 0.058824      4   0.56863 0.78431 0.077835
+5 0.039216      7   0.39216 0.74510 0.078728
+6 0.019608      9   0.31373 0.72549 0.079060
+7 0.010000     10   0.29412 0.68627 0.079501</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Time taken: 0.02 secs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -587,17 +589,17 @@ Call:
                      Number of trees: 500
 No. of variables tried at each split: 2
 
-        OOB estimate of  error rate: 40.91%
+        OOB estimate of  error rate: 37.88%
 Confusion matrix:
      PG01 PG02 PG03 PG04 PG05 PG06 PG07 PG08 PG09 PG10 class.error
-PG01    0    1    1    0    0    0    0    0    0    0   1.0000000
+PG01    0    2    0    0    0    0    0    0    0    0   1.0000000
 PG02    0    4    1    0    0    0    0    0    0    0   0.2000000
 PG03    0    0    5    1    1    0    0    0    0    0   0.2857143
-PG04    0    0    1    1    5    0    0    0    0    0   0.8571429
+PG04    0    0    1    3    3    0    0    0    0    0   0.5714286
 PG05    0    0    0    3   10    2    0    0    0    0   0.3333333
-PG06    0    0    0    0    1    5    1    0    0    0   0.2857143
-PG07    0    0    0    0    0    2    2    0    0    0   0.5000000
-PG08    0    0    0    0    0    0    0    4    3    0   0.4285714
+PG06    0    0    0    0    1    6    0    0    0    0   0.1428571
+PG07    0    0    0    0    0    3    1    0    0    0   0.7500000
+PG08    0    0    0    0    0    0    0    4    2    1   0.4285714
 PG09    0    0    0    0    0    0    0    4    2    0   0.6666667
 PG10    0    0    0    0    0    0    0    0    0    6   0.0000000</code></pre>
 </div>
@@ -607,21 +609,21 @@ PG10    0    0    0    0    0    0    0    0    0    6   0.0000000</code></pre>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>rn[<span class="fu">order</span>(rn[,<span class="dv">3</span>], <span class="at">decreasing=</span><span class="cn">TRUE</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 PG01  PG02  PG03 PG04  PG05  PG06  PG07  PG08  PG09  PG10
-EducationLevel   2.46 15.31 12.70 4.81  7.26  0.28  4.59  1.01 -6.23  8.79
-Experience      -4.32 11.04  9.18 6.34  3.48  4.21  7.65 -5.51  4.09  2.32
-ProblemSolving   3.35  7.36  9.17 3.02  8.56 11.47  7.15 13.03 10.96 21.39
-Supervision     -2.85  8.48  7.49 2.30  7.25  2.60 -0.80  2.05  4.30 16.07
-FinancialBudget  2.01  6.95  4.41 2.25  9.15  3.37 -2.85 -5.89 12.46 14.26
-ContactLevel     1.00 11.61  3.20 1.31  4.10 10.20  4.30 10.58 -0.90 10.97
-OrgImpact       -2.13 11.25  3.03 2.20 12.34  3.21  3.77 -1.00  5.41 10.88
+EducationLevel   2.85 15.84 12.83 4.29  6.42  2.03  5.47  6.35 -4.76  8.29
+ProblemSolving   3.93  6.34  9.25 2.34  7.62 12.13  8.43 13.24 10.21 19.68
+Experience      -4.44 10.20  9.16 4.67  2.36  6.31  9.03 -5.78  4.93  3.32
+Supervision     -3.08  9.00  7.30 2.75  7.00  4.17  0.00  3.40  3.78 15.64
+ContactLevel     2.46 11.88  3.88 3.89  2.77 10.43  3.70 10.34 -1.38 10.47
+OrgImpact       -2.52 10.59  3.67 2.58 10.19  1.78  5.61 -0.91  6.30 10.58
+FinancialBudget  2.25  6.28  3.59 1.65  8.66  2.95 -3.59 -5.06 11.90 15.03
                 MeanDecreaseAccuracy MeanDecreaseGini
-EducationLevel                 17.91             4.33
-Experience                     13.73             4.18
-ProblemSolving                 25.35             6.60
-Supervision                    17.45             3.88
-FinancialBudget                14.44             5.08
-ContactLevel                   15.85             5.02
-OrgImpact                      14.97             3.52</code></pre>
+EducationLevel                 17.97             4.61
+ProblemSolving                 23.60             6.30
+Experience                     13.86             4.42
+Supervision                    16.30             3.82
+ContactLevel                   16.10             4.93
+OrgImpact                      14.17             3.38
+FinancialBudget                13.79             5.24</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Time taken: 0.06 secs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -664,12 +666,12 @@ SV type: C-svc  (classification)
  parameter : cost C = 1 
 
 Gaussian Radial Basis kernel function. 
- Hyperparameter : sigma =  0.201811243273916 
+ Hyperparameter : sigma =  0.151222236388729 
 
 Number of Support Vectors : 64 
 
-Objective Function Value : -3.7987 -3.5908 -2.7748 -2.1644 -1.5241 -1.3472 -1.4549 -1.5807 -1.4366 -7.292 -3.8758 -2.3434 -1.584 -1.3361 -1.4385 -1.5634 -1.4198 -7.8978 -6.0711 -2.9111 -2.183 -1.9641 -2.2079 -1.8544 -9.808 -3.7017 -2.4013 -2.2027 -2.5941 -2.0227 -9.6571 -6.2132 -3.8025 -3.8761 -2.4217 -7.5785 -5.2181 -4.5411 -2.2818 -4.3815 -3.7009 -2.0481 -9.6341 -5.5006 -5.9596 
-Training error : 0.272727 
+Objective Function Value : -3.8437 -3.6794 -2.9812 -2.3382 -1.5472 -1.3242 -1.3688 -1.5097 -1.3689 -7.7967 -4.483 -2.6257 -1.6532 -1.3211 -1.3594 -1.5029 -1.3566 -8.6345 -6.5264 -3.1206 -2.3037 -1.8315 -2.088 -1.6889 -10.3209 -3.9815 -2.5211 -2.0744 -2.4871 -1.8299 -10.2577 -6.5316 -3.8955 -3.8986 -2.2741 -7.6954 -5.6307 -4.8631 -2.3234 -4.7859 -4.1069 -2.112 -9.9423 -6.2772 -6.586 
+Training error : 0.30303 
 Probability model included. </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Time taken: 0.43 secs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -937,7 +939,7 @@ Actual PG01 PG02 PG03 PG04 PG05 PG06 PG07 PG08 PG09 PG10
   PG02    0    5    0    0    0    0    0    0    0    0
   PG03    0    0    7    0    0    0    0    0    0    0
   PG04    0    0    0    7    0    0    0    0    0    0
-  PG05    0    0    0    1   14    0    0    0    0    0
+  PG05    0    0    0    0   15    0    0    0    0    0
   PG06    0    0    0    0    0    7    0    0    0    0
   PG07    0    0    0    0    0    0    4    0    0    0
   PG08    0    0    0    0    0    0    0    7    0    0
@@ -961,28 +963,28 @@ Actual PG01 PG02 PG03 PG04 PG05 PG06 PG07 PG08 PG09 PG10
 <div class="cell-output cell-output-stdout">
 <pre><code>      Predicted
 Actual PG01 PG02 PG03 PG04 PG05 PG06 PG07 PG08 PG09 PG10 Error
-  PG01 0.02 0.02 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00  0.50
-  PG02 0.00 0.08 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00  0.00
-  PG03 0.00 0.00 0.11 0.00 0.00 0.00 0.00 0.00 0.00 0.00  0.00
-  PG04 0.00 0.00 0.00 0.11 0.00 0.00 0.00 0.00 0.00 0.00  0.00
-  PG05 0.00 0.00 0.00 0.02 0.21 0.00 0.00 0.00 0.00 0.00  0.07
-  PG06 0.00 0.00 0.00 0.00 0.00 0.11 0.00 0.00 0.00 0.00  0.00
-  PG07 0.00 0.00 0.00 0.00 0.00 0.00 0.06 0.00 0.00 0.00  0.00
-  PG08 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.11 0.00 0.00  0.00
-  PG09 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.09 0.00  0.00
-  PG10 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.09  0.00</code></pre>
+  PG01 0.02 0.02 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00   0.5
+  PG02 0.00 0.08 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00   0.0
+  PG03 0.00 0.00 0.11 0.00 0.00 0.00 0.00 0.00 0.00 0.00   0.0
+  PG04 0.00 0.00 0.00 0.11 0.00 0.00 0.00 0.00 0.00 0.00   0.0
+  PG05 0.00 0.00 0.00 0.00 0.23 0.00 0.00 0.00 0.00 0.00   0.0
+  PG06 0.00 0.00 0.00 0.00 0.00 0.11 0.00 0.00 0.00 0.00   0.0
+  PG07 0.00 0.00 0.00 0.00 0.00 0.00 0.06 0.00 0.00 0.00   0.0
+  PG08 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.11 0.00 0.00   0.0
+  PG09 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.09 0.00   0.0
+  PG10 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.09   0.0</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the overall error percentage.</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">round</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>(<span class="fu">diag</span>(per), <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>3</code></pre>
+<pre><code>2</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the averaged class error percentage.</span></span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">round</span>(<span class="fu">mean</span>(per[,<span class="st">"Error"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>6</code></pre>
+<pre><code>5</code></pre>
 </div>
 </div>
 </section>
@@ -1003,13 +1005,13 @@ Actual PG01 PG02 PG03 PG04 PG05 PG06 PG07 PG08 PG09 PG10 Error
 <pre><code>      Predicted
 Actual PG01 PG02 PG03 PG04 PG05 PG06 PG07 PG08 PG09 PG10
   PG01    0    1    1    0    0    0    0    0    0    0
-  PG02    0    5    0    0    0    0    0    0    0    0
-  PG03    0    2    3    1    1    0    0    0    0    0
+  PG02    0    4    1    0    0    0    0    0    0    0
+  PG03    0    0    5    0    2    0    0    0    0    0
   PG04    0    0    0    6    1    0    0    0    0    0
-  PG05    0    0    0    1   13    1    0    0    0    0
-  PG06    0    0    0    0    1    6    0    0    0    0
+  PG05    0    0    0    1   12    2    0    0    0    0
+  PG06    0    0    0    0    2    5    0    0    0    0
   PG07    0    0    0    0    0    4    0    0    0    0
-  PG08    0    0    0    0    0    0    0    7    0    0
+  PG08    0    0    0    0    0    1    0    6    0    0
   PG09    0    0    0    0    0    0    0    4    2    0
   PG10    0    0    0    0    0    0    0    0    0    6</code></pre>
 </div>
@@ -1031,13 +1033,13 @@ Actual PG01 PG02 PG03 PG04 PG05 PG06 PG07 PG08 PG09 PG10
 <pre><code>      Predicted
 Actual PG01 PG02 PG03 PG04 PG05 PG06 PG07 PG08 PG09 PG10 Error
   PG01    0 0.02 0.02 0.00 0.00 0.00    0 0.00 0.00 0.00  1.00
-  PG02    0 0.08 0.00 0.00 0.00 0.00    0 0.00 0.00 0.00  0.00
-  PG03    0 0.03 0.05 0.02 0.02 0.00    0 0.00 0.00 0.00  0.57
+  PG02    0 0.06 0.02 0.00 0.00 0.00    0 0.00 0.00 0.00  0.20
+  PG03    0 0.00 0.08 0.00 0.03 0.00    0 0.00 0.00 0.00  0.29
   PG04    0 0.00 0.00 0.09 0.02 0.00    0 0.00 0.00 0.00  0.14
-  PG05    0 0.00 0.00 0.02 0.20 0.02    0 0.00 0.00 0.00  0.13
-  PG06    0 0.00 0.00 0.00 0.02 0.09    0 0.00 0.00 0.00  0.14
+  PG05    0 0.00 0.00 0.02 0.18 0.03    0 0.00 0.00 0.00  0.20
+  PG06    0 0.00 0.00 0.00 0.03 0.08    0 0.00 0.00 0.00  0.29
   PG07    0 0.00 0.00 0.00 0.00 0.06    0 0.00 0.00 0.00  1.00
-  PG08    0 0.00 0.00 0.00 0.00 0.00    0 0.11 0.00 0.00  0.00
+  PG08    0 0.00 0.00 0.00 0.00 0.02    0 0.09 0.00 0.00  0.14
   PG09    0 0.00 0.00 0.00 0.00 0.00    0 0.06 0.03 0.00  0.67
   PG10    0 0.00 0.00 0.00 0.00 0.00    0 0.00 0.00 0.09  0.00</code></pre>
 </div>
@@ -1045,13 +1047,13 @@ Actual PG01 PG02 PG03 PG04 PG05 PG06 PG07 PG08 PG09 PG10 Error
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">round</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>(<span class="fu">diag</span>(per), <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>27</code></pre>
+<pre><code>30</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the averaged class error percentage.</span></span>
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">round</span>(<span class="fu">mean</span>(per[,<span class="st">"Error"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>36</code></pre>
+<pre><code>39</code></pre>
 </div>
 </div>
 </section>
