@@ -39,7 +39,10 @@
     "DDJobAnalysisDescription.html": "5c7dc3c5"
   },
   "posts/HRWhatsStoppingUS/HRANalyticsWhatsStopppingUs.qmd": {
-    "HRANalyticsWhatsStopppingUs.html": "c2a3a178"
+    "HRANalyticsWhatsStopppingUs.html": "c2a3a178",
+    "HRANalyticsWhatsStopppingUs.tex": "8abc3647",
+    "HRANalyticsWhatsStopppingUs.docx": "bcd403f5",
+    "HRANalyticsWhatsStopppingUs.epub": "01e80607"
   },
   "posts/CalculatingEmployeeTurnover/CalculatingEmployeeTurnover.qmd": {
     "CalculatingEmployeeTurnover.html": "8b05d92d",
@@ -90,7 +93,10 @@
     "DoingHRA1.epub": "ab4821ce"
   },
   "posts/DoingHRA2/DoingHRA2.qmd": {
-    "DoingHRA2.html": "7194d248"
+    "DoingHRA2.html": "7194d248",
+    "DoingHRA2.docx": "04c2ff8c",
+    "DoingHRA2.tex": "6282f8e5",
+    "DoingHRA2.epub": "7dcbbc20"
   },
   "Rattle/Rattle.qmd": {
     "Rattle.html": "dd323c0e",
@@ -120,7 +126,10 @@
     "ddjobclasspt2.html": "4d004e2e"
   },
   "posts/HRAWayOfDoing/HRWayOfDoing.qmd": {
-    "HRWayOfDoing.html": "11778430"
+    "HRWayOfDoing.html": "11778430",
+    "HRWayOfDoing.tex": "f27855be",
+    "HRWayOfDoing.docx": "8f66f58c",
+    "HRWayOfDoing.epub": "2a47c55b"
   },
   "posts/Automl/automl.qmd": {
     "automl.html": "1a3d0ced",

@@ -3,6 +3,12 @@ title: "Doing HR Analytics - A Practitioner's Handbook With R Examples -paperbac
 author: "Lyndon Sundmark, MBA"
 date: "2017-09-20"
 categories: [HR Analytics]
+
+format:
+  docx: default
+  pdf: default
+  epub: default
+  html: default
 ---
 
 Hi Everyone,
