@@ -5,6 +5,9 @@ date: "2021-08-15"
 categories: [HR Analytics]
 ---
 
+::: {.callout-note appearance="simple"}
+*TL;DR; The HR Innovator Role is hard to find in organizations*
+:::
 # Introduction
 
 Did the above title grab your attention? It is my hope that it did.
@@ -406,3 +409,9 @@ This particular prototype is written in C# as a Microsoft Blazor Server applicat
 If there is sufficient interest in this application, I 'may' put it out in the public domain under the GPL 3.0 license for review and use. Under that type of licensing, it could be copied, modified, and enhanced freely by users without any charge- but not be sold/resold for profit. And its ongoing support would be up to users themselves in their own organizations.
 
 My motivation here - more than anything - is to influence, enable, and help the HR profession and HR practitioners to be increasingly more innovative.
+
+::: {.callout-note appearance="simple"}
+About Lyndon Sundmark, MBA
+
+Lyndon is a retired HR Professional with over 40 years experience of applying a 'data-driven', 'evidence based' mindset to HR practices in organizations in a variety of roles and industries.
+:::
