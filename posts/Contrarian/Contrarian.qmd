@@ -319,7 +319,7 @@ Without these, are we as HR really 'managing' and providing 'leadership' in HR, 
 
 My purpose in this blog article is to have HR as a profession and its professional bodies consider very carefully their paradigm for People/HR analytics. Your choice may very well artificially limit its success it isn't defined or operationalized properly right from the very beginning. AI, statistics, and machine learning hold so much promise to bring HR into levels of relevancy and organizational breakthoughs not seen historically in the profession. But these will occur only to the extent that HR fundamentally rethinks its role, operations , methodologies and practices. Traditional HR -business as usual - will not cut it nor bring these promises or potential to fruition.
 
-::: {.callout-note appearance="simple"}    
+::: {.callout-note appearance="simple"}
 About Lyndon Sundmark, MBA
 
 Lyndon is a retired HR Professional with over 40 years experience of applying a 'data-driven', 'evidence based' mindset to HR practices in organizations in a variety of roles and industries.
