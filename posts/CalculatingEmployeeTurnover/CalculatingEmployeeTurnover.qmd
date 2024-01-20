@@ -3,11 +3,6 @@ title: "Is it Time To Take Another Look at How to Calculate Employee Turnover?"
 author: "Lyndon Sundmark, MBA"
 date: "2014-11-25"
 categories: [HR Analytics]
-format:
-  docx: default
-  pdf: default
-  epub: default
-  html: default
 ---
 
 # Introduction
