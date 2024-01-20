@@ -15,8 +15,10 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    toc: true
   pdf:
     colorlinks: true
+    toc: true
   docx:
     toc: true
     highlight-style: github
