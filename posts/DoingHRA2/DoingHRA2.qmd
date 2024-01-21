@@ -5,10 +5,10 @@ date: "2017-09-20"
 categories: [HR Analytics]
 
 format:
+  html: default
   docx: default
   pdf: default
   epub: default
-  html: default
 ---
 
 Hi Everyone,
