@@ -4,6 +4,10 @@ author: "Lyndon Sundmark, MBA"
 date: "2014-11-25"
 categories: [HR Analytics]
 ---
+::: {.callout-note appearance="simple"}
+*TL;DR; In a word- YES. Current formulas for calculating turnover often use denominators which are an average. These averages really are attempting to indirectly combine inflows with the outflows. In my opinion inflow rates and outflow rates are separate entities*
+:::
+
 
 # Introduction
 
@@ -126,3 +130,9 @@ None of the discussion in this article is here to suggest or imply that you as t
 But perhaps I can leave you with some closing thoughts or suggested criteria for your choice, whether it be for regulatory or other purposes:
 
 Is there a reasoning behind why you are calculating it the way you are calculating it? If a regulatory reason requires one of the above 3 choices in your denominator, then that is reason enough for 'that' purpose. Can you have multiple turnover measures for different purposes? Some may be for regulatory purposes, some for benchmarking with other organizations. These may require different calculations. If the purpose for the calculation is for comparison to other organizations, how do they calculate the denominator? Is their entire formula the same? If so, your purposes are met. If not, another formula may be required for that specific purpose or intent. If there is no regulatory required definition for your employee turnover metric, does your metric really measure what you think it measures? And if you have more than one calculation for turnover, are your definitions and terminology allowing you to distinguish between them and still have clarity, meaningful dialogue, and a reaching of all the purposes intended? What do you think?
+
+::: {.callout-note appearance="simple"}
+About Lyndon Sundmark, MBA
+
+Lyndon is a retired HR Professional with over 40 years experience of applying a 'data-driven', 'evidence based' mindset to HR practices in organizations in a variety of roles and industries.
+:::
