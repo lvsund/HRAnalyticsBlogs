@@ -3,6 +3,11 @@ title: "Data Driven Job Classification"
 author: "Lyndon Sundmark, MBA"
 date: "2015-03-04"
 categories: [HR Analytics]
+format:
+  html: default
+  docx: default
+  pdf: default
+  epub: default
 ---
 
 # Introduction
