@@ -5,6 +5,10 @@ date: "2019-06-12"
 categories: [HR Analytics]
 ---
 
+::: {.callout-note appearance="simple"}
+*TL;DR; In a word- YES*
+:::
+
 # Introduction
 
 One of the things you can assume about HR Analytics ("Data Science being applied to HR management and decision making" or "Data-Driven HR") is that this field is not standing still. Things are changing all the time, and this reflects the fact that things are changing constantly in the three fields from which HR analytics draws upon:
@@ -266,3 +270,9 @@ The use of automated machine learning can cut down significantly the time to det
 The quicker that we are able to 'zero-in' on 'best' performing models, the quicker we can get to and spend more time in the detailed understanding and analysis of our data - to make high-quality changes to our HR decision making and management.
 
 I hope this blog article has got you at least a little bit excited about the prospects of how this will benefit HR Analytics as things progress.
+
+::: {.callout-note appearance="simple"}
+About Lyndon Sundmark, MBA
+
+Lyndon is a retired HR Professional with over 40 years experience of applying a 'data-driven', 'evidence based' mindset to HR practices in organizations in a variety of roles and industries.
+:::
