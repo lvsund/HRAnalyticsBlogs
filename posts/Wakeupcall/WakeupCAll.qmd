@@ -5,7 +5,9 @@ categories: [HR Analytics]
 date: "2014-12-17"
 ---
 
-# Workforce/HR/People Analytics- Is This a Wake-Up Call for HR?
+::: {.callout-note appearance="simple"}
+## TL;DR; Yes it is!
+:::
 
 ## Introduction
 
@@ -148,7 +150,7 @@ Google is indeed doing some tremendously exciting things in their People practic
 
 I guess the key question is- how will Workforce, HR, People Analytics impact you and your organization?
 
-::: {.callout-note appearance="simple"}    
+::: {.callout-note appearance="simple"}
 About Lyndon Sundmark, MBA
 
 Lyndon is a retired HR Professional with over 40 years experience of applying a 'data-driven', 'evidence based' mindset to HR practices in organizations in a variety of roles and industries.
