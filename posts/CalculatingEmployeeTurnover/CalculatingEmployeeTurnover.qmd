@@ -4,10 +4,10 @@ author: "Lyndon Sundmark, MBA"
 date: "2014-11-25"
 categories: [HR Analytics]
 ---
+
 ::: {.callout-note appearance="simple"}
 *TL;DR; In a word- YES. Current formulas for calculating turnover often use denominators which are an average. These averages really are attempting to indirectly combine inflows with the outflows. In my opinion inflow rates and outflow rates are separate entities*
 :::
-
 
 # Introduction
 
