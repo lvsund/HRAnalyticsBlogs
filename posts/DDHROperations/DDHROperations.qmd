@@ -295,7 +295,6 @@ Six Sigma With R: Statistical Engineering for Process Improvement written by Can
 
 HR seeing itself as a business Start logging all interaction with their customers Measuring that interaction both in terms of time taken to perform services and the feedback from their customers Understanding the role Quality Improvement plays in HR operations measurement and the methodologies that assist them in this ( ie SixSigma) Significantly increasing both knowledge and application of statistical analysis packages, procedures and tools to fully realize 'data driven' operations Often as HR professionals we are left with the impression from Executive Management and other parts of the organization that HR needs to justify its existence. On a personal level I don't support or agree with that mindset. Organizations require HR Services regardless of HOW they are provided- whether from inside or outside the organization. HR Services DO need to exist. The real question is HOW they are to be provided and by WHOM. We are in a much better position to make the argument that it should be us, when we are measuring the performance of our HR Services in the above ways, and require any thought of outsourcing these services to provide verifiable evidence that they can do better with the same level of resources.
 
-
 ::: {.callout-note appearance="simple"}
 About Lyndon Sundmark, MBA
 

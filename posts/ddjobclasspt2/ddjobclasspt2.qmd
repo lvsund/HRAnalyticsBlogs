@@ -3,12 +3,6 @@ title: "Data-Driven' Job Classification Part 2"
 author: "Lyndon Sundmark"
 categories: [HR Analytics]
 date: "2015-03-25"
-
-format:
-  html: default
-  docx: default
-  pdf: default
-  epub: default
 ---
 
 # Introduction
