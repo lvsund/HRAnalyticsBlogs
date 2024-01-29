@@ -3,6 +3,11 @@ title: "Automated Machine Learning –Does This Benefit HR Analytics?"
 author: "Lyndon Sundmark, MBA"
 date: "2019-06-12"
 categories: [HR Analytics]
+format: 
+  html: default
+  pdf: default
+  docx: default
+  epub: default
 ---
 
 ::: {.callout-note appearance="simple"}
